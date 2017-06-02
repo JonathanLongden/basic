@@ -64,50 +64,50 @@ function click(d) {
 d3.select(self.frameElement).style("height", height + "px");
 
 
- run: function() {
-            self = this;
+//  run: function() {
+//             self = this;
 
-            d3.csv(csvUrl, function(data) {
-                var parse = d3.time.format("%m/%d/%Y %H:%M").parse; //gfdata2 5/1/2017 12:00
-                //var parse = d3.time.format("%y-%b").parse; //gfdata
-                var parse = d3.time.format("%b-%Y").parse; //stocks
-                // Nest stock values by symbol.
-                symbols = d3.nest()
-                    .key(function(d) {
-                        return d.symbol;
-                    })
-                    .entries(data);
+//             d3.csv(csvUrl, function(data) {
+//                 var parse = d3.time.format("%m/%d/%Y %H:%M").parse; //gfdata2 5/1/2017 12:00
+//                 //var parse = d3.time.format("%y-%b").parse; //gfdata
+//                 var parse = d3.time.format("%b-%Y").parse; //stocks
+//                 // Nest stock values by symbol.
+//                 symbols = d3.nest()
+//                     .key(function(d) {
+//                         return d.symbol;
+//                     })
+//                     .entries(data);
 
-                // Parse dates and numbers. We assume values are sorted by date.
-                // Also compute the maximum price per symbol, needed for the y-domain.
-                symbols.forEach(function(s) {
-                    s.values.forEach(function(d) {
-                        d.date = parse(d.date);
-                        d.price = +d.price;
-                    });
+//                 // Parse dates and numbers. We assume values are sorted by date.
+//                 // Also compute the maximum price per symbol, needed for the y-domain.
+//                 symbols.forEach(function(s) {
+//                     s.values.forEach(function(d) {
+//                         d.date = parse(d.date);
+//                         d.price = +d.price;
+//                     });
 
-                    s.maxPrice = d3.max(s.values, function(d) {
-                        return d.price;
-                    });
+//                     s.maxPrice = d3.max(s.values, function(d) {
+//                         return d.price;
+//                     });
 
-                    s.sumPrice = d3.sum(s.values, function(d) {
-                        return d.price;
-                    });
-                });
+//                     s.sumPrice = d3.sum(s.values, function(d) {
+//                         return d.price;
+//                     });
+//                 });
 
-                // Sort by maximum price, descending.
-                symbols.sort(function(a, b) {
-                    return b.maxPrice - a.maxPrice;
-                });
+//                 // Sort by maximum price, descending.
+//                 symbols.sort(function(a, b) {
+//                     return b.maxPrice - a.maxPrice;
+//                 });
 
-                g = svg.selectAll("g")
-                    .data(symbols)
-                    .enter().append("g")
-                    .attr("class", "symbol");
+//                 g = svg.selectAll("g")
+//                     .data(symbols)
+//                     .enter().append("g")
+//                     .attr("class", "symbol");
 
-                setTimeout(self.lines, duration);
-            });
-        }
+//                 setTimeout(self.lines, duration);
+//             });
+//         }
 
 
 }(d3)); //end of function
