@@ -727,6 +727,8 @@ window.D3ShowReel = window.D3ShowReel || (function(d3) {
             setTimeout(self.areas, duration + delay);
         },
 
+    //Running the Functions start here
+    
         run: function() {
             self = this;
 
