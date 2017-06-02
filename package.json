@@ -1,0 +1,14 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "convert a d3 project in index to a full angular app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan E. Longden",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^4.9.1"
+  }
+}
