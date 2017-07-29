@@ -91,4 +91,3 @@ app.listen(config.port, function(){
   console.log('The server is on', config.port)
 })
 // Contact GitHub API Training Shop Blog About
-// © 2017 GitHub, Inc. Terms Privacy Security Status Help
