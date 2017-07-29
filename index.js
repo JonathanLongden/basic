@@ -90,4 +90,3 @@ app.put('/sales:id',saleControl.update);
 app.listen(config.port, function(){
   console.log('The server is on', config.port)
 })
-// Contact GitHub API Training Shop Blog About
