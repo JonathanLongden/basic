@@ -1,5 +1,5 @@
 var express = require('express');
-var cors = require('cors');
+//var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
@@ -22,9 +22,9 @@ var configSession = require('./passport/setsecret.js');
 require('./passport/passport.js')(passport);
 
 
-var app = express();
+//var app = express();
 
-app.use(cors);
+//app.use(cors);
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
