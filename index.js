@@ -31,17 +31,17 @@ app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname+'/public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
 
 // var userControl = require('./controller/userControl.js');
 // var saleControl = require('./controller/saleControl.js');
 // var qcCard = require();
 
 
-app.post('/login', userControl.login); //logining in
-app.post('/signup', userControl.signup); //signing up
-app.get('/logout', userControl.logout);	//logging out
+// app.post('/login', userControl.login); //logining in
+// app.post('/signup', userControl.signup); //signing up
+// app.get('/logout', userControl.logout);	//logging out
 // app.post('/forgot', userControl.forogt) //password reset
 
 
@@ -56,25 +56,25 @@ app.get('/logout', userControl.logout);	//logging out
 // });
 
 
-app.get('/users', userControl.getAllUsers);
-app.get('/user/:id', userControl.getOneUser);
-app.put('/user/:id', userControl.update);
-app.post('/sale/:id', userControl.addSale);
-// app.put('/sale/:id', userControl.updateSale);
+// app.get('/users', userControl.getAllUsers);
+// app.get('/user/:id', userControl.getOneUser);
+// app.put('/user/:id', userControl.update);
+// app.post('/sale/:id', userControl.addSale);
+// // app.put('/sale/:id', userControl.updateSale);
 
-//When sale is created, add sale id to user sale array
-app.post('/sale', saleControl.create, userControl.addSale );
-app.get('/sale', saleControl.read);
-app.get('/sale/:id', saleControl.readById);
-app.get('/mysales', saleControl.readByUser);
-app.put('/sale/:id', saleControl.update );
-app.delete('/sale/:id', saleControl.delete, userControl.deleteSale);
+// //When sale is created, add sale id to user sale array
+// app.post('/sale', saleControl.create, userControl.addSale );
+// app.get('/sale', saleControl.read);
+// app.get('/sale/:id', saleControl.readById);
+// app.get('/mysales', saleControl.readByUser);
+// app.put('/sale/:id', saleControl.update );
+// app.delete('/sale/:id', saleControl.delete, userControl.deleteSale);
 
 
-app.get('/sales', saleControl.read );
-app.post('/sales', saleControl.create);
-app.get('/sales:id',saleControl.readById);
-app.put('/sales:id',saleControl.update);
+// app.get('/sales', saleControl.read );
+// app.post('/sales', saleControl.create);
+// app.get('/sales:id',saleControl.readById);
+// app.put('/sales:id',saleControl.update);
 
 
 
@@ -87,6 +87,6 @@ app.put('/sales:id',saleControl.update);
 //   console.log('We have data');
 // })
 
-app.listen(config.port, function(){
-  console.log('The server is on', config.port)
+app.listen(config.port, function() {
+    console.log('The server is on', config.port)
 })
