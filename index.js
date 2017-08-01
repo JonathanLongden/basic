@@ -22,7 +22,7 @@ var configSession = require('./passport/setsecret.js');
 require('./passport/passport.js')(passport);
 
 
-//var app = express();
+var app = express();
 
 //app.use(cors);
 app.use(session(configSession));
@@ -76,14 +76,14 @@ var qcCard = null; //require();
 
 
 
-// mongoose.connect(
-//   //"mongodb://localhost:27017/sales"
-// 	config.mongolab_uri
-// );
+mongoose.connect(
+    //"mongodb://localhost:27017/sales"
+    config.mongolab_uri
+);
 
-// mongoose.connection.once('open', function(){
-//   console.log('We have data')
-// })
+mongoose.connection.once('open', function() {
+    console.log('We have data')
+})
 
 app.listen(config.port, function() {
         console.log('The server is on', config.port)
