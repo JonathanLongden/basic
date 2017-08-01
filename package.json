@@ -4,24 +4,29 @@
     "description": "convert a d3 project in index to a full angular app",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "test": "This is a Test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JonathanLongden/basic"
     },
     "author": "Jonathan E. Longden",
     "license": "ISC",
+    "homepage": "https://trecqacard.herokuapp.com/",
     "dependencies": {
         "body-parser": "^1.17.2",
         "cors": "^2.8.4",
-        "d3": "^4.9.1",
-        "eslint-plugin-react": "^7.1.0",
         "express": "^4.15.3",
-        "express-flash": "0.0.2",
         "express-session": "^1.15.4",
+        "module_name": "^1.0.0",
         "mongodb": "^2.2.30",
-        "mongoose": "^4.10.8",
+        "mongoose": "^4.11.5",
         "nodejs": "0.0.0",
         "passport": "^0.3.2",
         "passport-facebook": "^2.1.1",
         "passport-local": "^1.0.0",
         "serve-favicon": "^2.4.3"
-    }
+    },
+    "devDependencies": {}
 }
