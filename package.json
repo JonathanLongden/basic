@@ -1,25 +1,26 @@
 {
-  "name": "basic",
-  "version": "1.0.0",
-  "description": "convert a d3 project in index to a full angular app",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonathan E. Longden",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "cors": "^2.8.4",
-    "d3": "^4.9.1",
-    "express": "^4.15.3",
-    "express-session": "^1.15.4",
-    "mongodb": "^2.2.30",
-    "mongoose": "^4.11.5",
-    "nodejs": "0.0.0",
-    "passport": "^0.3.2",
-    "passport-facebook": "^2.1.1",
-    "passport-local": "^1.0.0",
-    "serve-favicon": "^2.4.3"
-  }
+    "name": "basic",
+    "version": "1.0.0",
+    "description": "convert a d3 project in index to a full angular app",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jonathan E. Longden",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "cors": "^2.8.4",
+        "d3": "^4.9.1",
+        "express": "^4.15.3",
+        "express-session": "^1.15.4",
+        "mongodb": "^2.2.30",
+        "mongoose": "^4.11.5",
+        "nodejs": "0.0.0",
+        "passport": "^0.3.2",
+        "passport-facebook": "^2.1.1",
+        "passport-local": "^1.0.0",
+        "serve-favicon": "^2.4.3"
+    }
 }
