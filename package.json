@@ -4,8 +4,7 @@
     "description": "convert a d3 project in index to a full angular app",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node index.js"
     },
     "author": "Jonathan E. Longden",
     "license": "ISC",
@@ -14,6 +13,7 @@
         "cors": "^2.8.4",
         "d3": "^4.9.1",
         "express": "^4.15.3",
+        "express-flash": "0.0.2",
         "express-session": "^1.15.4",
         "mongodb": "^2.2.30",
         "mongoose": "^4.11.5",

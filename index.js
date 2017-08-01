@@ -84,9 +84,10 @@ app.use(express.static(__dirname + '/public'));
 // );
 
 // mongoose.connection.once('open', function(){
-//   console.log('We have data');
+//   console.log('We have data')
 // })
 
 app.listen(config.port, function() {
-    console.log('The server is on', config.port)
-})
+        console.log('The server is on', config.port)
+    })
+    //127.0.0.1:3000
