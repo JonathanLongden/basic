@@ -8,7 +8,7 @@ angular.module("basic", ['ui.router'])
             })
             .state("login", {
                 url: "/login",
-                templateUrl: "./../templates/login.html",
+                templateUrl: "./templates/login.html",
                 controller: "loginCtrl"
             })
             .state("screenone", {
