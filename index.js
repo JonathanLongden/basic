@@ -13,7 +13,7 @@ const app = express();
 // const bodyParser = require('body-parser');
 // const mongoose = require('mongoose');
 // const session = require('express-session');
-// const config = require('./config.js');
+const config = require('./config.js');
 //var nodemailer = require('nodemailer'); //password reset
 //var sgTransport = require('nodemailer-sendgrid-transport'); //password reset
 //var sendgrid  = require('sendgrid'); //password reset
@@ -45,8 +45,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-//app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
 //app.use(cors);
@@ -128,8 +128,9 @@ var qcCard = null; //require();
 //   console.log("listening on 8000");
 // });
 
-app.listen(process.env.PORT);
-// app.listen(config.port, function() {
-//         console.log('The server is on', config.port)
-//     })
-//127.0.0.1:3000
+//app.listen(process.env.PORT || 8080);
+app.listen(config.port, function() {
+        console.log('The server is on', config.port)
+
+    })
+    //127.0.0.1:3000
