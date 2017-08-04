@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport'); //local auth
@@ -126,7 +126,7 @@ var qcCard = null; //require();
 //   console.log("listening on 8000");
 // });
 
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT);
 // app.listen(config.port, function() {
 //         console.log('The server is on', config.port)
 //     })
