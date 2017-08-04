@@ -1,8 +1,8 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var User = null; //require('./../model/userModel.js');
-var configAuth = require('./auth.js');
+// var FacebookStrategy = require('passport-facebook').Strategy;
+// var User = null; //require('./../model/userModel.js');
+// var configAuth = require('./auth.js');
 
 
 
@@ -68,6 +68,7 @@ module.exports = function(passport) { //call in passport as a parameter
                 });
             });
         }));
+
     // Facebook login, works at this current time
     // passport.use(new FacebookStrategy({
     //     clientID: configAuth.facebookAuth.clientID,

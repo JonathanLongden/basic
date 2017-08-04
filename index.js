@@ -30,7 +30,7 @@ const app = express();
 var configSession = require('./passport/setsecret.js');
 
 require('./passport/passport.js')(passport);
-
+//require('./config/passport')(passport);//self invokes passport
 
 var app = express();
 
@@ -40,8 +40,8 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
