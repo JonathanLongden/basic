@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport'); //local auth
@@ -32,7 +32,6 @@ var configSession = require('./passport/setsecret.js');
 require('./passport/passport.js')(passport);
 //require('./config/passport')(passport);//self invokes passport
 
-var app = express();
 
 app.use(session({
     secret: 'banana',
@@ -44,6 +43,9 @@ app.use(session({
 // app.use(passport.session());
 app.use(cors());
 app.use(bodyParser.json());
+
+
+//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
