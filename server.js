@@ -1,9 +1,19 @@
-var express = require('express');
-//var cors = require('cors');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var config = require('./config.js');
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport'); //local auth
+const session = require('express-session'); //session
+
+const app = express();
+
+
+// const express = require('express');
+// //var cors = require('cors');
+// const bodyParser = require('body-parser');
+// const mongoose = require('mongoose');
+// const session = require('express-session');
+// const config = require('./config.js');
 //var nodemailer = require('nodemailer'); //password reset
 //var sgTransport = require('nodemailer-sendgrid-transport'); //password reset
 //var sendgrid  = require('sendgrid'); //password reset
@@ -16,7 +26,7 @@ var config = require('./config.js');
 // };
 // var mailer = nodemailer.createTransport(sgTransport(options));
 
-var passport = require('passport');
+
 var configSession = require('./passport/setsecret.js');
 
 require('./passport/passport.js')(passport);
@@ -24,14 +34,27 @@ require('./passport/passport.js')(passport);
 
 var app = express();
 
-//app.use(cors);
-app.use(session(configSession));
+app.use(session({
+    secret: 'banana',
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors());
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// parse application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded());
+app.use(express.static(__dirname + '/public'));
+
+//app.use(cors);
+// app.use(session(configSession));
+// app.use(passport.initialize());
+// app.use(passport.session());
+// app.use(bodyParser.json());
+// // app.use(bodyParser.urlencoded({ extended: true }));
+// // parse application/x-www-form-urlencoded 
+// app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static(__dirname + '/public'));
 
@@ -94,9 +117,16 @@ var qcCard = null; //require();
 // mongoose.connection.once('open', function() {
 //     console.log('We have data')
 // })
+// mongoose.connect("mongodb://localhost:27017/usersNThings");
+// mongoose.connection.once('open', function(){
+//   console.log("connected to mongoDB");
+// });
 
+// app.listen(8000, function(){
+//   console.log("listening on 8000");
+// });
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 8000);
 // app.listen(config.port, function() {
 //         console.log('The server is on', config.port)
 //     })
