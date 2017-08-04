@@ -32,6 +32,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+
+
+//   app.use(express.logger('dev'));
+//   app.use(gzippo.staticGzip("" + __dirname + "/dist"));
+
+
 // var userControl = require('./controller/userControl.js');
 // var saleControl = require('./controller/saleControl.js');
 var qcCard = null; //require();
@@ -85,7 +91,9 @@ var qcCard = null; //require();
 //     console.log('We have data')
 // })
 
-app.listen(config.port, function() {
-        console.log('The server is on', config.port)
-    })
-    //127.0.0.1:3000
+
+app.listen(process.env.PORT || 5000);
+// app.listen(config.port, function() {
+//         console.log('The server is on', config.port)
+//     })
+//127.0.0.1:3000
