@@ -59,7 +59,7 @@ app.use(express.static(__dirname + '/public'));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static(__dirname + '/public'));
-
+app.get('/favico.ico', function(req, res) { /*code*/ });
 // parse application/json 
 app.use(bodyParser.json())
 
