@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 const passport = require('passport'); //local auth
 const session = require('express-session'); //session
 const favicon = require('serve-favicon');
-var path = require('path')
+var path = require('path');
+var finalhandler = require('finalhandler');
+var http = require('http');
+
+
 const app = express();
 
 
