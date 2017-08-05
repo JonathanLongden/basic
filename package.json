@@ -40,6 +40,7 @@
         "passport": "^0.3.2",
         "passport-facebook": "^2.1.1",
         "passport-local": "^1.0.0",
+        "path": "^0.12.7",
         "sendgrid": "^5.2.0",
         "serve-favicon": "^2.4.3",
         "session": "^0.1.0",
