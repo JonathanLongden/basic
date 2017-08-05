@@ -48,9 +48,11 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.urlencoded());
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-app.use(express.static(__dirname + '/public'));
-var express = require('express');
+app.use(favicon(path.join(__dirname, 'public', '/favicon.ico')))
+    // app.use(express.static(__dirname + '/public'));
+app.get('/favicon.ico', function(req, res) {
+    res.status(204);
+});
 
 //var app = express();
 
