@@ -1,43 +1,38 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const passport = require('passport'); //local auth
-const session = require('express-session'); //session
-const favicon = require('serve-favicon');
-var path = require('path');
-var finalhandler = require('finalhandler');
-var http = require('http');
+var express = require('express');
+//var cors = require('cors');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var session = require('express-session');
+var config = require('./config.js');
+//var nodemailer = require('nodemailer'); //password reset
+//var sgTransport = require('nodemailer-sendgrid-transport'); //password reset
+//var sendgrid  = require('sendgrid'); //password reset
+//var User = require('./model/userModel'); // password reset
+//var engine = require('consolidate'); //password reset && view controll
 
+// 	auth: {
+// 		key is needed
+// 	}
+// };
+// var mailer = nodemailer.createTransport(sgTransport(options));
 
-const app = express();
-const config = require('./config.js');
-
-
+var passport = require('passport');
 
 var configSession = require('./passport/setsecret.js');
 
 require('./passport/passport.js')(passport);
-//require('./config/passport')(passport);//self invokes passport
 
 
-app.use(session({
-    secret: 'banana',
-    resave: true,
-    saveUninitialized: true
-}));
+var app = express();
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-app.use(cors());
+//app.use(cors);
+
+app.use(session(configSession));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.urlencoded());
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-    // app.use(express.static(__dirname + '/public'));
-app.get('/favicon.ico', function(req, res) {
-    res.status(204);
-});
+app.use(express.static(__dirname + '/public'));
 
 
 
