@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport'); //local auth
 const session = require('express-session'); //session
-
+const favicon = require('serve-favicon');
 const app = express();
 
 
@@ -48,7 +48,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'));
+var express = require('express');
 
+//var app = express();
+
+app.use(favicon(__dirname + '/public/image/favicon.ico'));
 //app.use(cors);
 // app.use(session(configSession));
 // app.use(passport.initialize());
@@ -58,10 +62,10 @@ app.use(express.static(__dirname + '/public'));
 // // parse application/x-www-form-urlencoded 
 // app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.static(__dirname + '/public'));
-app.get('/favico.ico', function(req, res) { /*code*/ });
+// app.use(express.static(__dirname + '/public'));
+// app.get('/favico.ico', function(req, res) { /*code*/ });
 // parse application/json 
-app.use(bodyParser.json())
+
 
 //   app.use(express.logger('dev'));
 //   app.use(gzippo.staticGzip("" + __dirname + "/dist"));
