@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport'); //local auth
 const session = require('express-session'); //session
 const favicon = require('serve-favicon');
+var path = require('path')
 const app = express();
 
 
@@ -47,12 +48,13 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.urlencoded());
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(express.static(__dirname + '/public'));
 var express = require('express');
 
 //var app = express();
 
-app.use(favicon(__dirname + '/public/image/favicon.ico'));
+// app.use(favicon(__dirname + '/public/image/favicon.ico'));
 //app.use(cors);
 // app.use(session(configSession));
 // app.use(passport.initialize());
@@ -67,8 +69,7 @@ app.use(favicon(__dirname + '/public/image/favicon.ico'));
 // parse application/json 
 
 
-//   app.use(express.logger('dev'));
-//   app.use(gzippo.staticGzip("" + __dirname + "/dist"));
+
 
 
 // var userControl = require('./controller/userControl.js');
