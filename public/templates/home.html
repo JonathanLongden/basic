@@ -1,19 +1,24 @@
-<div class="login">
+<div class="login" ng-controller="loginCtrl">
     <h2>Login</h2>
 
-    <form ng-submit="postLogin(loginEmail, secret)">
-        <input class="form-control" type="email" ng-model="loginEmail" placeholder=Email>
-        <input class="form-control" type="password" ng-model="secret" placeholder="Password">
-        <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
+        <row>
+            <div class="col-sm-5 col-sm-offset-0">
+                <input class="form-control" type="email" ng-model="loginEmail" placeholder=Email>
+                <input class="form-control" type="password" ng-model="secret" placeholder="Password">
+                <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </row>
     </form>
     <h3 id="wrongLogin" ng-hide=wrongCred>Incorrect Email/Password Combination</h3>
-
 </div>
-
-
+<br>
+<br>
 <div class="home" ng-controller="mainCtrl">
     <br>
-    <h1 id="welcome"> Submittal of a Quality Risk Card </h1>
+    <center>
+        <h1 id="welcome"> Submittal of a Quality Risk Card </h1>
+    </center>
     <br>
     <br>
     <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="mainCtrl">

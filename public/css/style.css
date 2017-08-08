@@ -21,3 +21,17 @@ body {
     width: 100%;
     height: auto;
 }
+
+.home {
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: auto;
+}
