@@ -16,6 +16,7 @@
     "homepage": "https://trecqacard.herokuapp.com/",
     "dependencies": {
         "angular": "^1.6.5",
+        "angularjs-datepicker": "^2.1.23",
         "async": "^2.5.0",
         "bcrypt-nodejs": "0.0.3",
         "body-parser": "^1.17.2",

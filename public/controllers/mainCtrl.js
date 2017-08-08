@@ -3,6 +3,8 @@ angular.module("basic")
         this.myDate = new Date();
         this.isOpen = false;
 
+        //$scope.mmddyyyy = myDate;
+
         $scope.category = {
             model: null,
             availableOptions: [
@@ -32,6 +34,7 @@ angular.module("basic")
                 riskMitigration: mitigration
 
             };
+            console.log(qaCardData);
             mainServ.qcCardPost(qaCardData)
                 .then(function(response) {
                     //console.log("You have Signed in like a champ!");
