@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var config = require('./config.js');
+var debug = require('debug');
 //var nodemailer = require('nodemailer'); //password reset
 //var sgTransport = require('nodemailer-sendgrid-transport'); //password reset
 //var sendgrid  = require('sendgrid'); //password reset
