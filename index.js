@@ -40,11 +40,10 @@ app.use(express.static(__dirname + '/public'));
 
 
 var qcCard = null; //require();
-var port = process.env.PORT || 8000;
-//config.port
-app.listen(port, function() {
-        console.log('The server is on', port)
 
-    })
-    //127.0.0.1:3000
-    //not sure
+app.listen(config.port, function() {
+    var port = config.port;
+    console.log('The server is on', port);
+
+});
+//127.0.0.1:3000

@@ -38,7 +38,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             .then(function(response) {
                 console.log(response);
                 if (response.user.local) {
-                    $location.path('map');
+                    //$location.path('map');
                     //console.log(response.user.local.userName)
                 } else {
                     // $location.path('/');
