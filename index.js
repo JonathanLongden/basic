@@ -38,7 +38,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-
 var qcCard = null; //require();
 var port = process.env.PORT || 8000;
 //config.port

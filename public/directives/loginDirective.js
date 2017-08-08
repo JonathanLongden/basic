@@ -1,20 +1,25 @@
 angular.module("basic").directive("loginDirective", function() {
 
         return {
-            templateUrl: './../templates/home.html',
+            templateUrl: "./../templates/home.html",
             restrict: "E"
         };
     })
-    // .directive("signupDirective", function() {
+    .directive("signupDirective", function() {
 
 
-//     return {
-//         templateUrl: './../templates/signup.html',
-//         restrict: "E"
-//     }
+        return {
+            templateUrl: "./../templates/signup.html",
+            restrict: "E"
+        }
 
-// })
-// .directive("createSaleDirective", function() {
+    })
+    //     .directive('myCustomer', function() {
+    //   return {
+    //     templateUrl: 'my-customer.html'
+    //   };
+    // });
+    // .directive("createSaleDirective", function() {
 
 //     return {
 //         templateUrl: './../templates/createSale.html',

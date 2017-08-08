@@ -2,28 +2,35 @@ angular.module("basic", ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state("home", {
-                url: "/",
-                templateUrl: "./templates/home.html", // or template: '<h1>Home Page</h1>' 
-                controller: "mainCtrl"
+                url: "/home",
+                templateUrl: "./templates/home.html" // or template: '<h1>Home Page</h1>' 
+                    //controller: "contactCtrl"
             })
             .state("login", {
                 url: "/login",
-                templateUrl: "./templates/login.html",
-                controller: "loginCtrl"
+                templateUrl: "./templates/login.html" // or template: '<h1>Home Page</h1>' 
+                    //controller: "contactCtrl"
             })
-            .state("screenone", {
-                url: "/screenone",
-                templateUrl: "./templates/screenone.html", // or template: '<h1>Home Page</h1>' 
-                controller: "addAnswers"
-            })
-            .state("screentwo", {
-                url: "/screentwo",
-                templateUrl: "./templates/screentwo.html"
-            })
-            .state("summary", {
-                url: "/summary",
-                templateUrl: "./templates/summary.html"
-            })
+            // .when("/red", {
+            //     templateUrl : "red.htm"
+            // })
+            // .when("/green", {
+            //     templateUrl : "green.htm"
+            // })
+            // .when("/blue", {
+            //     templateUrl : "blue.htm"
+            // });
+            //$stateProvider
+            // .state("/", {
+            //     // url: "/home",
+            //     templateUrl: "./../templates/home.html",
+            //     //controller: "mainCtrl"
+            // })
+            // .state("login", {
+            //     // url: "/login",
+            //     templateUrl: "./../templates/login.html",
+            //     controller: "loginCtrl"
+            // })
 
 
 
