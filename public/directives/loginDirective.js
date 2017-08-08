@@ -1,7 +1,7 @@
 angular.module("basic").directive("loginDirective", function() {
 
         return {
-            templateUrl: "./../templates/home.html",
+            templateUrl: "./../templates/login.html",
             restrict: "E"
         };
     })

@@ -3,8 +3,8 @@ angular.module("basic", ['ui.router'])
         $stateProvider
             .state("home", {
                 url: "/home",
-                templateUrl: "./templates/home.html" // or template: '<h1>Home Page</h1>' 
-                    //controller: "contactCtrl"
+                templateUrl: "./templates/home.html", // or template: '<h1>Home Page</h1>' 
+                controller: "mainCtrl"
             })
             .state("login", {
                 url: "/login",
