@@ -1,69 +1,75 @@
-<div class="login" ng-controller="loginCtrl">
-    <h2>Login</h2>
+<center>
+    <div class="login" ng-controller="loginCtrl">
+        <h2>Login</h2>
 
-    <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
-        <row>
-            <div class="col-sm-5 col-sm-offset-0">
-                <input class="form-control" type="email" ng-model="loginEmail" placeholder=Email>
-                <input class="form-control" type="password" ng-model="secret" placeholder="Password">
-                <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-            </div>
-        </row>
-    </form>
-    <h3 id="wrongLogin" ng-hide=wrongCred>Incorrect Email/Password Combination</h3>
-</div>
+        <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
+            <row>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input class="form-control" type="email" ng-model="loginEmail" placeholder=Email>
+                    <input class="form-control" type="password" ng-model="secret" placeholder="Password">
+                    <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </row>
+        </form>
+        <h3 id="wrongLogin" ng-hide=wrongCred>Incorrect Email/Password Combination</h3>
+    </div>
+</center>
 <br>
 <br>
-<div class="home" ng-controller="mainCtrl">
-    <br>
-    <center>
-        <h1 id="welcome"> Submittal of a Quality Risk Card </h1>
-    </center>
-    <br>
-    <br>
-    <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="mainCtrl">
-        <row>
-            <div class="col-sm-5 col-sm-offset-0">
-                <label for="RiskObservationDate">Risk Observation Date: </label>
-                <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
-            </div>
-            <div class="col-sm-5 col-sm-offset-1 ">
-                <label for="RiskReportedBy " for='RiskReportedBy'>Risk Reported By:</label>
-                <input class="form-control " type="text " ng-model="person " placeholder="Name ">
-            </div>
-        </row>
+<br>
+<br>
+<center>
+    <div class="home" ng-controller="mainCtrl">
+        <br>
+        <center>
+            <h1 id="welcome"> Submittal of a Quality Risk Card </h1>
+        </center>
         <br>
         <br>
-        <br>
-        <row>
-            <div class="col-sm-5 col-sm-offset-0 ">
-                <BR>
-                <label for="RiskCategory ">Risk Category:</label>
-                <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
+        <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="mainCtrl">
+            <row>
+                <div class="col-sm-5 col-sm-offset-0">
+                    <label for="RiskObservationDate">Risk Observation Date: </label>
+                    <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
+                </div>
+                <div class="col-sm-5 col-sm-offset-1 ">
+                    <label for="RiskReportedBy " for='RiskReportedBy'>Risk Reported By:</label>
+                    <input class="form-control " type="text " ng-model="person " placeholder="Name ">
+                </div>
+            </row>
+            <br>
+            <br>
+            <br>
+            <row>
+                <div class="col-sm-5 col-sm-offset-0 ">
+                    <BR>
+                    <label for="RiskCategory ">Risk Category:</label>
+                    <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
       		<option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
 		            </select>
-            </div>
-            <div class="col-sm-5 col-sm-offset-1 ">
-                <label for="RiskDescription ">Risk Description:</label>
-                <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
-            </div>
-        </row>
-        <br>
-        <br>
-        <br>
-        <row>
-            <div class="col-sm-6 col-sm-offset-3 ">
-                <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
-                <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
-            </div>
-        </row>
-        <br>
-        <br>
-        <br>
-        <row>
-            <center>
-                <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
-            </center>
-        </row>
-    </form>
-</div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-1 ">
+                    <label for="RiskDescription ">Risk Description:</label>
+                    <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
+                </div>
+            </row>
+            <br>
+            <br>
+            <br>
+            <row>
+                <div class="col-sm-6 col-sm-offset-3 ">
+                    <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
+                    <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
+                </div>
+            </row>
+            <br>
+            <br>
+            <br>
+            <row>
+                <center>
+                    <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
+                </center>
+            </row>
+        </form>
+    </div>
+</center>
