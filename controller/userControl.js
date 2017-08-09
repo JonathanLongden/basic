@@ -86,7 +86,7 @@ module.exports = {
     },
 
     getAllUsers: function(req, res) {
-        UserModel.find().populate('sale').exec(function(err, result) {
+        UserModel.find().populate('qacard').exec(function(err, result) {
             if (err) {
                 res.send(err);
             } else {
@@ -98,7 +98,7 @@ module.exports = {
         if (true) {
             console.log(req.user)
             UserModel.findById({ _id: req.params.id })
-                .populate('sale')
+                .populate('qacard')
                 .exec(
                     function(err, user) {
                         if (err) {
@@ -114,24 +114,24 @@ module.exports = {
         }
 
     },
-    addSale: function(req, res) {
+    addqacard: function(req, res) {
         console.log(req.id);
         UserModel.findByIdAndUpdate(
-            req.user._id, { $push: { "sale": req.id } }, { safe: true, upsert: true },
+            req.user._id, { $push: { "qacard": req.id } }, { safe: true, upsert: true },
             function(err, model) {
                 if (err) console.log(err);
                 res.send(model);
             }
         )
     },
-    deleteSale: function(req, res) {
+    deleteqacard: function(req, res) {
         console.log()
         UserModel.findOne({ _id: req._user }, function(err, user) {
             if (err) {
                 console.log(err);
             }
-            var index = user.sale.indexOf(req.body._id);
-            user.sale.splice(index, 1);
+            var index = user.qacard.indexOf(req.body._id);
+            user.qacard.splice(index, 1);
             user.save(function(error) {
                 if (error) {
                     console.log(err)

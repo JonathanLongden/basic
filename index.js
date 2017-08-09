@@ -35,11 +35,46 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+var userControl = require('./controller/userControl.js');
+var qaControl = require('./controller/qaControl.js')
+
+
+app.post('/login', userControl.login); //logining in
+app.post('/signup', userControl.signup); //signing up
+app.get('/logout', userControl.logout); //logging out
+// app.post('/forgot', userControl.forogt) //password reset
+
+pp.get('/users', userControl.getAllUsers);
+app.get('/user/:id', userControl.getOneUser);
+app.put('/user/:id', userControl.update);
+app.post('/sale/:id', userControl.addqacard);
+// app.put('/sale/:id', userControl.updateSale);
+
+//When sale is created, add sale id to user sale array
+app.post('/qacard', qaControl.create, userControl.addqacard);
+app.get('/qacard', qaControl.read);
+app.get('/qacard/:id', qaControl.readById);
+app.get('/mysales', qaControl.readByUser);
+app.put('/qacard/:id', qaControl.update);
+app.delete('/qacard/:id', qaControl.delete, userControl.deleteqacard);
+
+
+app.get('/qacard', qaControl.read);
+app.post('/qacard', qaControl.create);
+app.get('/qacard:id', qaControl.readById);
+app.put('/qacard:id', qaControl.update);
+
+// mongoose.connect(
+//     //"mongodb://localhost:27017/sales"
+//     config.mongolab_uri
+// );
+
+// mongoose.connection.once('open', function() {
+//     console.log('We have data');
+// });
 
 
 
-
-var qcCard = null; //require();
 
 app.listen(config.port, function() {
     var port = config.port;
