@@ -3,8 +3,7 @@ angular.module("basic")
 
         console.log($rootScope.user);
         console.log($scope.user);
-        console.log($rootScope.user.data);
-        console.log($scope.user.data);
+
         $scope.names = {};
 
 
