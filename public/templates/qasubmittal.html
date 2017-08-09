@@ -1,46 +1,50 @@
 <div class="home" ng-controller="qaCtrl">
-    <br>
-    <center>
-        <h1 style="color:white;">Submittal of a Quality Risk Card</h1>
-    </center>
-    <br>
-    <br>
-    <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
-        <div class="form-group col-sm-5 col-sm-offset-1 ">
-            <label for="RiskObservationDate" style="color:white;">Risk Observation Date: </label>
-            <input class="form-control " type="Date" ng-model="mmddyyyy " class="angular-datepicker-input " placeholder="mm/dd/yyyy ">
-        </div>
+    <div class="container">
         <br>
-        <div class="form-group col-sm-5 col-sm-offset-1 ">
-            <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;">Risk Reported By:</label>
-            <input class="form-control " type="text " ng-model="person " placeholder="Name ">
-        </div>
+        <center>
+            <h1 style="color:white;">Submittal of a Quality Risk Card</h1>
+        </center>
         <br>
-        <div class="form-group col-sm-5 col-sm-offset-0 ">
+        <br>
+        <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
+            <div class="form-group row">
+                <label for="RiskObservationDate" style="color:white;">Risk Observation Date: </label>
+                <input class="form-control " type="Date" ng-model="mmddyyyy " class="angular-datepicker-input " placeholder="mm/dd/yyyy ">
+            </div>
             <br>
-            <label for="RiskCategory" style="color:white;">Risk Category:</label>
-            <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
+            <div class="form-group row">
+                <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;">Risk Reported By:</label>
+                <input class="form-control " type="text " ng-model="person " placeholder="Name ">
+            </div>
+            <br>
+            <div class="form-group row ">
+                <br>
+                <label for="RiskCategory" style="color:white;">Risk Category:</label>
+                <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
-        </div>
-        <br>
-        <div class="form-group col-sm-5 col-sm-offset-1 ">
-            <textarea ng-model="description" rows="6" cols="50"></textarea>
-            <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
+            </div>
+            <br>
+            <div class="form-group row">
+                <textarea ng-model="description" rows="6" cols="50"></textarea>
+                <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
                 <input class="form-control " type="textarea" ng-model="description " placeholder="Write a Description "> -->
-        </div>
-        <br>
-        <div class=" form-group col-sm-6 col-sm-offset-3" style="color:white;">
-            <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
-            <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
-        </div>
-        <br>
-        <br>
-        <br>
-        <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
-
-
-    </form>
+            </div>
+            <br>
+            <div class="form-group row" style="color:white;">
+                <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
+                <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 <div class="toforms">
     <row>
