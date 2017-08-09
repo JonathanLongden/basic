@@ -1,5 +1,6 @@
 angular.module("basic")
     .controller("mainCtrl", function($scope, $location, mainServ) {
+        scope.userInfo = response.data;
 
         (function(userInfo) {
             mainServ.getKnownUser(userInfo)
