@@ -17,23 +17,23 @@
                 <input class="form-control " type="text " ng-model="person " placeholder="Name ">
             </div>
             <br>
-            <div class="form-group">
+            <div class="form-group row">
                 <br>
-                <label for="RiskCategory" style="color:white;">Risk Category:</label>
+                <label for="RiskCategory" style="color:white;" class="col-sm-2 col-form-label">Risk Category:</label>
                 <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
             </div>
             <br>
-            <div class="form-group">
-                <label for="RiskDescription" style="color:white;">Risk Description:</label>
+            <div class="form-group row">
+                <label for="RiskDescription" style="color:white;" class="col-sm-2 col-form-label">Risk Description:</label>
                 <textarea ng-model="description" rows="3" cols="50"></textarea>
                 <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
                 <input class="form-control " type="textarea" ng-model="description " placeholder="Write a Description "> -->
             </div>
             <br>
-            <div class="form-group" style="color:white;">
-                <label for="SuggestedRiskMitigrationMeasure" style="color:white;">Suggested Risk Mitigration Measure:</label>
+            <div class="form-group row" style="color:white;">
+                <label for="SuggestedRiskMitigrationMeasure" style="color:white;" class="col-sm-2 col-form-label">Suggested Risk Mitigration Measure:</label>
                 <textarea ng-model=" mitigration " rows="3 " cols="50 "></textarea>
                 <!-- <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
                 <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure "> -->
