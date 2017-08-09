@@ -2,54 +2,61 @@ angular.module("basic")
     .controller("mainCtrl", function($scope, $location, mainServ) {
 
 
-            $scope.names = {};
+        $scope.names = {};
 
 
-            // $scope.getUsername = function(name) {
-            //     $scope.userName = name;
-            // }
-            $scope.userId;
-            (function(userId) {
+        // $scope.getUsername = function(name) {
+        //     $scope.userName = name;
+        // }
+        $scope.userId;
+
+        // (function(userId) {
+        //         mainServ.getKnownUser(userId)
+        //             .then(function(response) {
+        //                     console.log(response);
+        //                     var verify = response.data;
+        //                     console.log(verify);
+        //                     console.log($scope.userId);
+        //                     if (verify.local) {
+        //                         $scope.userId = response.data._id;
+        //                     } else if (verify.facebook) {
+        //                         $scope.userId = response.data._id;
+        //                     } else {
+        //                         //$location.url('/landingPage');
+        //                         $location.path('/landingPage');
+        //                     }
+
+        //                 }
+
+        //             })()
+
+
+        $scope.signOut = function() { //logs a you out and redirects them to the home page
+                // console.log("SignOut");
+                mainServ.getSignOut()
+                    .then(function(response) {})
+            }
+            (function(userId) { //self-invoking function that responses to whether a user is log in or not
                 mainServ.getKnownUser(userId)
                     .then(function(response) {
                         console.log(response);
-                        var verify = response.data;
-                        console.log(verify);
-                        console.log($scope.userId);
-                        if (verify.local) {
-                            $scope.userId = response.data._id;
-                        } else if (verify.facebook) {
-                            $scope.userId = response.data._id;
+                        var userID = response.data;
+                        var user;
+                        console.log(userID);
+                        console.log($scope.userId)
+                        console.log($userd)
+                        if (userID.facebook) {
+                            console.log(userID);
+                        } else if (userID.local) {
+                            console.log(userID);
                         } else {
-                            //$location.url('/landingPage');
                             $location.path('/landingPage');
+                            // logoutIcon = false;
                         }
-
+                        $scope.logOutStuff = logoutIcon;
                     });
+            })()
 
 
-                // (function() { //self-invoking function that responses to whether a user is log in or not
-                //     mainServ.getKnownUser()
-                //         .then(function(response) {
-                //             console.log(response);
-                //             var userID = response.data;
-                //             var user;
-                //             if (userID.facebook) {
-                //                 console.log(userID);
-                //             } else if (userID.local) {
-                //                 console.log(userID);
-                //             } else {
-                //                 $location.path('/landingPage');
-                //                 // logoutIcon = false;
-                //             }
-                //             $scope.logOutStuff = logoutIcon;
-                //         });
-                // })()
 
-                $scope.signOut = function() { //logs a you out and redirects them to the home page
-                    // console.log("SignOut");
-                    mainServ.getSignOut()
-                        .then(function(response) {})
-                }
-
-            });
+    });
