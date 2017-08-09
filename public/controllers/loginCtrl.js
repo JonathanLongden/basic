@@ -13,15 +13,11 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
         };
         mainServ.loginPostLogin(userLogin)
             .then(function(response) {
-                console.log(response);
+                //console.log(response);
                 var verify = response;
-                console.log(response.data);
                 if (verify.user) {
-                    console.log(verify);
-                    console.log(verify.user);
                     //guiding user to forms
                     $location.path('forms');
-                    //$scope.userLogin = "";
                 } else {
                     $location.path('/landingPage');
                     $scope.wrongCred = false;
