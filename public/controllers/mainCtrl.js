@@ -48,14 +48,21 @@ angular.module("basic")
                     //   }
                 })
         };
-
-        // $scope.message = "Added to Cart";
-        // $scope.itemincart = function(item, cart) {
-        //     mainServ.addToCart(item, cart)
-        //         .then(function() {
-        //             $scope.showmessage = true;
-        //         });
-        // }
+        // (function (){                   //self-invoking function that responses to whether a user is log in or not
+        //     mainServ.getKnownUser()
+        //     .then(function(response){
+        //         var userID = response.data;
+        //         var user;
+        //         if (userID.facebook){
+        //         logoutIcon = true;
+        //         } else if (userID.local) {
+        //         logoutIcon = true;
+        //         } else {
+        //         logoutIcon = false;
+        //         }
+        //         $scope.logOutStuff = logoutIcon;
+        //     });
+        //     })()
 
         $scope.signOut = function() { //logs a you out and redirects them to the home page
             console.log("SignOut");
