@@ -1,7 +1,7 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 // var FacebookStrategy = require('passport-facebook').Strategy;
-// var User = null; //require('./../model/userModel.js');
+var User = require('./../model/userModel.js');
 // var configAuth = require('./auth.js');
 
 
