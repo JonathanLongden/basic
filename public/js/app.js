@@ -29,7 +29,7 @@ angular.module("basic", ['ui.router'])
 
 
 
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/landingPage");
 
 
     });
