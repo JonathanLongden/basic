@@ -93,5 +93,6 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             })
     };
 
-}
+
+
 });

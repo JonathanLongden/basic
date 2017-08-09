@@ -1,11 +1,11 @@
 <div class="home" ng-controller="qaCtrl">
     <br>
     <center>
-        <h1 id=" welcome "> Submittal of a Quality Risk Card </h1>
+        <h1 id="welcome">Submittal of a Quality Risk Card</h1>
     </center>
     <br>
     <br>
-    <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration) " ng-controller="qaCtrl ">
+    <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
         <row>
             <div class="col-sm-5 col-sm-offset-0 ">
                 <label for="RiskObservationDate ">Risk Observation Date: </label>
@@ -50,4 +50,11 @@
             </center>
         </row>
     </form>
+</div>
+<div class="toforms">
+    <row>
+        <div class="col-sm-6 col-sm-offset-3">
+            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms ">Back to Forms</button>
+        </div>
+    </row>
 </div>
