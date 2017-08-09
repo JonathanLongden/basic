@@ -64,14 +64,14 @@ app.post('/qacard', qaControl.create);
 app.get('/qacard:id', qaControl.readById);
 app.put('/qacard:id', qaControl.update);
 
-// mongoose.connect(
-//     //"mongodb://localhost:27017/sales"
-//     config.mongolab_uri
-// );
+mongoose.connect(
+    //"mongodb://localhost:27017/sales"
+    config.mongolab_uri
+);
 
-// mongoose.connection.once('open', function() {
-//     console.log('We have data');
-// });
+mongoose.connection.once('open', function() {
+    console.log('We have data');
+});
 
 
 
