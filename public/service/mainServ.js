@@ -13,11 +13,22 @@ angular.module("basic")
                 });
         };
 
+        this.getSignOut = function() {
+            return $http({
+                    method: "GET",
+                    url: "/logout"
+                })
+                .then(function(res) {
+                    //console.log("SignOut");
+                    return res;
+                })
+        }
+
 
         this.getKnownUser = function(userInfo) {
             return $http({
                     method: "GET",
-                    url: "user/:id"
+                    url: "/user"
                 })
                 .then(function(res) {
                     return res;
@@ -76,16 +87,7 @@ angular.module("basic")
         // }
 
 
-        this.getSignOut = function() {
-            return $http({
-                    method: "GET",
-                    url: "/logout"
-                })
-                .then(function(res) {
-                    console.log("SignOut");
-                    return res;
-                })
-        }
+
 
 
         this.getSales = function() {

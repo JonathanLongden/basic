@@ -20,7 +20,7 @@ angular.module("basic")
 
 
         (function() { //self-invoking function that responses to whether a user is log in or not
-            mainServ.getKnownUser()
+            mainServ.getUpdateUserID()
                 .then(function(response) {
                     console.log(response);
                     var userID = response.data;
