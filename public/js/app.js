@@ -1,6 +1,10 @@
 angular.module("basic", ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
+            .state("landingPage", {
+                url: "/landingPage",
+                templateUrl: "./../templates/landingPage.html"
+            })
             .state("/", {
                 url: "/home",
                 templateUrl: "./templates/home.html", // or template: '<h1>Home Page</h1>' 
@@ -9,17 +13,17 @@ angular.module("basic", ['ui.router'])
             .state("forms", {
                 url: "/forms",
                 templateUrl: "./templates/forms.html", // or template: '<h1>Home Page</h1>' 
-                //controller: "mainCtrl"
+                controller: "qaCtrl"
             })
             .state("login", {
                 url: "/login",
-                templateUrl: "./templates/login.html" // or template: '<h1>Home Page</h1>' 
-                    //controller: "contactCtrl"
+                templateUrl: "./templates/login.html", // or template: '<h1>Home Page</h1>' 
+                controller: "loginCtrl"
             })
             .state("signup", {
                 url: "/signup",
-                templateUrl: "./templates/signup.html" // or template: '<h1>Home Page</h1>' 
-                    //controller: "contactCtrl"
+                templateUrl: "./templates/signup.html", // or template: '<h1>Home Page</h1>' 
+                controller: "loginCtrl"
             })
 
 
