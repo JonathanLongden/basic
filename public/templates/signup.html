@@ -1,9 +1,15 @@
 <div ng-controller="loginCtrl">
-    <h2>Sign Up</h2>
-    <form ng-submit="postSignUp(signUpEmail, password)" ng-controller="loginCtrl">
-        <input class="form-control" type="email" ng-model="signUpEmail" placeholder="Email Address" />
-        <input class="form-control" type="password" ng-model="password" placeholder="Password" ng-require="true" />
-        <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-  </button>
-    </form>
+    <center>
+        <h2>Sign Up</h2>
+    </center>
+    <row>
+        <div class="col-sm-6 col-sm-offset-3">
+            <form ng-submit="postSignUp(signUpEmail, password)" ng-controller="loginCtrl">
+                <input class="form-control" type="email" ng-model="signUpEmail" placeholder="Email Address" />
+                <input class="form-control" type="password" ng-model="password" placeholder="Password" ng-require="true" />
+                <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            </form>
+        </div>
+    </row>
 </div>
