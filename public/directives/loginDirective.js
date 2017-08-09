@@ -2,7 +2,7 @@ angular.module("basic").directive("loginDirective", function() {
 
         return {
             templateUrl: "./../templates/login.html",
-            restrict: "E"
+            restrict: "AE"
         };
     })
     .directive("signupDirective", function() {
@@ -10,7 +10,7 @@ angular.module("basic").directive("loginDirective", function() {
 
         return {
             templateUrl: "./../templates/signup.html",
-            restrict: "E"
+            restrict: "AE"
         }
 
     })
