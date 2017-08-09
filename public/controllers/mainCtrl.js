@@ -1,7 +1,7 @@
 angular.module("basic")
     .controller("mainCtrl", function($scope, $location, mainServ, $rootScope) {
 
-        console.log($rootScope.userInfo)
+        console.log($rootScope.user)
         $scope.names = {};
 
 
