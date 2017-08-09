@@ -1,9 +1,33 @@
-<div class="forms">
+<div class="container text-center">
+    <br>
+    <div class="text-right">
+        <ul class="social-icons">
+            <li class="social-links"><a id="links" href=""><i class="fa fa-facebook"  aria-hidden="true"></i></a></li>
+            <li class="social-links"><a id="links" href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="social-links"><a id="links" href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="social-links">
+                <a id="links" href="https://github.com/JonathanLongden/basic"> <i class="fa fa-github" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <button class="btn btn-primary" ng-click="signOut()" id="logout" ui-sref="landingPage">Logout</button>
+    </div>
+    <br>
     <div class="">
         <button class="btn btn-warning" id="enterButton" ui-sref="qasubmittal">Submit Quality RiskCard</button>
         <br>
     </div>
+    <br>
+    <div class="map" id="map">
+    </div>
 </div>
+</div>
+
+<!-- <div class="forms">
+    <div class="">
+        <button class="btn btn-warning" ng-href="#/qasubmittal" ui-sref="qasubmittal">Submit Quality RiskCard</button>
+        <br>
+    </div>
+</div> -->
 
 <div class="Mitigation" ng-controller="mainCtrl" style="border:1px solid black">
     <br>
