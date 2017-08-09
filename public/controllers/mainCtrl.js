@@ -10,7 +10,8 @@ angular.module("basic")
                     if (verify.local) {
                         $scope.userId = response.data._id;
                     } else {
-                        $location.url('/landingPage');
+                        $location.path('/landingPage');
+                        //$location.url('/landingPage');
                     }
 
                 });
