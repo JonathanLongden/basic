@@ -4,12 +4,10 @@ angular.module("basic")
         (function(userInfo) {
             mainServ.getKnownUser(userInfo)
                 .then(function(response) {
-                    //console.log(response);
+                    console.log(response);
                     var verify = response.data;
-                    // console.log($scope.userId);
+                    console.log($scope.userId);
                     if (verify.local) {
-                        $scope.userId = response.data._id;
-                    } else if (verify.facebook) {
                         $scope.userId = response.data._id;
                     } else {
                         $location.url('/landingPage');
