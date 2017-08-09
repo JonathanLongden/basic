@@ -1,5 +1,6 @@
 angular.module('basic').controller('loginCtrl', function($scope, $location, mainServ, $rootScope) {
 
+    console.log($rootScope.user)
     $scope.wrongCred = true;
     $scope.userName;
 
