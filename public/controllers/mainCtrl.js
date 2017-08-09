@@ -1,9 +1,9 @@
 angular.module("basic")
     .controller("mainCtrl", function($scope, $location, mainServ) {
-        var userInfo = response.data;
 
-        (function(userInfo) {
-            mainServ.getKnownUser(userInfo)
+
+        (function() {
+            mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response);
                     var verify = response.data;
