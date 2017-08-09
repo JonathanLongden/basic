@@ -17,40 +17,43 @@
                 <input class="form-control " type="text " ng-model="person " placeholder="Name ">
             </div>
             <br>
-            <div class="form-group row ">
+            <div class="form-group">
                 <br>
-                <label for="RiskCategory" style="color:white;" class="col-sm-2 col-form-label">Risk Category:</label>
+                <label for="RiskCategory" style="color:white;">Risk Category:</label>
                 <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
             </div>
             <br>
-            <div class="form-group row">
-                <label for="RiskDescription" style="color:white;" class="col-sm-2 col-form-label">Risk Description:</label>
-                <textarea ng-model="description" rows="6" cols="50"></textarea>
+            <div class="form-group">
+                <label for="RiskDescription" style="color:white;">Risk Description:</label>
+                <textarea ng-model="description" rows="3" cols="50"></textarea>
                 <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
                 <input class="form-control " type="textarea" ng-model="description " placeholder="Write a Description "> -->
             </div>
             <br>
-            <div class="form-group row" style="color:white;" class="col-sm-2 col-form-label">
-                <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
-                <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
+            <div class="form-group" style="color:white;">
+                <label for="SuggestedRiskMitigrationMeasure" style="color:white;">Suggested Risk Mitigration Measure:</label>
+                <textarea ng-model=" mitigration " rows="3 " cols="50 "></textarea>
+                <!-- <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
+                <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure "> -->
             </div>
             <br>
             <br>
             <br>
-            <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10">
+            <div class="form-group row ">
+                <div class="offset-sm-2 col-sm-10 ">
+                    <label for="button " style="color:white; " class="col-sm-2 col-form-label ">Submit</label>
                     <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<div class="toforms">
+<div class="toforms ">
     <row>
-        <div class="col-sm-6 col-sm-offset-3">
-            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms" style="color:white;">Back to Forms</button>
+        <div class="col-sm-6 col-sm-offset-3 ">
+            <button class="btn btn-warning " href="/forms " id="forms " ui-sref="forms " style="color:white; ">Back to Forms</button>
         </div>
     </row>
 </div>
