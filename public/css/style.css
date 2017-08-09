@@ -17,19 +17,12 @@ body {
 
 .header {
     text-align: center;
-    color: black;
+    color: whitesmoke;
     width: 100%;
     height: auto;
 }
 
 .home {
-    text-align: center;
-    color: black;
-    width: 100%;
-    height: auto;
-}
-
-.login {
     text-align: center;
     color: whitesmoke;
     width: 100%;
@@ -43,7 +36,14 @@ body {
     height: auto;
 }
 
-landing-page {
+.login {
+    text-align: center;
+    color: whitesmoke;
+    width: 100%;
+    height: auto;
+}
+
+.landing-page {
     text-align: center;
     color: white;
     width: 100%;
