@@ -7,36 +7,39 @@
     <br>
     <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
         <row>
-            <div class="col-sm-5 col-sm-offset-0 ">
+            <div class="form-group col-sm-5 col-sm-offset-1 ">
                 <label for="RiskObservationDate" style="color:white;">Risk Observation Date: </label>
                 <input class="form-control " type="Date " ng-model="mmddyyyy " class="angular-datepicker-input " placeholder="mm/dd/yyyy ">
             </div>
-            <div class="col-sm-5 col-sm-offset-1 ">
-                <label for="RiskReportedBy " for='RiskReportedBy'>Risk Reported By:</label>
+        </row>
+        <br>
+        <row>
+            <div class="form-group col-sm-5 col-sm-offset-1 ">
+                <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;">Risk Reported By:</label>
                 <input class="form-control " type="text " ng-model="person " placeholder="Name ">
             </div>
         </row>
         <br>
-        <br>
-        <br>
+
         <row>
-            <div class="col-sm-5 col-sm-offset-0 ">
-                <BR>
+            <div class="form-group col-sm-5 col-sm-offset-0 ">
+                <br>
                 <label for="RiskCategory" style="color:white;">Risk Category:</label>
                 <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
             </div>
-            <div class="col-sm-5 col-sm-offset-1 ">
-                <label for="RiskDescription" style="color:white;">Risk Description:</label>
-                <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
+        </row>
+        <row>
+            <div class="form-group col-sm-5 col-sm-offset-1 ">
+                <textarea ng-model="description"></textarea>
+                <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
+                <input class="form-control " type="textarea" ng-model="description " placeholder="Write a Description "> -->
             </div>
         </row>
         <br>
-        <br>
-        <br>
         <row>
-            <div class="col-sm-6 col-sm-offset-3" style="color:white;">
+            <div class=" form-group col-sm-6 col-sm-offset-3" style="color:white;">
                 <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
                 <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
             </div>
