@@ -55,7 +55,7 @@ angular.module("basic")
                         }
                         $scope.logOutStuff = logoutIcon;
                     });
-            })()
+            })();
 
 
 
