@@ -8,30 +8,31 @@
         <br>
         <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
             <div class="form-group row">
-                <label for="RiskObservationDate" style="color:white;">Risk Observation Date: </label>
+                <label for="RiskObservationDate" style="color:white;" class="col-sm-2 col-form-label">Risk Observation Date: </label>
                 <input class="form-control " type="Date" ng-model="mmddyyyy " class="angular-datepicker-input " placeholder="mm/dd/yyyy ">
             </div>
             <br>
             <div class="form-group row">
-                <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;">Risk Reported By:</label>
+                <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;" class="col-sm-2 col-form-label">Risk Reported By:</label>
                 <input class="form-control " type="text " ng-model="person " placeholder="Name ">
             </div>
             <br>
             <div class="form-group row ">
                 <br>
-                <label for="RiskCategory" style="color:white;">Risk Category:</label>
+                <label for="RiskCategory" style="color:white;" class="col-sm-2 col-form-label">Risk Category:</label>
                 <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
             </div>
             <br>
             <div class="form-group row">
+                <label for="RiskDescription" style="color:white;" class="col-sm-2 col-form-label">Risk Description:</label>
                 <textarea ng-model="description" rows="6" cols="50"></textarea>
                 <!-- <label for="RiskDescription" style="color:white;">Risk Description:</label>
                 <input class="form-control " type="textarea" ng-model="description " placeholder="Write a Description "> -->
             </div>
             <br>
-            <div class="form-group row" style="color:white;">
+            <div class="form-group row" style="color:white;" class="col-sm-2 col-form-label">
                 <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
                 <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
             </div>
