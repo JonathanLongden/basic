@@ -32,7 +32,7 @@
                     <label for="RiskObservationDate">Risk Observation Date: </label>
                     <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
                 </div>
-                <div class="col-sm-5 col-sm-offset-1 ">
+                <div class="col-sm-5 col-sm-offset-1">
                     <label for="RiskReportedBy " for='RiskReportedBy'>Risk Reported By:</label>
                     <input class="form-control " type="text " ng-model="person " placeholder="Name ">
                 </div>
@@ -41,14 +41,14 @@
             <br>
             <br>
             <row>
-                <div class="col-sm-5 col-sm-offset-0 ">
+                <div class="col-sm-5 col-sm-offset-0">
                     <BR>
                     <label for="RiskCategory ">Risk Category:</label>
                     <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
       		<option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
 		            </select>
                 </div>
-                <div class="col-sm-5 col-sm-offset-1 ">
+                <div class="col-sm-5 col-sm-offset-1">
                     <label for="RiskDescription ">Risk Description:</label>
                     <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
                 </div>
@@ -57,7 +57,7 @@
             <br>
             <br>
             <row>
-                <div class="col-sm-6 col-sm-offset-3 ">
+                <div class="col-sm-6 col-sm-offset-3">
                     <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
                     <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
                 </div>
@@ -71,5 +71,71 @@
                 </center>
             </row>
         </form>
+    </div>
+</center>
+<br>
+<br>
+<br>
+<center>
+    <div class="home" ng-controller="mainCtrl">
+        <br>
+        <center>
+            <h1 id="welcome">Quality Risk Mitigation Discussion and Directions</h1>
+        </center>
+        <br>
+        <br>
+        <form ng-submit="qaCardMitgration(mmddyyyy, person, description, mitigration)" ng-controller="mainCtrl">
+            <row>
+                <div class="col-sm-5 col-sm-offset-0">
+                    <label for="DiscussionDate">Discussion Date:</label>
+                    <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
+                </div>
+                <div class="col-sm-5 col-sm-offset-1">
+                    <label for="MemberPresent " for='MemberPresent'>Team Member Presents:</label>
+                    <input class="form-control " type="text " ng-model="person " placeholder="Name ">
+                </div>
+            </row>
+            <br>
+            <br>
+            <br>
+            <row>
+                <div class="col-sm-5 col-sm-offset-0">
+                    <BR>
+                    <label for="DiscussionHighlights">Team Discussion Highlights:</label>
+                    <input class="form-control " type="text " ng-model="description " placeholder="What is the Teams Discussion Highlights?">
+                </div>
+                <div class="col-sm-5 col-sm-offset-1">
+                    <label for="MitigrationDirections">Mitigration Directions:</label>
+                    <input class="form-control " type="text " ng-model="mitigration " placeholder="Mitigration Directions?">
+                </div>
+            </row>
+            <br>
+            <br>
+            <br>
+            <row>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <center>
+                        <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
+                    </center>
+                </div>
+            </row>
+        </form>
+    </div>
+</center>
+<br>
+<br>
+<br>
+<center>
+    <div class="home" ng-controller="mainCtrl">
+        <br>
+        <center>
+            <h1 id="welcome">Summary of Cases</h1>
+        </center>
+        <br>
+        <br>
+        <p>How would you like to sort through this data</p>
     </div>
 </center>
