@@ -17,7 +17,7 @@ angular.module("basic")
         this.getKnownUser = function(userInfo) {
             return $http({
                     method: "GET",
-                    url: "/user"
+                    url: "user/:id"
                 })
                 .then(function(res) {
                     return res;
