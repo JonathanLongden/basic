@@ -31,7 +31,7 @@
         "iconv-lite": "^0.4.18",
         "module_name": "^1.0.0",
         "mongodb": "^2.2.31",
-        "mongoose": "^4.11.6",
+        "mongoose": "4.1.9",
         "morgan": "^1.8.2",
         "mpromise": "^0.5.5",
         "mustache": "^2.3.0",
