@@ -1,179 +1,156 @@
 angular.module("basic")
     .service("mainServ", function($http) {
 
-        // this.qcCardPost = function(qaCardData){
+
+        this.loginPostLogin = function(userLogin) {
+            return $http({
+                    method: "POST",
+                    url: "/login",
+                    data: userLogin
+                })
+                .then(function(res) {
+                    return res.data;
+                });
+        };
+
+
+        this.getKnownUser = function(userInfo) {
+            return $http({
+                    method: "GET",
+                    url: "/user"
+                })
+                .then(function(res) {
+                    return res;
+                })
+        }
+
+
+        this.deleteSale = function(id) {
+                return $http({
+                        method: "DELETE",
+                        url: "/sale/" + id
+                    })
+                    .then(function(res) {
+                        return res;
+                    })
+            }
+            // app.get('/user', userControl.getOneUser);
+        this.getUpdateUserID = function(user) {
+            // console.log(user);
+            return $http({
+                    method: "PUT",
+                    url: "/user/" + user._id,
+                    data: user
+                })
+                .then(function(res) {
+                    // console.log(response.data);
+                    return res;
+                })
+        }
+
+
+        this.signupPostSignUp = function(userSignUp) {
+            console.log(userSignUp);
+            return $http({
+                    method: "POST",
+                    url: "/signup",
+                    data: userSignUp
+                })
+                .then(function(res) {
+                    console.log(res.data);
+                    // console.log("You have Signed in like a champ!");
+                    return res.data;
+                })
+        }
+
+
+        // this.getfacebooksignup = function() {
         //     return $http({
-        //         method:"POST",
-        //         url:"/#/screentwo",
-        //         data: qaCardData
-        //     })
-        //     .then(function(res){
-        //       return res.data;
-        //     });
-        //   };
-
-        //  //Servicer Side Selling the Stuff
-        //   this.getPostNewItemToSell = function(newitem){
-        //     return $http({
-        //       method:"POST",
-        //       url:"/widget",
-        //       data: newitem
-        //     })
-        //     .then(function(response){
-        //       console.log(response.data);
-        //       return response.data;
-        //     })
-        //   };
-        //   //Server Side Getting items to Sell
-        //   this.getThings = function(){
-        //     return $http({
-        //       method:"GET",
-        //       url:"/widget" 
-        //     })
-        //     .then(function(response){
-        //       return response.data;
-        //     })
-        //   };
-
-        //   this.addCart = function(){
-        //     return $http({
-        //        method: "POST",
-        //         url: "/cart"
-        //     }).then(function(response){
-        //        return response.data;
-        //     });
-        //   };
-
-        //   this.addToCart = function(item, cart){
-        //     var newcart = cart;
-        //     newcart.items.push(item);
-        //     newcart.totalCost += item.cost;
-        //     return $http({
-        //        method: "PUT",
-        //        url: "/cart/" + cart._id,
-        //        data: newcart
-        //     }).then(function(response){
-        //         return response.data;
-        //     })
-        //   }
+        //             method: "GET",
+        //             url: "/auth/facebook"
+        //         })
+        //         .then(function(res) {
+        //             console.log("You have Signed in to Facebook like champ!");
+        //             return res.data;
+        //         })
+        // }
 
 
+        this.getSignOut = function() {
+            return $http({
+                    method: "GET",
+                    url: "/logout"
+                })
+                .then(function(res) {
+                    console.log("SignOut");
+                    return res;
+                })
+        }
 
 
+        this.getSales = function() {
+            return $http({
+                method: 'GET',
+                url: '/sales'
+            }).then(function(res) {
+                return res.data;
+            })
+        }
 
 
-        //   //Server Side Posting the Creatures
-        //   this.getPostCreature = function(name){
-        //     return $http({
-        //     method:"POST",
-        //     url:"/todo",
-        //     data: name
+        this.getAllSales = function() {
+            return $http({
+                method: 'GET',
+                url: '/sales'
+            }).then(function(res) {
+
+                return res.data;
+            })
+        }
+
+
+        // this is for getting just one sale!
+        this.getSale = function() {
+            return $http({
+                method: 'GET',
+                url: '/sales/'
+            }).then(function(res) {
+                return res.data;
+            })
+        }
+
+
+        this.postSale = function(sale) {
+            console.log(sale);
+            return $http({
+                method: 'POST',
+                url: '/sale',
+                data: sale
+            }).then(function(res) {
+                return res.data;
+            });
+        };
+
+
+        this.getMySales = function() {
+            return $http({
+                method: 'GET',
+                url: '/mysales'
+            }).then(function(res) {
+                return res.data;
+            })
+        }
+
+
+        // this.updateSale = function(sale){
+        //   return $http({
+        //     method: 'PUT',
+        //     url: '/sales/' + sale.id,
+        //     data: sale
+        //   }).then(function(res){
+        //     return res;
         //   })
-        //   .then(function(response){
-        //       console.log(response.data);
-        //       return response.data;
-        //     });
-        //   };
-        //   //Server Side Getting the Creatures
-        //   this.getGetCreature = function(){
-        //     return $http({
-        //       method:"GET",
-        //       url:"/todo"
-        //     }).then(function(response){
-        //       console.log(response.data);
-        //       return response.data;
-        //     });
-        //   }
-        //   this.getUpDateCreature = function(name){
-        //     return $http({
-        //       method:"PUT",
-        //       url:"/todo/"+ name._id,
-        //       data: name
-        //     }).then(function(response){
-        //       console.log(response.data);
-        //       return response.data;
-        //     });
-        //   }
-        //   //Server Side Deleting the Creatures
-        //   this.getDeleteCreature = function(name){
-
-        //     return $http({
-        //       method:"DELETE",
-        //       url:"/todo/"+ name._id
-        //     }).then(function(response){
-        //       console.log(response.data)
-        //       return response.data;
-        //     });
-        //   }
-
-
-
-
-        // 	//Server Side Posting the Chats
-        // 	this.getPostChat = function(chat){
-        //     return $http({
-        //       method: "POST",
-        //       url: "/chat",
-        //       data: chat
-        //     })
-        //     .then(function(response){
-        //     	console.log(response.data);
-        //       return response.data;
-        //     });
-        //  	};
-
-        //  	//Server Side Getting Chats
-        //  	this.getGetChats = function(){
-        //     return $http({
-        //       method: "GET",
-        //       url: "/chat"
-        //     })
-        //     .then(function(response){
-        //       return response.data;
-        //     });
-        //   };
-
-        // 	//Service Side Deleting Chats
-        // 	this.getDeleteChats = function(){
-        //   	return $http({
-        //   		method: "Delete",
-        //   		url: "/chat"
-        //   	}) 
-        //   	.then(function(response){
-        //   		return response.data;
-        //   	})
-        //   }
-        //   //Service for getting my Giphys
-        //   this.getGetGiphy = function(){
-        //     return $http({
-        //       method: "GET",
-        //       url:"http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
-        //     }).then(function(response){
-        //       console.log(response.data.data);
-        //       return response.data;
-
-        //     })
-        //   }
-
-        // 	//Service for Getting Pokemon!
-        // 	this.getfindPokemon = function(){
-        // 	 return $http({
-        // 	  	method: "GET",
-        //   	  	url: "http://pokeapi.co/api/v2/pokemon"
-        //   	}).then(function(response){
-        //   	  	return response.data.results;
-        //   	})
-        //   }
-        // 	//Service got getting One Pokemon
-        // 	this.getPokemonOne = function(url){
-        //      	return $http({
-        //        	method: "GET",
-        //       	url: url
-        //     }).then(function(response){
-        //       	return response.data;
-        //     })
-        //    };
-
+        // }
 
 
 
