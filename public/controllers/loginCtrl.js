@@ -16,6 +16,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                     $location.path('forms');
                     $scope.userLogin = "";
                 } else {
+                    $location.path('/landingPage');
                     $scope.wrongCred = false;
                 }
             })
@@ -43,7 +44,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                     $location.path('forms');
                     //console.log(response.user.local.userName)
                 } else {
-                    $location.path('/');
+                    $location.path('/landingPage');
                 }
             })
     };

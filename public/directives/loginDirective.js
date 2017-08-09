@@ -14,24 +14,17 @@ angular.module("basic").directive("loginDirective", function() {
         }
 
     })
-    //     .directive('myCustomer', function() {
-    //   return {
-    //     templateUrl: 'my-customer.html'
-    //   };
-    // });
-    // .directive("createSaleDirective", function() {
+    .directive('qasubmittal', function() {
+        return {
+            templateUrl: 'qasubmittal.html',
+            restrict: "AE"
+        };
+    })
+    .directive("summary", function() {
 
-//     return {
-//         templateUrl: './../templates/createSale.html',
-//         restrict: "E"
-//     }
+        return {
+            templateUrl: './../template/summary.html',
+            restrict: "AE"
+        }
 
-// })
-// .directive("contentDirective", function() {
-
-//     return {
-//         templateUrl: './../template/saleContent.html',
-//         restrict: "E"
-//     }
-
-//})
+    })

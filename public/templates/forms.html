@@ -1,60 +1,9 @@
-<div class="home" ng-controller="mainCtrl" style="border:1px solid black">
-    <br>
-    <center>
-        <h1 id="welcome"> Submittal of a Quality Risk Card </h1>
-    </center>
-    <br>
-    <br>
-    <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="mainCtrl">
-        <row>
-            <div class="col-sm-5 col-sm-offset-0">
-                <label for="RiskObservationDate">Risk Observation Date: </label>
-                <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
-            </div>
-            <div class="col-sm-5 col-sm-offset-1">
-                <label for="RiskReportedBy " for='RiskReportedBy'>Risk Reported By:</label>
-                <input class="form-control " type="text " ng-model="person " placeholder="Name ">
-            </div>
-        </row>
+<div class="forms">
+    <div class="">
+        <button class="btn btn-warning" id="enterButton" ui-sref="qasubmittal">Submit Quality RiskCard</button>
         <br>
-        <br>
-        <br>
-        <row>
-            <div class="col-sm-5 col-sm-offset-0">
-                <BR>
-                <label for="RiskCategory ">Risk Category:</label>
-                <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
-        <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
-                </select>
-            </div>
-            <div class="col-sm-5 col-sm-offset-1">
-                <label for="RiskDescription ">Risk Description:</label>
-                <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
-            </div>
-        </row>
-        <br>
-        <br>
-        <br>
-        <row>
-            <div class="col-sm-6 col-sm-offset-3">
-                <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
-                <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
-            </div>
-        </row>
-        <br>
-        <br>
-        <br>
-        <row>
-            <center>
-                <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
-            </center>
-        </row>
-    </form>
+    </div>
 </div>
-
-<br>
-<br>
-<br>
 
 <div class="Mitigation" ng-controller="mainCtrl" style="border:1px solid black">
     <br>
@@ -102,26 +51,4 @@
             </div>
         </row>
     </form>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class="home" ng-controller="mainCtrl" style="border:1px solid black">
-    <br>
-    <center>
-        <h1 id="welcome">Summary of Cases</h1>
-    </center>
-    <br>
-    <br>
-    <p>How would you like to sort through this data</p>
-</div>
-<div class="container">
-    <center>
-        <login-directive></login-directive>
-    </center>
-    <center>
-        <signup-directive></signup-directive>
-    </center>
 </div>
