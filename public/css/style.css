@@ -43,9 +43,223 @@ body {
     height: auto;
 }
 
-.landing-page {
+landing-page {
     text-align: center;
-    color: whitesmoke;
+    color: white;
     width: 100%;
     height: auto;
+}
+
+#yardImg {
+    width: 35rem;
+    height: 35rem;
+}
+
+#welcome {
+    font-size: 6rem;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+#title {
+    color: #fff;
+    font-size: 4rem;
+}
+
+.login-container,
+.signup-container {
+    height: auto;
+}
+
+.login-container {
+    margin-left: 10vw;
+}
+
+.signup-container {
+    margin-right: 10vw;
+}
+
+#wrongLogin {
+    color: white;
+}
+
+#username {
+    color: white;
+}
+
+#saleNames {
+    color: white;
+}
+
+#login {
+    margin-top: .5rem;
+    width: 15rem;
+    font-size: 2.5rem;
+    background-color: rgb(198, 86, 61);
+    border: none;
+}
+
+#login:hover {
+    background-color: red;
+}
+
+
+/*rgb(185, 17, 17)*/
+
+#enterButton {
+    width: 15rem;
+    font-size: 3rem;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+#enterButton:hover {
+    color: rgb(198, 86, 61);
+    background-color: white;
+}
+
+
+/*////////////////////////////////////*/
+
+#links {
+    color: white;
+}
+
+#links:hover {
+    color: rgb(198, 86, 61);
+}
+
+.social-links {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: .35rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: justify;
+    margin: 1rem;
+    color: #0d47a1;
+}
+
+.content-list {
+    font-family: sans-serif;
+    font-size: 4rem;
+    border: 4px solid black;
+    text-align: center;
+    margin: 1rem;
+    list-style: none;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 2rem;
+    background-color: white;
+}
+
+#sale-list-content {
+    font-size: 3rem;
+}
+
+#nameName {
+    text-align: center;
+}
+
+#logout {
+    background-color: rgb(198, 86, 61);
+    border: none;
+    width: 10rem;
+    font-size: 2rem;
+}
+
+.form-control {
+    width: 35rem;
+    height: 5rem;
+    font-family: sans-serif;
+    border-radius: 1rem;
+    font-size: 2rem;
+    margin-top: .25rem;
+}
+
+
+/*////////////////////////////////////*/
+
+a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: rgb(36, 32, 232);
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.link-container {
+    text-align: center;
+}
+
+.link-buttons {
+    width: 10rem;
+    background-color: white;
+    margin: 1rem;
+    box-shadow: 1px 1px 1px white;
+}
+
+#mapButton {
+    width: 20rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+#accountButton {
+    font-size: 2rem;
+}
+
+.home-container {
+    text-align: left;
+    height: auto;
+}
+
+#create-title {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+.user-info-container {
+    color: white;
+}
+
+.stuff-title {
+    color: white;
+}
+
+.add-container {
+    display: flex;
+    justify-content: center;
+}
+
+#addButton {
+    border: none;
+    margin-top: 2rem;
+    width: 10rem;
+    font-size: 2rem;
+    background-color: rgb(198, 86, 61);
+}
+
+.logout {
+    top: 20px;
+    right: 20px;
+    position: fixed;
+}
+
+.landing-containers {
+    border: 2px solid white;
+    text-align: left;
 }

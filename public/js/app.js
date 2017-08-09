@@ -30,6 +30,11 @@ angular.module("basic", ['ui.router'])
                 templateUrl: "./templates/qasubmittal.html", // or template: '<h1>Home Page</h1>' 
                 controller: "qaCtrl"
             })
+            .state("mitgration", {
+                url: "/mitgration",
+                templateUrl: "./templates/mitgration.html", // or template: '<h1>Home Page</h1>' 
+                controller: "qaCtrl"
+            })
             .state("summary", {
                 url: "/summary",
                 templateUrl: "./templates/summary.html", // or template: '<h1>Home Page</h1>' 
