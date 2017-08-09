@@ -1,18 +1,6 @@
 angular.module("basic")
     .controller("mainCtrl", function($scope, $location, mainServ, $rootScope) {
 
-        console.log($rootScope.user);
-        console.log($scope.user);
-
-        $scope.names = {};
-
-
-        $scope.getUsername = function(name) {
-            $scope.userName = name;
-            console.log(name)
-        }
-        $scope.userId;
-
 
         $scope.signOut = function() { //logs a you out and redirects them to the home page
             // console.log("SignOut");
