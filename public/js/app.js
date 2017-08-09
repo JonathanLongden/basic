@@ -13,7 +13,7 @@ angular.module("basic", ['ui.router'])
             .state("forms", {
                 url: "/forms",
                 templateUrl: "./templates/forms.html", // or template: '<h1>Home Page</h1>' 
-                controller: "qaCtrl"
+                controller: "mainCtrl"
             })
             .state("login", {
                 url: "/login",
