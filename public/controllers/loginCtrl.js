@@ -1,4 +1,4 @@
-angular.module('basic').controller('loginCtrl', function($scope, $location, mainServ) {
+angular.module('basic').controller('loginCtrl', function($scope, $location, mainServ, $rootScope) {
 
     $scope.wrongCred = true;
     $scope.userName;
