@@ -1,0 +1,47 @@
+<div class="Mitigation" ng-controller="mainCtrl" style="border:1px solid black">
+    <br>
+    <center>
+        <h1 id="welcome">Quality Risk Mitigation Discussion and Directions</h1>
+    </center>
+    <br>
+    <br>
+    <form ng-submit="qaCardMitgration(mmddyyyy, person, description, mitigration)" ng-controller="mainCtrl">
+        <row>
+            <div class="col-sm-5 col-sm-offset-0">
+                <label for="DiscussionDate">Discussion Date:</label>
+                <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <label for="MemberPresent " for='MemberPresent'>Team Member Presents:</label>
+                <input class="form-control " type="text " ng-model="person " placeholder="Name ">
+            </div>
+        </row>
+        <br>
+        <br>
+        <br>
+        <row>
+            <div class="col-sm-5 col-sm-offset-0">
+                <BR>
+                <label for="DiscussionHighlights">Team Discussion Highlights:</label>
+                <input class="form-control " type="text " ng-model="description " placeholder="What is the Teams Discussion Highlights?">
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <label for="MitigrationDirections">Mitigration Directions:</label>
+                <input class="form-control " type="text " ng-model="mitigration " placeholder="Mitigration Directions?">
+            </div>
+        </row>
+        <br>
+        <br>
+        <br>
+        <row>
+            <br>
+            <br>
+            <br>
+            <div class="col-sm-6 col-sm-offset-3">
+                <center>
+                    <button class="btn btn-warning " id="login " type="submit " name="button "><i class="fa fa-arrow-right " aria-hidden="true "></i></button>
+                </center>
+            </div>
+        </row>
+    </form>
+</div>
