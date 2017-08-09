@@ -34,7 +34,7 @@ module.exports = {
 
     signup: function(req, res, next) {
         passport.authenticate('local-signup', function(err, user, info) {
-            //console.log('You signed up.', info);
+            console.log('You signed up.', info);
             if (err) { return next(err); }
             if (!user) { return res.json({ message: "Please enter a Email & Password " }) } //{ return res.status(404).json(info.message); }
             req.login(user, function(err) {

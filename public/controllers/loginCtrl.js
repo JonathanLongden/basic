@@ -36,7 +36,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
         };
         mainServ.signupPostSignUp(userSignUp)
             .then(function(response) {
-                console.log(response);
+                //console.log(response);
                 if (response.user.local) {
                     //$location.path('map');
                     //console.log(response.user.local.userName)

@@ -58,7 +58,7 @@ angular.module("basic")
                 })
                 .then(function(res) {
                     console.log(res.data);
-                    // console.log("You have Signed in like a champ!");
+                    console.log("You have Signed in like a champ!");
                     return res.data;
                 })
         }
