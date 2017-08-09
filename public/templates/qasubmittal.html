@@ -1,14 +1,14 @@
 <div class="home" ng-controller="qaCtrl">
     <br>
     <center>
-        <h1 id="welcome">Submittal of a Quality Risk Card</h1>
+        <h1 style="color:white;">Submittal of a Quality Risk Card</h1>
     </center>
     <br>
     <br>
     <form ng-submit="qaCard(mmddyyyy, person, category, description, mitigration)" ng-controller="qaCtrl">
         <row>
             <div class="col-sm-5 col-sm-offset-0 ">
-                <label for="RiskObservationDate ">Risk Observation Date: </label>
+                <label for="RiskObservationDate" style="color:white;">Risk Observation Date: </label>
                 <input class="form-control " type="Date " ng-model="mmddyyyy " class="angular-datepicker-input " placeholder="mm/dd/yyyy ">
             </div>
             <div class="col-sm-5 col-sm-offset-1 ">
@@ -22,13 +22,13 @@
         <row>
             <div class="col-sm-5 col-sm-offset-0 ">
                 <BR>
-                <label for="RiskCategory ">Risk Category:</label>
+                <label for="RiskCategory" style="color:white;">Risk Category:</label>
                 <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
                 </select>
             </div>
             <div class="col-sm-5 col-sm-offset-1 ">
-                <label for="RiskDescription ">Risk Description:</label>
+                <label for="RiskDescription" style="color:white;">Risk Description:</label>
                 <input class="form-control " type="text " ng-model="description " placeholder="Write a Description ">
             </div>
         </row>
@@ -36,7 +36,7 @@
         <br>
         <br>
         <row>
-            <div class="col-sm-6 col-sm-offset-3 ">
+            <div class="col-sm-6 col-sm-offset-3" style="color:white;">
                 <label for="SuggestedRiskMitigrationMeasure ">Suggested Risk Mitigration Measure:</label>
                 <input class="form-control " type="text " ng-model="mitigration " placeholder="Write a Risk Mitgration Measure ">
             </div>
@@ -54,7 +54,7 @@
 <div class="toforms">
     <row>
         <div class="col-sm-6 col-sm-offset-3">
-            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms ">Back to Forms</button>
+            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms" style="color:white;">Back to Forms</button>
         </div>
     </row>
 </div>

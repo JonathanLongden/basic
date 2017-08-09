@@ -1,18 +1,18 @@
 <div class="Mitigation" ng-controller="qaCtrl">
     <br>
     <center>
-        <h1 id="welcome">Quality Risk Mitigation Discussion and Directions</h1>
+        <h1 style="color:white;">Quality Risk Mitigation Discussion and Directions</h1>
     </center>
     <br>
     <br>
     <form ng-submit="qaCardMitgration(mmddyyyy, person, description, mitigration)" ng-controller="mainCtrl">
         <row>
             <div class="col-sm-5 col-sm-offset-0">
-                <label for="DiscussionDate">Discussion Date:</label>
+                <label for="DiscussionDate" style="color:white;">Discussion Date:</label>
                 <input class="form-control" type="Date" ng-model="mmddyyyy" class="angular-datepicker-input" placeholder="mm/dd/yyyy ">
             </div>
             <div class="col-sm-5 col-sm-offset-1">
-                <label for="MemberPresent " for='MemberPresent'>Team Member Presents:</label>
+                <label for="MemberPresent " style="color:white;">Team Member Presents:</label>
                 <input class="form-control " type="text " ng-model="person " placeholder="Name ">
             </div>
         </row>
@@ -22,11 +22,11 @@
         <row>
             <div class="col-sm-5 col-sm-offset-0">
                 <BR>
-                <label for="DiscussionHighlights">Team Discussion Highlights:</label>
+                <label for="DiscussionHighlights" style="color:white;">Team Discussion Highlights:</label>
                 <input class="form-control " type="text " ng-model="description " placeholder="What is the Teams Discussion Highlights?">
             </div>
             <div class="col-sm-5 col-sm-offset-1">
-                <label for="MitigrationDirections">Mitigration Directions:</label>
+                <label for="MitigrationDirections" style="color:white;">Mitigration Directions:</label>
                 <input class="form-control " type="text " ng-model="mitigration " placeholder="Mitigration Directions?">
             </div>
         </row>
@@ -48,7 +48,7 @@
 <div class="toforms">
     <row>
         <div class="col-sm-6 col-sm-offset-3">
-            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms ">Back to Forms</button>
+            <button class="btn btn-warning" href="/forms" id="forms" ui-sref="forms" style="color:white;">Back to Forms</button>
         </div>
     </row>
 </div>
