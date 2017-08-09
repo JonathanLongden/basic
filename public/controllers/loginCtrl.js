@@ -12,7 +12,8 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             .then(function(response) {
                 var verify = response;
                 if (verify.user) {
-                    //$location.path('map');
+                    //guiding user to forms
+                    $location.path('forms');
                     $scope.userLogin = "";
                 } else {
                     $scope.wrongCred = false;
@@ -36,12 +37,13 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
         };
         mainServ.signupPostSignUp(userSignUp)
             .then(function(response) {
-                //console.log(response);
+                console.log(response);
                 if (response.user.local) {
-                    //$location.path('map');
+                    //guiding user to forms
+                    $location.path('forms');
                     //console.log(response.user.local.userName)
                 } else {
-                    // $location.path('/');
+                    $location.path('/');
                 }
             })
     };
