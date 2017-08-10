@@ -2,6 +2,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
     this.myDate = new Date();
     this.isOpen = false;
+    $scope.person;
 
     $scope.category = {
         model: null,
@@ -92,6 +93,51 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
                 //   }
             })
     };
+
+    function real(data) {
+        var person = data.data.local.userName;
+        try {
+            if (person) {
+                return true;
+                $scope.person = data.data.local.userName;
+            } else {
+                $location.path('/landingPage');
+                return null;
+
+            };
+        } catch (err) {
+            $location.path('/landingPage');
+            console.log(err);
+        }
+
+    };
+
+    //self-invoking function that responses to whether a user is log in or not
+    (function() {
+        mainServ.getKnownUser()
+            .then(function(response) {
+                var data = response;
+                try {
+                    // console.log(response); //{user:"anonymous"}
+                    // console.log(response.data);
+                    // console.log(response.data.local); //undefined for user anonymous
+                    // console.log(response.data.local.userName); //Cannot read property userName of undefined
+
+                    var user = real(data);
+                    if (user) {
+                        //true
+                    } else {
+                        $location.path('/landingPage');
+                    }
+                } catch (err) {
+                    $location.path('/landingPage');
+                    console.log(err);
+                }
+
+            });
+
+
+    })()
 
 
 
