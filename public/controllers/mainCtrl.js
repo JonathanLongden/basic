@@ -10,15 +10,31 @@ angular.module("basic")
 
 
 
-        $scope.Test = function() { //self-invoking function that responses to whether a user is log in or not
+        // $scope.Test = function() { //self-invoking function that responses to whether a user is log in or not
 
-            userId = $scope._id;
+        //     mainServ.getKnownUser()
+        //         .then(function(response) {
+        //             console.log(response);
+        //             var user = response.data;
+
+        //             if (user.userName) {
+        //                 //do nothing
+        //             } else {
+        //                 //do something
+        //                 $location.path('/landingPage');
+        //             }
+
+        //         });
+
+
+        // };
+        //self-invoking function that responses to whether a user is log in or not
+        (function() {
             mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response);
                     var user = response.data;
-                    console.log(userID);
-
+                    console.log(user);
                     if (user.userName) {
                         //do nothing
                     } else {
@@ -29,7 +45,8 @@ angular.module("basic")
                 });
 
 
-        };
+        })()
+
 
 
 
