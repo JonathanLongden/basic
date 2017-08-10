@@ -14,11 +14,10 @@ angular.module("basic")
             mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response); //{user:"anonymous"}
-                    console.log(response.data);
-                    console.log(response.data.local);
-                    console.log(response.data.user);
-                    console.log(response.user);
-                    console.log(response.data.userName)
+                    console.log(reponse.user);
+                    console.log(reponse.local);
+                    console.log(response.local.userName);
+                    console.log(response.data); //undefined
                     var user = response.data;
 
                     var local = response.data;
