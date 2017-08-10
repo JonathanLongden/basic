@@ -5,18 +5,10 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
     $scope.userName;
 
     $scope.postLogin = function(loginEmail, secret) {
-        try {
-            var userLogin = {
-                userName: email(loginEmail),
-                password: secret
-            };
-            if (userLogin.userName == null) {
-                $scope.HideNames = true;
-            }
-        } catch (err) {
-            console.log(err);
-        }
-
+        var userLogin = {
+            userName: email(loginEmail),
+            password: secret
+        };
         mainServ.loginPostLogin(userLogin)
             .then(function(response) {
                 //console.log(response);
@@ -30,23 +22,16 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                 }
             })
     };
-    // $scope.forgotPassword = function(lostPassword){
-    //   var reSetting = {
-    //     userName: lostPassword
-    //        };
-    //   mainServ.getforgotPassword(reSetting)
-    //   .then(function(response){
-    //     console.log(response);
 
-    //   })
-    // };
     function email(useremail) {
         var email = useremail;
         var test = useremail.toString().includes("woodardcurran.com");
         if (test) {
+            $scope.CorrectLogin = false;
             return email
         } else {
             return null
+            $scope.CorrectLogin = true;
         };
     };
     $scope.postSignUp = function(signUpEmail, password) {

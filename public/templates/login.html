@@ -2,6 +2,11 @@
     <center>
         <h2>Login</h2>
     </center>
+    <row>
+        <h1 ng-show="CorrectLogin">Please user your Professional Email from the Company!</h1>
+        <div class="col-sm-6 col-sm-offset-3">
+    </row>
+    <br>
     <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
         <row>
             <div class="col-sm-6 col-sm-offset-3">
@@ -12,4 +17,4 @@
         </row>
     </form>
     <h3 id="wrongLogin" ng-hide=wrongCred>Incorrect Email/Password Combination</h3>
-</div>
+    </div>

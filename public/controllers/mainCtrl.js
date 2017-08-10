@@ -16,8 +16,8 @@ angular.module("basic")
                     try {
                         console.log(response); //{user:"anonymous"}
                         console.log(response.data);
-                        console.log(response.data.local);
-                        console.log(response.data.local.userName);
+                        console.log(response.data.local); //undefined for user anonymous
+                        console.log(response.data.local.userName); //Cannot read property userName of undefined
 
 
                         var user = response.data;
