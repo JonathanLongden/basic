@@ -34,9 +34,14 @@ angular.module("basic")
                 .then(function(response) {
                     console.log(response);
                     var user = response.data;
-                    console.log(user);
-                    if (user.userName) {
+
+                    if (user == 'anonymous') {
+                        //do something
+                        $location.path('/landingPage');
+
+                    } else if (user.local) {
                         //do nothing
+
                     } else {
                         //do something
                         $location.path('/landingPage');
