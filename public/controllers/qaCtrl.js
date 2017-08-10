@@ -86,7 +86,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.formInfo = {};
     $scope.postQaCard = function(qacard) {
         qacard.person = $scope.person;
-        qacard.person = qacard.person.model;
+        qacard.category = qacard.category.model;
         // var qacard = {
         //     riskObservationDate: mmddyyyy,
         //     riskReportedBy: person,
