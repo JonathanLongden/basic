@@ -13,26 +13,31 @@ angular.module("basic")
         (function() {
             mainServ.getKnownUser()
                 .then(function(response) {
-                    console.log(response); //{user:"anonymous"}
-                    console.log(reponse.user);
-                    console.log(reponse.local);
-                    console.log(response.local.userName);
-                    console.log(response.data); //undefined
-                    var user = response.data;
+                    try {
+                        console.log(response); //{user:"anonymous"}
+                        console.log(response.data);
+                        console.log(reponse.user);
+                        console.log(reponse.local);
+                        console.log(response.local.userName);
+                        console.log(response.data); //undefined
+                        var user = response.data;
 
-                    var local = response.data;
-                    console.log(local) //undefined for anoymous
+                        var local = response.data;
+                        console.log(local) //undefined for anoymous
 
-                    if (user == "anonymous") {
-                        //do something
-                        $location.path('/landingPage');
+                        if (user == "anonymous") {
+                            //do something
+                            $location.path('/landingPage');
 
-                    } else if (local != null) {
-                        //do nothing
+                        } else if (local != null) {
+                            //do nothing
 
-                    } else {
-                        //do something
-                        $location.path('/landingPage');
+                        } else {
+                            //do something
+                            $location.path('/landingPage');
+                        }
+                    } catch (err) {
+                        console.log(err);
                     }
 
                 });
