@@ -95,23 +95,22 @@ module.exports = {
         })
     },
     getOneUser: function(req, res) {
-        if (true) {
+        if (req.user) {
             console.log(req.user)
-            UserModel.findById({ _id: req.params.id })
-                .populate('qacard')
-                .exec(
-                    function(err, user) {
-                        if (err) {
-                            return console.log(err);
-                        } else {
-                            res.json(user)
-                        }
-                    });
+            UserModel.findById({
+                    _id: req.user._id
+                },
+                function(err, user) {
+                    if (err) {
+                        return console.log(err);
+                    } else {
+                        res.json(user)
+                    }
+                });
         } else {
             res.json({
                 user: "anonymous"
             })
-            return console.log(res.json);
         }
 
     },

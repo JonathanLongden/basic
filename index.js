@@ -48,22 +48,22 @@ app.get('/users', userControl.getAllUsers);
 app.get('/user', userControl.getOneUser);
 app.get('/user/:id', userControl.getOneUser);
 app.put('/user/:id', userControl.update);
-app.post('/sale/:id', userControl.addqacard);
+//app.post('/sale/:id', userControl.addqacard);
 // app.put('/sale/:id', userControl.updateSale);
 
 //When sale is created, add sale id to user sale array
-app.post('/qacard', qaControl.create, userControl.addqacard);
-app.get('/qacard', qaControl.read);
-app.get('/qacard/:id', qaControl.readById);
-app.get('/mysales', qaControl.readByUser);
-app.put('/qacard/:id', qaControl.update);
-app.delete('/qacard/:id', qaControl.delete, userControl.deleteqacard);
+// app.post('/qacard', qaControl.create, userControl.addqacard);
+// app.get('/qacard', qaControl.read);
+// app.get('/qacard/:id', qaControl.readById);
+// app.get('/mysales', qaControl.readByUser);
+// app.put('/qacard/:id', qaControl.update);
+// app.delete('/qacard/:id', qaControl.delete, userControl.deleteqacard);
 
 
-app.get('/qacard', qaControl.read);
-app.post('/qacard', qaControl.create);
-app.get('/qacard:id', qaControl.readById);
-app.put('/qacard:id', qaControl.update);
+// app.get('/qacard', qaControl.read);
+// app.post('/qacard', qaControl.create);
+// app.get('/qacard:id', qaControl.readById);
+// app.put('/qacard:id', qaControl.update);
 
 mongoose.connect(
     //"mongodb://localhost:27017/sales"

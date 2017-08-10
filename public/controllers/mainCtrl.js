@@ -13,7 +13,7 @@ angular.module("basic")
         $scope.Test = function() { //self-invoking function that responses to whether a user is log in or not
 
             userId = $scope._id;
-            mainServ.getKnownUser(userId)
+            mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response);
                     var userID = response.data;
