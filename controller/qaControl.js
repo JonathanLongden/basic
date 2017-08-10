@@ -2,9 +2,7 @@ var qaCardModel = require('./../model/qaCardModel.js');
 var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
-        console.log(req);
-        console.log(res);
-        console.log(next);
+
         req.body._user = req.user._id;
         console.log(req.body._user);
         var qacard = new qaCardModel(req.body);
@@ -20,6 +18,17 @@ module.exports = {
             console.log(req.user);
             next();
 
+        });
+    },
+    //Added this for a demo
+    createbyself: function(req, res, next) {
+        var qacard = new qaCardModel(req.body);
+        qacard.save(function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
         });
     },
     read: function(req, res) {

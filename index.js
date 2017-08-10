@@ -66,7 +66,7 @@ app.get('/qacard', qaControl.read);
 
 
 // app.get('/qacard', qaControl.read);
-app.post('/qacard', qaControl.create);
+app.post('/qacard', createbyself.create);
 // app.get('/qacard:id', qaControl.readById);
 // app.put('/qacard:id', qaControl.update);
 
