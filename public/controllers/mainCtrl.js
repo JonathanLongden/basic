@@ -59,8 +59,6 @@ angular.module("basic")
 
         })();
 
-        console.log(getUser.data);
-
 
 
     });
