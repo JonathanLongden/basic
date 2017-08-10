@@ -6,7 +6,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
 
     $scope.postLogin = function(loginEmail, secret) {
         var userLogin = {
-            userName: loginEmail,
+            userName: email(loginEmail),
             password: secret
         };
         mainServ.loginPostLogin(userLogin)
@@ -32,9 +32,18 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
 
     //   })
     // };
+    function email(useremail) {
+        var email = useremail;
+        var test = useremail.toString().Includes("woodardcurran.com");
+        if (test) {
+            return email
+        } else {
+            return null
+        };
+    };
     $scope.postSignUp = function(signUpEmail, password) {
         var userSignUp = {
-            userName: signUpEmail,
+            userName: email(signUpEmail),
             password: password
         };
         mainServ.signupPostSignUp(userSignUp)
