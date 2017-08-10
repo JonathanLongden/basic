@@ -93,8 +93,8 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             riskMitigration: mitigration
 
         };
-        console.log(qacard);
-        mainServ.qcCardPost(qacard)
+        console.log(qacard.qacard);
+        mainServ.qcCardPost(qacard.qacard)
             .then(function(response) {
                 console.log("You Created a Card");
                 var verify = response;
