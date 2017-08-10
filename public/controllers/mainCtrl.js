@@ -12,21 +12,17 @@ angular.module("basic")
             var person = data.data.local.userName;
             try {
                 if (person) {
-                    return true
+                    return true;
                 } else {
-                    return null
                     $location.path('/landingPage');
+                    return null;
+
                 };
             } catch (err) {
+                $location.path('/landingPage');
                 console.log(err);
-            } finally {
-                if (person) {
-                    return true
-                } else {
-                    return null
-                    $location.path('/landingPage');
-                };
-            };
+            }
+
         };
 
         //self-invoking function that responses to whether a user is log in or not

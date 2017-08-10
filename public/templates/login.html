@@ -5,7 +5,7 @@
     <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
         <row>
             <div ng-hide="CorrectLogin" class="ng-hide">
-                <h1>Please user your Professional Email from the Company!</h1>
+                <h1 style="color:red;">Please user your Professional Email from the Company!</h1>
             </div>
         </row>
         <row>
@@ -17,7 +17,7 @@
         </row>
         <br>
         <div ng-hide="wrongpw" class="ng-hide">
-            <h3>Incorrect Email/Password Combination</h3>
+            <h3 style="color:red;">Incorrect Email/Password Combination</h3>
         </div>
 
     </form>
