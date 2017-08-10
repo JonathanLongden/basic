@@ -98,8 +98,13 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         var person = data.data.local.userName;
         try {
             if (person) {
-                return true;
-                $scope.personemail = data.data.local.userName;
+                try {
+                    $scope.personemail = data.data.local.userName;
+                    return true;
+                } catch (err) {
+                    console.log(err);
+                }
+
             } else {
                 $location.path('/landingPage');
                 return null;
