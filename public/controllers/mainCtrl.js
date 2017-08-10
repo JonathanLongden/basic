@@ -10,7 +10,7 @@ angular.module("basic")
 
 
 
-        (function() { //self-invoking function that responses to whether a user is log in or not
+        $scope.getUser = (function() { //self-invoking function that responses to whether a user is log in or not
             if ($rootScope._id) {
                 userId = $rootScope._id;
                 mainServ.getKnownUser(userId)
@@ -58,6 +58,8 @@ angular.module("basic")
 
 
         })();
+        console.log(getUser);
+        console.log(getUser.data);
 
 
 
