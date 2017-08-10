@@ -98,7 +98,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             .then(function(response) {
                 console.log("You Created a Card");
                 var verify = response;
-
+                console.log(verify)
             })
     };
     this.myDate = new Date();
