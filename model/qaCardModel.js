@@ -10,7 +10,7 @@ var QaSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("QaCard", QaSchema);
+module.exports = mongoose.model("qacard", QaSchema);
 
 // var saleSchema = new mongoose.Schema({
 // 	name: {type:String},
