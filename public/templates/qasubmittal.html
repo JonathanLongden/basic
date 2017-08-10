@@ -21,7 +21,7 @@
             <br>
             <div class="form-group row">
                 <label for="RiskReportedBy " for='RiskReportedBy' style="color:white;" class="col-sm-2 col-form-label">Risk Reported By:</label>
-                <input class="form-control " type="text " ng-model="person " ng-attr-placeholder="{{personemail}}">
+                <input class="form-control " type="text " ng-model="person " ng-value="{{personemail}}">
                 <!-- <input class="form-control " type="text " ng-model="person " placeholder="Name "> -->
                 <!-- value="{{option.name}} -->
             </div>
@@ -29,9 +29,10 @@
             <div class="form-group row">
                 <br>
                 <label for="RiskCategory" style="color:white;" class="col-sm-2 col-form-label">Risk Category:</label>
-                <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
+                <input class="form-control " type="text " ng-model="category " value="Name">
+                <!-- <select name="RiskCategory " id="RiskCategory " ng-model="category.model ">
         <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
-                </select>
+                </select> -->
             </div>
             <br>
             <div class="form-group row">
