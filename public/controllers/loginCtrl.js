@@ -41,9 +41,6 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             userName: email(signUpEmail),
             password: password
         };
-        if (userSignup.userName == null) {
-            $scope.HideNames = true;
-        }
         mainServ.signupPostSignUp(userSignUp)
             .then(function(response) {
                 console.log(response);
