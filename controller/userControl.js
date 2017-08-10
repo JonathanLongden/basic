@@ -111,6 +111,7 @@ module.exports = {
             res.json({
                 user: "anonymous"
             })
+            return console.log(res.json);
         }
 
     },

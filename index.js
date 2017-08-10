@@ -45,6 +45,7 @@ app.get('/logout', userControl.logout); //logging out
 // app.post('/forgot', userControl.forogt) //password reset
 
 app.get('/users', userControl.getAllUsers);
+app.get('/user', userControl.getOneUser);
 app.get('/user/:id', userControl.getOneUser);
 app.put('/user/:id', userControl.update);
 app.post('/sale/:id', userControl.addqacard);
