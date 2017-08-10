@@ -34,7 +34,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
     // };
     function email(useremail) {
         var email = useremail;
-        var test = useremail.toString().Includes("woodardcurran.com");
+        var test = useremail.toString().includes("woodardcurran.com");
         if (test) {
             return email
         } else {

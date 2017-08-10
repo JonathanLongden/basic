@@ -32,10 +32,10 @@ angular.module("basic")
         (function() {
             mainServ.getKnownUser()
                 .then(function(response) {
-                    console.log(response);
+                    console.log(response); //{user:"anonymous"}
                     var user = response.data;
                     var local = response.data;
-                    console.log(local)
+                    console.log(local) //undefined for anoymous
                     console.log(local.userName)
                     if (user == "anonymous") {
                         //do something
