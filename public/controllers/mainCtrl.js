@@ -9,34 +9,21 @@ angular.module("basic")
         };
 
 
-
-        // $scope.Test = function() { //self-invoking function that responses to whether a user is log in or not
-
-        //     mainServ.getKnownUser()
-        //         .then(function(response) {
-        //             console.log(response);
-        //             var user = response.data;
-
-        //             if (user.userName) {
-        //                 //do nothing
-        //             } else {
-        //                 //do something
-        //                 $location.path('/landingPage');
-        //             }
-
-        //         });
-
-
-        // };
         //self-invoking function that responses to whether a user is log in or not
         (function() {
             mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response); //{user:"anonymous"}
+                    console.log(response.data);
+                    console.log(response.data.local);
+                    console.log(response.data.user);
+                    console.log(response.user);
+                    console.log(response.data.userName)
                     var user = response.data;
+
                     var local = response.data;
                     console.log(local) //undefined for anoymous
-                    console.log(local.userName)
+
                     if (user == "anonymous") {
                         //do something
                         $location.path('/landingPage');
