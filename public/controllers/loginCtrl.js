@@ -18,7 +18,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                     $location.path('forms');
                 } else {
                     $location.path('/landingPage');
-                    $scope.wrongCred = false;
+                    $scope.CorrectLogin = false;
                 }
             })
     };
