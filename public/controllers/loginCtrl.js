@@ -5,13 +5,18 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
     $scope.userName;
 
     $scope.postLogin = function(loginEmail, secret) {
-        var userLogin = {
-            userName: email(loginEmail),
-            password: secret
-        };
-        if (userLogin.userName == null) {
-            $scope.HideNames = true;
+        try {
+            var userLogin = {
+                userName: email(loginEmail),
+                password: secret
+            };
+            if (userLogin.userName == null) {
+                $scope.HideNames = true;
+            }
+        } catch (err) {
+            console.log(err);
         }
+
         mainServ.loginPostLogin(userLogin)
             .then(function(response) {
                 //console.log(response);

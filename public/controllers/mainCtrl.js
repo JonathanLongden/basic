@@ -16,9 +16,9 @@ angular.module("basic")
                     try {
                         console.log(response); //{user:"anonymous"}
                         console.log(response.data);
-                        console.log(response.results);
-                        console.log(response.results.local);
-                        //console.log(reponse.user);//undefined
+                        console.log(response.data.local);
+                        console.log(response.data.local.userName);
+
 
                         var user = response.data;
 
