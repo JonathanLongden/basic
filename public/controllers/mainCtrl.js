@@ -8,8 +8,8 @@ angular.module("basic")
                 .then(function(response) {})
         };
 
-        function real(reponse) {
-            var person = response.data.local.userName;
+        function real(data) {
+            var person = data.data.local.userName;
             try {
                 if (person) {
                     return true
@@ -32,13 +32,14 @@ angular.module("basic")
         (function() {
             mainServ.getKnownUser()
                 .then(function(response) {
+                    var data = response;
                     try {
                         // console.log(response); //{user:"anonymous"}
                         // console.log(response.data);
                         // console.log(response.data.local); //undefined for user anonymous
                         // console.log(response.data.local.userName); //Cannot read property userName of undefined
 
-                        var user = real(reponse);
+                        var user = real(data);
                         if (user) {
                             //true
                         } else {
@@ -47,13 +48,12 @@ angular.module("basic")
                     } catch (err) {
                         console.log(err);
                     } finally {
-                        var user = real(reponse);
+                        var user = real(data);
                         if (user) {
                             //true
                         } else {
                             $location.path('/landingPage');
                         }
-
                     }
 
                 });

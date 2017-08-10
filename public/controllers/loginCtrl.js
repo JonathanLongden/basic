@@ -30,6 +30,7 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             $scope.CorrectLogin = false;
             return email
         } else {
+            console.log("fail to login or signup");
             return null
             $scope.CorrectLogin = true;
         };
