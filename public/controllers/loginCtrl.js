@@ -1,6 +1,6 @@
 angular.module('basic').controller('loginCtrl', function($scope, $location, mainServ, $rootScope) {
 
-
+    $scope.CorrectLogin = false;
     $scope.wrongCred = true;
     $scope.userName;
 
@@ -9,6 +9,9 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             userName: email(loginEmail),
             password: secret
         };
+        if (userLogin.userName == null) {
+            $scope.HideNames = true;
+        }
         mainServ.loginPostLogin(userLogin)
             .then(function(response) {
                 //console.log(response);
@@ -46,6 +49,9 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
             userName: email(signUpEmail),
             password: password
         };
+        if (userSignup.userName == null) {
+            $scope.HideNames = true;
+        }
         mainServ.signupPostSignUp(userSignUp)
             .then(function(response) {
                 console.log(response);
