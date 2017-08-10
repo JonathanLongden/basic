@@ -2,7 +2,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
     this.myDate = new Date();
     this.isOpen = false;
-    $scope.person;
+    $scope.personemail = 'Hello';
 
     $scope.category = {
         model: null,
@@ -99,7 +99,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         try {
             if (person) {
                 return true;
-                $scope.person = data.data.local.userName;
+                $scope.personemail = data.data.local.userName;
             } else {
                 $location.path('/landingPage');
                 return null;
