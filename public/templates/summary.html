@@ -5,12 +5,21 @@
         </div>
     </row>
 </div>
-<div class="home" ng-controller="summaryCtrl">
+<div class="Summary" ng-controller="summaryCtrl">
     <br>
     <center>
         <h1 id="welcome">Summary of Cases</h1>
     </center>
     <br>
-    <br>
-    <p>How would you like to sort through this data</p>
+
+    <div class="User col-sm-12">
+        <center>
+            <usersummaryreports-directive></usersummaryreports-directive>
+        </center>
+    </div>
+    <div class="Admin col-sm-12" ng-hide="Admistration" class="ng-hide">
+        <center>
+            <admitsummaryreport-directive></admitsummaryreport-directive>
+        </center>
+    </div>
 </div>

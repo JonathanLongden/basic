@@ -38,8 +38,19 @@ angular.module("basic", ['ui.router'])
             .state("summary", {
                 url: "/summary",
                 templateUrl: "./templates/summary.html", // or template: '<h1>Home Page</h1>' 
-                controller: "qaCtrl"
+                controller: "summaryCtrl"
             })
+            .state("admitsummaryreports", {
+                url: "/admitsummaryreports",
+                templateUrl: "./templates/admitsummaryreports.html", // or template: '<h1>Home Page</h1>' 
+                controller: "summaryCtrl"
+            })
+            .state("usersummaryreports", {
+                url: "/usersummaryreports",
+                templateUrl: "./templates/usersummaryreports.html", // or template: '<h1>Home Page</h1>' 
+                controller: "summaryCtrl"
+            })
+
 
 
 
