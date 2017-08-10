@@ -19,16 +19,16 @@ module.exports = {
         });
     },
     //Added this for a demo
-    // createbyself: function(req, res, next) {
-    //     var qacard = new qaCardModel(req.body);
-    //     qacard.save(function(err, result) {
-    //         if (err) {
-    //             res.send(err);
-    //         } else {
-    //             res.send(result);
-    //         }
-    //     });
-    // },
+    createbyself: function(req, res, next) {
+        var qacard = new qaCardModel(req.body);
+        qacard.save(function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        });
+    },
     read: function(req, res) {
         qaCardModel
             .find(req.query)
