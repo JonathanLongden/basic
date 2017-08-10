@@ -16,18 +16,14 @@ angular.module("basic")
             mainServ.getKnownUser()
                 .then(function(response) {
                     console.log(response);
-                    var userID = response.data;
-                    var user;
+                    var user = response.data;
                     console.log(userID);
-                    console.log($scope.userId)
-                    console.log($userd)
-                    if (userID.facebook) {
-                        console.log(userID);
-                    } else if (userID.local) {
-                        console.log(userID);
+
+                    if (user.userName) {
+                        //do nothing
                     } else {
+                        //do something
                         $location.path('/landingPage');
-                        // logoutIcon = false;
                     }
 
                 });

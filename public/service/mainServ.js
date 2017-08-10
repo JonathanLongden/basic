@@ -32,9 +32,9 @@ angular.module("basic")
                     url: "/user"
                 })
                 .then(function(res) {
-                    console.log(res);
-                    console.log(res.data);
-                    return res;
+                    // console.log(res);
+                    // console.log(res.data);
+                    return res.data;
                 })
         }
 
