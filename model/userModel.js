@@ -20,7 +20,7 @@ var UserSchema = new Schema({
     loggedin: {
         type: Boolean
     },
-    qacard: [{ type: Schema.Types.ObjectId, ref: 'qacard' }]
+    qacard: [{ type: Schema.Types.ObjectId, ref: 'QaCard' }]
 });
 
 UserSchema.methods.generateHash = function(password) {

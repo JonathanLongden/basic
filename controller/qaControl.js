@@ -3,8 +3,9 @@ var qaCardModel = require('./../model/qaCardModel.js');
 module.exports = {
     create: function(req, res, next) {
         req.body._user = req.user._id;
+        console.log(req.body._user);
         var qacard = new qaCardModel(req.body);
-
+        console.log(qacard);
         qacard.save(function(err, result) {
             if (err) {
                 res.send(err);

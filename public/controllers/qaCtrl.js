@@ -63,30 +63,30 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     };
 
 
-    $scope.formInfo = {};
-    $scope.qaCard = function(mmddyyyy, person, category, description, mitigration) {
-        var qaCardData = {
-            riskObservationDate: mmddyyyy,
-            riskReportedBy: person,
-            riskCategory: category,
-            riskDescription: description,
-            riskMitigration: mitigration
+    // $scope.formInfo = {};
+    // $scope.qaCard = function(mmddyyyy, person, category, description, mitigration) {
+    //     var qaCardData = {
+    //         riskObservationDate: mmddyyyy,
+    //         riskReportedBy: person,
+    //         riskCategory: category,
+    //         riskDescription: description,
+    //         riskMitigration: mitigration
 
-        };
-        console.log(qaCardData);
-        mainServ.qcCardPost(qaCardData)
-            .then(function(response) {
-                //console.log("You have Signed in like a champ!");
-                var verify = response;
-                //console.log(response.data)
-                //  if (verify.user){
-                //     $location.path('map');
-                //     $scope.userLogin = "";
-                //   } else {
-                //     $scope.wrongCred = false;
-                //   }
-            })
-    };
+    //     };
+    //     console.log(qaCardData);
+    //     mainServ.qcCardPost(qaCardData)
+    //         .then(function(response) {
+    //             //console.log("You have Signed in like a champ!");
+    //             var verify = response;
+    //             //console.log(response.data)
+    //             //  if (verify.user){
+    //             //     $location.path('map');
+    //             //     $scope.userLogin = "";
+    //             //   } else {
+    //             //     $scope.wrongCred = false;
+    //             //   }
+    //         })
+    // };
 
     function real(data) {
         var person = data.data.local.userName;
