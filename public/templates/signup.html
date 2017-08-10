@@ -5,6 +5,9 @@
         </center>
         <row>
             <div class="col-sm-6 col-sm-offset-3">
+                <div ng-hide="CorrectLogin" class="ng-hide">
+                    <h1 style="color:red;">Please user your Professional Email from the Company!</h1>
+                </div>
                 <form ng-submit="postSignUp(signUpEmail, password)" ng-controller="loginCtrl">
                     <input class="form-control" type="email" ng-model="signUpEmail" placeholder="Email Address" />
                     <input class="form-control" type="password" ng-model="password" placeholder="Password" ng-require="true" />
