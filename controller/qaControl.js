@@ -2,11 +2,8 @@ var qaCardModel = require('./../model/qaCardModel.js');
 var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
-
         req.body._user = req.user._id;
-        console.log(req.body._user);
-        var qacard = new qaCardModel(req.body);
-        console.log(qacard);
+        var qacard = new qaCardModel(req.body._user);
         qacard.save(function(err, result) {
             if (err) {
                 res.send(err);
@@ -21,16 +18,16 @@ module.exports = {
         });
     },
     //Added this for a demo
-    createbyself: function(req, res, next) {
-        var qacard = new qaCardModel(req.body);
-        qacard.save(function(err, result) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(result);
-            }
-        });
-    },
+    // createbyself: function(req, res, next) {
+    //     var qacard = new qaCardModel(req.body);
+    //     qacard.save(function(err, result) {
+    //         if (err) {
+    //             res.send(err);
+    //         } else {
+    //             res.send(result);
+    //         }
+    //     });
+    // },
     read: function(req, res) {
         qaCardModel
             .find(req.query)
