@@ -3,7 +3,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
     $scope.userId;
     // $scope.success;
-    // $scope.addButton = "Add Sale";
+    $scope.addButton = "Add Quality Risk Card";
     // $scope.mySales;
 
     // (function(userInfo) {
@@ -81,10 +81,10 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             { id: '12', name: 'Deliverables' }
         ]
     };
-
+    // $scope.postSale = function(sale) {
     //(mmddyyyy, person, category, description, mitigration)
     $scope.formInfo = {};
-    $scope.qaCard = function(qacard) {
+    $scope.postQaCard = function(qacard) {
         // var qacard = {
         //     riskObservationDate: mmddyyyy,
         //     riskReportedBy: person,
@@ -108,11 +108,11 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
 
     function real(data) {
-        var person = data.data.local.userName;
+        var personemail = data.data.local.userName;
         try {
-            if (person) {
+            if (personemail) {
                 try {
-                    $scope.personemail = data.data.local.userName;
+                    $scope.person = data.data.local.userName;
                     return true;
                 } catch (err) {
                     console.log(err);

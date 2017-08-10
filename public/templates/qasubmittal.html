@@ -5,7 +5,7 @@
         </div>
     </row>
 </div>
-<div class="home" ng-controller="qaCtrl">
+<!-- <div class="home" ng-controller="qaCtrl">
     <div class="container">
         <br>
         <center>
@@ -13,34 +13,6 @@
         </center>
         <br>
         <br>
-        <!-- <div class="container text-center"> -->
-        <!-- <h2 id="create-title">Submittal of a Quality Risk Card</h2> -->
-        <!-- <div class="form-group"> -->
-        <!-- <center><input class="form-control" id="addSale" placeholder="Title" ng-model="sale.name">
-                    <br>
-                    <input class="form-control" id="addSale" placeholder="Address" ng-model="sale.address">
-                    <br>
-                    <input class="form-control" id="addSale" type="date" placeholder="Date" ng-model="sale.date"> -->
-        <!-- <br> -->
-        <!-- <input class="form-control" id="addSale" type="time" placeholder="Time" ng-model="sale.time"></center>  -->
-        <!-- </div>
-            <div class="add-container">
-                <textarea class="form-control" placeholder="Comments" ng-model="sale.comment" rows="4" cols="10"></textarea>
-            </div>
-            <button class="btn btn-success" id="addButton" type="button" ng-click="postSale(sale)">{{addButton}}</button>
-            <button class="btn btn-primary" id="toMap" type="button" ui-sref="map" ng-click="initMap()">To Map</button>
-            <button class="btn btn-primary" id="toSales" type="button" ng-click="getMySales()">Your Sales</button>
-
-            <center>
-                <div class="content-list" ng-repeat="sale in mySales track by $index">
-                    <h4 id="sale-list-content">{{sale.name | uppercase}}</h4>
-                    <h4 id="sale-list-content">{{sale.address | uppercase}}</h4>
-                    <h4 id="sale-list-content">{{sale.date | date}}</h4>
-                    <br>
-                    <button class="btn btn-primary" name="button" ng-click="deleteSale(sale._id)">Delete</button>
-                </div>
-            </center>
-        </div> -->
         <form ng-submit="qaCard(qacard)" ng-controller="qaCtrl">
             <div class="form-group row">
                 <label for="RiskObservationDate" style="color:white;" class="col-sm-2 col-form-label">Risk Observation Date: </label>
@@ -77,7 +49,6 @@
             <br>
             <br>
             <br>
-            <!-- <button class="btn btn-success" id="addButton" type="button" ng-click="postQaCard(qacard)">{{addButton}}</button> -->
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10 ">
                     <label for="button " style="color:white; " class="col-sm-2 col-form-label ">Submit:</label>
@@ -86,4 +57,36 @@
             </div>
         </form>
     </div>
+</div> -->
+<div class="container text-center">
+    <h2 id="create-title">Create Sale</h2>
+    <div class="form-group">
+        <center>
+            <input class="form-control" id="addqacard" type="date" class="angular-datepicker-input " ng-attr-placeholder="mm/dd/yyyy" ng-model=" qacard.mmddyyyy ">
+            <br>
+            <input class="form-control " id="addqacard " type="text " placeholder="Address " ng-model="qacard.person " ng-value="{{qacard.person}} " ng-attr-placeholder="{{person}} ">
+            <br>
+            <select class="form-control " id="addqacard " ng-model="qacard.category.model ">
+            <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
+            </select>
+            <br>
+        </center>
+    </div>
+    <div class="add-container ">
+        <textarea class="form-control " placeholder="description " ng-model="qacard.description " rows="4 " cols="10 "></textarea>
+    </div>
+    <div class="add-container ">
+        <textarea class="form-control " placeholder="mitigration " ng-model="qacard.mitigration " rows="4 " cols="10 "></textarea>
+    </div>
+    <button class="btn btn-success " id="addButton " type="button " ng-click="postQaCard(qacard) ">{{addButton}}</button>
+    <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button>
+    <button class="btn btn-primary " id="toSales " type="button " ng-click="getMySales() ">Your Sales</button> -->
+
+    <!-- <center><div class="content-list " ng-repeat="sale in mySales track by $index ">
+      <h4 id="sale-list-content ">{{sale.name | uppercase}}</h4>
+      <h4 id="sale-list-content ">{{sale.address | uppercase}}</h4>
+      <h4 id="sale-list-content ">{{sale.date | date}}</h4>
+      <br>
+      <button class="btn btn-primary " name="button " ng-click="deleteSale(sale._id) ">Delete</button>
+    </div></center> -->
 </div>
