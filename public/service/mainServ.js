@@ -29,7 +29,7 @@ angular.module("basic")
 
             return $http({
                     method: "GET",
-                    url: "/user"
+                    url: "/user/:id"
                 })
                 .then(function(res) {
                     console.log(res);
