@@ -14,32 +14,18 @@ angular.module("basic").directive("loginDirective", function() {
         }
 
     })
-    .directive('qasubmittalDirective', function() {
-        return {
-            templateUrl: 'qasubmittal.html',
-            restrict: "AE"
-        };
-    })
-    .directive("summaryDirective", function() {
+    .directive("adminreportDirective", function() {
 
         return {
-            templateUrl: './../template/summary.html',
+            templateUrl: './../templates/adminreport.html',
             restrict: "AE"
         }
 
     })
-    .directive("admitsummaryreportsDirective", function() {
+    .directive("reportsDirective", function() {
 
         return {
-            templateUrl: './../template/admitsummaryreports.html',
-            restrict: "AE"
-        }
-
-    })
-    .directive("usersummaryreportsDirective", function() {
-
-        return {
-            templateUrl: './../template/usersummaryreports.html',
+            templateUrl: './../templates/reports.html',
             restrict: "AE"
         }
 

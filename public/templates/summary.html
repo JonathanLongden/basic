@@ -8,18 +8,19 @@
 <div class="Summary" ng-controller="summaryCtrl">
     <br>
     <center>
-        <h1 id="welcome">Summary of Cases</h1>
+        <h1 id="welcome" style="color:White;">Summary of Cases</h1>
     </center>
     <br>
-
-    <div class="User col-sm-12">
-        <center>
-            <usersummaryreports-directive></usersummaryreports-directive>
-        </center>
-    </div>
-    <div class="Admin col-sm-12" ng-hide="Admistration" class="ng-hide">
-        <center>
-            <admitsummaryreport-directive></admitsummaryreport-directive>
-        </center>
+    <div class="container">
+        <div class="User col-sm-12">
+            <center>
+                <reports-directive></reports-directive>
+            </center>
+        </div>
+        <div class="Admin col-sm-12" ng-hide="Admistration" class="ng-hide">
+            <center>
+                <adminreport-directive></adminreport-directive>
+            </center>
+        </div>
     </div>
 </div>
