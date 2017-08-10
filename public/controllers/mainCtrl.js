@@ -15,6 +15,7 @@ angular.module("basic")
                     return true
                 } else {
                     return null
+                    $location.path('/landingPage');
                 };
             } catch (err) {
                 console.log(err);
@@ -23,7 +24,7 @@ angular.module("basic")
                     return true
                 } else {
                     return null
-
+                    $location.path('/landingPage');
                 };
             };
         };

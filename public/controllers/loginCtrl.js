@@ -1,7 +1,7 @@
 angular.module('basic').controller('loginCtrl', function($scope, $location, mainServ, $rootScope) {
 
-    $scope.CorrectLogin = false;
-    $scope.wrongCred = true;
+    $scope.CorrectLogin = true;
+    $scope.wrongpw = true;
     $scope.userName;
 
     $scope.postLogin = function(loginEmail, secret) {
@@ -17,8 +17,10 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                     //guiding user to forms
                     $location.path('forms');
                 } else {
-                    $location.path('/landingPage');
+                    $scope.wrongpw = false;
                     $scope.CorrectLogin = false;
+                    $location.path('/landingPage');
+
                 }
             })
     };
@@ -27,12 +29,12 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
         var email = useremail;
         var test = useremail.toString().includes("woodardcurran.com");
         if (test) {
-            $scope.CorrectLogin = false;
-            return email
-        } else {
-            console.log("fail to login or signup");
-            return null
             $scope.CorrectLogin = true;
+            return email;
+        } else {
+            $scope.CorrectLogin = false;
+            return null;
+
         };
     };
     $scope.postSignUp = function(signUpEmail, password) {
