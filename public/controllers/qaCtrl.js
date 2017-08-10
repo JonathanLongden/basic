@@ -1,7 +1,7 @@
 angular.module('basic').controller('qaCtrl', function($scope, $location, mainServ) {
 
 
-    // $scope.userId;
+    $scope.userId;
     // $scope.success;
     // $scope.addButton = "Add Sale";
     // $scope.mySales;
@@ -62,7 +62,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     //   }
     this.myDate = new Date();
     this.isOpen = false;
-    $scope.personemail = 'Hello';
+    $scope.person = 'Hello';
 
     $scope.category = {
         model: null,
@@ -94,7 +94,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
         // };
         console.log(qacard);
-        mainServ.qcCardPost(qacard.qacard)
+        mainServ.qcCardPost(qacard)
             .then(function(response) {
                 console.log("You Created a Card");
                 var verify = response;
@@ -143,7 +143,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
                     var user = real(data);
                     if (user) {
-                        //true
+                        $scope.userId = response.data._id;
                     } else {
                         $location.path('/landingPage');
                     }
