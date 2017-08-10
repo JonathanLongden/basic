@@ -84,16 +84,17 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
 
     $scope.formInfo = {};
-    $scope.qaCard = function(mmddyyyy, person, category, description, mitigration) {
-        var qaCardData = {
-            riskObservationDate: mmddyyyy,
-            riskReportedBy: person,
-            riskCategory: category,
-            riskDescription: description,
-            riskMitigration: mitigration
+    // $scope.qaCard = function(mmddyyyy, person, category, description, mitigration) {
+    //     var qaCardData = {
+    //         riskObservationDate: mmddyyyy,
+    //         riskReportedBy: person,
+    //         riskCategory: category,
+    //         riskDescription: description,
+    //         riskMitigration: mitigration
 
-        };
-        console.log(qaCardData);
+    //     };
+    //     console.log(qaCardData);
+    $scope.postQaCard = function(sale) {
         mainServ.qcCardPost(qaCardData)
             .then(function(response) {
                 console.log("You Created a Card");

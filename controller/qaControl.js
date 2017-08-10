@@ -3,7 +3,7 @@ var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
         req.body._user = req.user._id;
-        var qacard = new qaCardModel(req.body._user);
+        var qacard = new qaCardModel(req.body);
         qacard.save(function(err, result) {
             if (err) {
                 res.send(err);
