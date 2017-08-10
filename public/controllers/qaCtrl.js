@@ -85,12 +85,13 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     //(mmddyyyy, person, category, description, mitigration)
     $scope.formInfo = {};
     $scope.postQaCard = function(qacard) {
-        // var qacard = {
-        //     riskObservationDate: mmddyyyy,
-        //     riskReportedBy: person,
-        //     riskCategory: category,
-        //     riskDescription: description,
-        //     riskMitigration: mitigration
+        qacard.person = $scope.person
+            // var qacard = {
+            //     riskObservationDate: mmddyyyy,
+            //     riskReportedBy: person,
+            //     riskCategory: category,
+            //     riskDescription: description,
+            //     riskMitigration: mitigration
 
         // };
         console.log(qacard);
@@ -101,10 +102,6 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
                 console.log(verify)
             })
     };
-    this.myDate = new Date();
-    this.isOpen = false;
-
-
 
 
     function real(data) {
