@@ -58,7 +58,7 @@ app.put('/user/:id', userControl.update);
 
 //When sale is created, add sale id to user sale array
 app.post('/qacard', qaControl.create, userControl.addqacard); //Creating card that tieing to User
-// app.get('/qacard', qaControl.read);
+app.get('/qacard', qaControl.read);
 // app.get('/qacard/:id', qaControl.readById);
 // app.get('/mysales', qaControl.readByUser);
 // app.put('/qacard/:id', qaControl.update);
