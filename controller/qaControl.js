@@ -1,7 +1,10 @@
 var qaCardModel = require('./../model/qaCardModel.js');
-//var userControl = require('./userControl');
+var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
+        console.log(req);
+        console.log(res);
+        console.log(next);
         req.body._user = req.user._id;
         console.log(req.body._user);
         var qacard = new qaCardModel(req.body);
