@@ -77,6 +77,18 @@ angular.module("basic")
                 })
         }
 
+        this.qcCardPost = function(qcCard) {
+            console.log(qcCard);
+            return $http({
+                method: 'POST',
+                url: '/qcCard',
+                data: qcCard
+            }).then(function(res) {
+                return res.data;
+                console.log(res.data);
+            });
+        };
+
 
         // this.getfacebooksignup = function() {
         //     return $http({
@@ -92,59 +104,49 @@ angular.module("basic")
 
 
 
-
-        this.getSales = function() {
-            return $http({
-                method: 'GET',
-                url: '/sales'
-            }).then(function(res) {
-                return res.data;
-            })
-        }
-
-
-        this.getAllSales = function() {
-            return $http({
-                method: 'GET',
-                url: '/sales'
-            }).then(function(res) {
-
-                return res.data;
-            })
-        }
+        //Start of qaCard stuff
+        // this.getSales = function() {
+        //     return $http({
+        //         method: 'GET',
+        //         url: '/sales'
+        //     }).then(function(res) {
+        //         return res.data;
+        //     })
+        // }
 
 
-        // this is for getting just one sale!
-        this.getSale = function() {
-            return $http({
-                method: 'GET',
-                url: '/sales/'
-            }).then(function(res) {
-                return res.data;
-            })
-        }
+        // this.getAllSales = function() {
+        //     return $http({
+        //         method: 'GET',
+        //         url: '/sales'
+        //     }).then(function(res) {
+
+        //         return res.data;
+        //     })
+        // }
 
 
-        this.postSale = function(sale) {
-            console.log(sale);
-            return $http({
-                method: 'POST',
-                url: '/sale',
-                data: sale
-            }).then(function(res) {
-                return res.data;
-            });
-        };
+        // // this is for getting just one sale!
+        // this.getSale = function() {
+        //     return $http({
+        //         method: 'GET',
+        //         url: '/sales/'
+        //     }).then(function(res) {
+        //         return res.data;
+        //     })
+        // }
 
 
-        this.getMySales = function() {
-            return $http({
-                method: 'GET',
-                url: '/mysales'
-            }).then(function(res) {
-                return res.data;
-            })
-        }
+
+
+        // this.getMySales = function() {
+        //     return $http({
+        //         method: 'GET',
+        //         url: '/mysales'
+        //     }).then(function(res) {
+        //         return res.data;
+        //     })
+        // }
 
 
         // this.updateSale = function(sale){

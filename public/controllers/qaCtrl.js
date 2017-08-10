@@ -36,15 +36,9 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         console.log(qaCardData);
         mainServ.qcCardPost(qaCardData)
             .then(function(response) {
-                //console.log("You have Signed in like a champ!");
+                console.log("You Created a Card");
                 var verify = response;
-                //console.log(response.data)
-                //  if (verify.user){
-                //     $location.path('map');
-                //     $scope.userLogin = "";
-                //   } else {
-                //     $scope.wrongCred = false;
-                //   }
+
             })
     };
     this.myDate = new Date();

@@ -38,6 +38,11 @@ app.use(express.static(__dirname + '/public'));
 var userControl = require('./controller/userControl.js');
 var qaControl = require('./controller/qaControl.js')
 
+//POST -- Create
+//GET  -- Read
+//PUT  -- Update/Replace
+//Patch -- Update/Modify
+//Delete -- Delete
 
 app.post('/login', userControl.login); //logining in
 app.post('/signup', userControl.signup); //signing up
@@ -48,11 +53,11 @@ app.get('/users', userControl.getAllUsers);
 app.get('/user', userControl.getOneUser);
 app.get('/user/:id', userControl.getOneUser);
 app.put('/user/:id', userControl.update);
-//app.post('/sale/:id', userControl.addqacard);
+// app.post('/sale/:id', userControl.addqacard);
 // app.put('/sale/:id', userControl.updateSale);
 
 //When sale is created, add sale id to user sale array
-// app.post('/qacard', qaControl.create, userControl.addqacard);
+app.post('/qacard', qaControl.create, userControl.addqacard); //Creating card that tieing to User
 // app.get('/qacard', qaControl.read);
 // app.get('/qacard/:id', qaControl.readById);
 // app.get('/mysales', qaControl.readByUser);
