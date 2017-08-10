@@ -58,7 +58,7 @@ angular.module("basic")
 
 
         })();
-        console.log(getUser);
+
         console.log(getUser.data);
 
 
