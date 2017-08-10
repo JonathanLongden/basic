@@ -77,16 +77,29 @@ angular.module("basic")
                 })
         }
 
+        // this.qcCardPost = function(qacard) {
+        //     console.log(qacard);
+        //     return $http({
+        //         method: 'POST',
+        //         url: '/qacard',
+        //         data: qacard
+
+        //     }).then(function(res) {
+        //         return res.data;
+        //         console.log(res.data);
+        //     });
+        // };
+
         this.qcCardPost = function(qacard) {
             console.log(qacard);
             return $http({
                 method: 'POST',
                 url: '/qacard',
                 data: qacard
-
             }).then(function(res) {
-                return res.data;
+                console.log(res);
                 console.log(res.data);
+                return res.data;
             });
         };
 
