@@ -16,10 +16,10 @@ angular.module("basic")
                     try {
                         console.log(response); //{user:"anonymous"}
                         console.log(response.data);
-                        console.log(reponse.user);
-                        console.log(reponse.local);
-                        console.log(response.local.userName);
-                        console.log(response.data); //undefined
+                        console.log(response.results);
+                        console.log(response.results.local);
+                        //console.log(reponse.user);//undefined
+
                         var user = response.data;
 
                         var local = response.data;
