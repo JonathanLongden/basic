@@ -43,14 +43,8 @@ angular.module("basic")
                             $location.path('/landingPage');
                         }
                     } catch (err) {
+                        $location.path('/landingPage');
                         console.log(err);
-                    } finally {
-                        var user = real(data);
-                        if (user) {
-                            //true
-                        } else {
-                            $location.path('/landingPage');
-                        }
                     }
 
                 });

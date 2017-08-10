@@ -18,7 +18,6 @@ angular.module('basic').controller('loginCtrl', function($scope, $location, main
                     $location.path('forms');
                 } else {
                     $scope.wrongpw = false;
-                    $scope.CorrectLogin = false;
                     $location.path('/landingPage');
 
                 }
