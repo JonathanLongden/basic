@@ -26,8 +26,7 @@ angular.module("basic")
 
 
         this.getKnownUser = function(userInfo) {
-            console.log(userInfo);
-            console.log(userInfo.data);
+
             return $http({
                     method: "GET",
                     url: "/user"
