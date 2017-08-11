@@ -14,7 +14,7 @@ module.exports = {
                 //call userControl.addSale
 
                 console.log(req.user);
-                next(result);
+                next(req);
             }
         });
     },
