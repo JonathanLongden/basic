@@ -117,7 +117,7 @@ module.exports = {
     addqacard: function(req, res) {
         console.log(req.id);
         UserModel.findByIdAndUpdate(
-            req.user._id, { $push: { "qacard": req.id } }, { safe: true, upsert: true },
+            req.user._id, { $push: { "Card": req.id } }, { safe: true, upsert: true },
             function(err, model) {
                 if (err) console.log(err);
                 res.send(model);
