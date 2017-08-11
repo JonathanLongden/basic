@@ -5,12 +5,13 @@ module.exports = {
         req.body._user = req.user._id;
         var card = new cardModel(req.body);
 
-        card.save(function(err, res) {
+        card.save(function(err, result) {
             if (err) {
                 res.send(err);
             } else {
                 //add card id to req
                 req.id = res._id;
+                res.send(result);
                 //call userControl.addSale
                 // console.log(res)
                 // console.log(req.id)
