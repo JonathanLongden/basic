@@ -12,11 +12,11 @@ module.exports = {
                 //add card id to req
                 req.id = res._id;
                 //call userControl.addSale
-                console.log(res)
-                console.log(req.id)
-                console.log(req)
-                console.log(req.user);
-                // next();//was here before
+                // console.log(res)
+                // console.log(req.id)
+                // console.log(req)
+                // console.log(req.user);
+                next(); //was here before
                 //req.send()
                 //res.send(result)
                 //next(req);

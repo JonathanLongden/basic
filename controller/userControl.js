@@ -123,7 +123,7 @@ module.exports = {
                 if (err) {
                     console.log(err);
                 }
-
+                console.log(model)
                 res.send(model);
             }
         )
