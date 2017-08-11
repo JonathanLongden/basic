@@ -115,7 +115,7 @@ module.exports = {
         }
 
     },
-    addqacard: function(req, res) {
+    addcard: function(req, res) {
         console.log(req.id);
         UserModel.findByIdAndUpdate(
             req.user._id, { $push: { "card": req.id } }, { safe: true, upsert: true },
@@ -128,6 +128,18 @@ module.exports = {
             }
         )
     },
+    // addSale: function(req, res){
+    // 	console.log(req.id);
+    // 	UserModel.findByIdAndUpdate(
+    // 		req.user._id,
+    // 		{$push: {"sale":req.id}},
+    // 		{safe: true, upsert: true},
+    // 		function(err, model){
+    // 			if(err) console.log(err);
+    // 			res.send(model);
+    // 		}
+    // 	)
+    // },
     deleteqacard: function(req, res) {
         console.log()
         UserModel.findOne({ _id: req._user }, function(err, user) {

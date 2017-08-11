@@ -8,19 +8,28 @@ module.exports = {
         card.save(function(err, result) {
             if (err) {
                 res.send(err);
-            } else {
-                //add card id to req
-                req.id = res._id;
-
-                //call userControl.addSale;
-                next(); //was here before
-                res.send(result);
-                //req.send()
-                //res.send(result)
-                //next(req);
             }
+            //add sale id to req
+            req.id = result._id;
+            //call userControl.addSale
+
+            //console.log(req.user);
+            next();
+
         });
     },
+    // addSale: function(req, res){
+    // 	console.log(req.id);
+    // 	UserModel.findByIdAndUpdate(
+    // 		req.user._id,
+    // 		{$push: {"sale":req.id}},
+    // 		{safe: true, upsert: true},
+    // 		function(err, model){
+    // 			if(err) console.log(err);
+    // 			res.send(model);
+    // 		}
+    // 	)
+    // },
     //Added this for a demo
     createbyself: function(req, res, next) {
         var card = new cardModel(req.body);
