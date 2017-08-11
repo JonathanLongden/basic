@@ -4,62 +4,10 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.userId;
     // $scope.success;
     $scope.addButton = "Add Quality Risk Card";
+    $scope.addmButton = "Add Mitigation Discussion Card";
     // $scope.mySales;
 
-    // (function(userInfo) {
-    //     console.log(userInfo)
-    //     mainServ.getKnownUser(userInfo)
-    //         .then(function(response) {
-    //             //console.log(response);
-    //             var verify = response.data;
-    //             // console.log($scope.userId);
-    //             if (verify.local) {
-    //                 $scope.userId = response.data._id;
-    //             } else if (verify.facebook) {
-    //                 $scope.userId = response.data._id;
-    //             }
 
-    //         });
-
-    // })()
-
-    // var geocoder = new google.maps.Geocoder();
-
-
-
-    // $scope.postSale = function(sale) {
-
-    //         var addObj = {
-    //             address: sale.address + " Bozeman"
-    //         };
-
-    //         console.log(addObj);
-
-    //         geocoder.geocode(addObj, function(results, status) {
-    //             var temp = results[0].geometry.viewport;
-
-
-    //             sale.lat = temp.b.b;
-    //             sale.lng = temp.f.f;
-    //             mainServ.postSale(sale)
-    //             $scope.getMySales();
-    //         })
-
-    //     }
-    //   $scope.getMySales = function(){
-    //     mainServ.getMySales()
-    //     .then(function(response){
-    //       $scope.mySales = response;
-    //     })
-    //   }
-
-    //   $scope.deleteSale = function(id){
-    //     console.log(id);
-    //     mainServ.deleteSale(id)
-    //     .then(function(response){
-    //       $scope.getMySales();
-    //     })
-    //   }
     this.myDate = new Date();
     this.isOpen = false;
     $scope.riskReportedBy = 'Hello';
@@ -81,26 +29,17 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             { id: '12', name: 'Deliverables' }
         ]
     };
-    // $scope.postSale = function(sale) {
-    //(mmddyyyy, person, category, description, mitigration)
-    $scope.formInfo = {};
+
     $scope.postCard = function(card) {
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
-        // var qacard = {
-        //     riskObservationDate: mmddyyyy,
-        //     riskReportedBy: person,
-        //     riskCategory: category,
-        //     riskDescription: description,
-        //     riskMitigration: mitigration
 
-        // };
-        console.log(card);
+        //console.log(card);
         mainServ.qcCardPost(card)
             .then(function(response) {
                 console.log("You Created a Card");
                 var verify = response;
-                console.log(verify)
+                //console.log(verify)
             })
     };
 
@@ -134,11 +73,6 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             .then(function(response) {
                 var data = response;
                 try {
-                    // console.log(response); //{user:"anonymous"}
-                    // console.log(response.data);
-                    // console.log(response.data.local); //undefined for user anonymous
-                    // console.log(response.data.local.userName); //Cannot read property userName of undefined
-
                     var user = real(data);
                     if (user) {
                         $scope.userId = response.data._id;
