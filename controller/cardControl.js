@@ -1,5 +1,5 @@
-var cardModel = require('./../model/cardModel.js');
-var userControl = require('./userControl');
+var cardModel = require('./../model/cardModel');
+//var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
         req.body._user = req.user._id;

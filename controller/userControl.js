@@ -123,7 +123,7 @@ module.exports = {
                 if (err) return res.send(500, { error: err });
                 console.log(model);
                 res.send(model);
-                return res.send("succesfully saved");
+                //return res.send("succesfully saved");
             }
         )
     },
