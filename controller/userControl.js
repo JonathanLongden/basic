@@ -102,6 +102,7 @@ module.exports = {
                 },
                 function(err, user) {
                     if (err) {
+                        res.send(err);
                         return console.log(err);
                     } else {
                         res.json(user)
@@ -119,7 +120,10 @@ module.exports = {
         UserModel.findByIdAndUpdate(
             req.user._id, { $push: { "card": req.id } }, { safe: true, upsert: true },
             function(err, model) {
-                if (err) console.log(err);
+                if (err) {
+                    console.log(err);
+                }
+
                 res.send(model);
             }
         )

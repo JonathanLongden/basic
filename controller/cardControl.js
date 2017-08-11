@@ -5,16 +5,21 @@ module.exports = {
         req.body._user = req.user._id;
         var card = new cardModel(req.body);
 
-        card.save(function(err, result) {
+        card.save(function(err, res) {
             if (err) {
                 res.send(err);
             } else {
                 //add card id to req
-                req.id = result._id;
+                req.id = res._id;
                 //call userControl.addSale
-
+                console.log(res)
+                console.log(req.id)
+                console.log(req)
                 console.log(req.user);
-                next(req);
+                // next();//was here before
+                //req.send()
+                //res.send(result)
+                //next(req);
             }
         });
     },
