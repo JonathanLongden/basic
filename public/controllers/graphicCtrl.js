@@ -1,4 +1,4 @@
-angular.module('basic').controller('graphicCtrl.js', function($scope, $location, mainServ, $rootScope) {
+angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
     $scope.pieChartConfig = {
         graphData: [
