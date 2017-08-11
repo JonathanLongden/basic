@@ -62,7 +62,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     //   }
     this.myDate = new Date();
     this.isOpen = false;
-    $scope.person = 'Hello';
+    $scope.riskReportedBy = 'Hello';
 
     $scope.category = {
         model: null,
@@ -84,9 +84,9 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     // $scope.postSale = function(sale) {
     //(mmddyyyy, person, category, description, mitigration)
     $scope.formInfo = {};
-    $scope.postQaCard = function(qacard) {
-        qacard.person = $scope.person;
-        qacard.category = qacard.category.model;
+    $scope.postCard = function(card) {
+        card.riskReportedBy = $scope.riskReportedBy;
+        card.riskCategory = card.riskCategory.model;
         // var qacard = {
         //     riskObservationDate: mmddyyyy,
         //     riskReportedBy: person,
@@ -95,8 +95,8 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         //     riskMitigration: mitigration
 
         // };
-        console.log(qacard);
-        mainServ.qcCardPost(qacard)
+        console.log(card);
+        mainServ.qcCardPost(card)
             .then(function(response) {
                 console.log("You Created a Card");
                 var verify = response;
@@ -110,7 +110,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         try {
             if (personemail) {
                 try {
-                    $scope.person = data.data.local.userName;
+                    $scope.riskReportedBy = data.data.local.userName;
                     return true;
                 } catch (err) {
                     console.log(err);

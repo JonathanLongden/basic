@@ -9,25 +9,25 @@
     <h2 id="create-title">Create Sale</h2>
     <div class="form-group">
         <center>
-            <input class="form-control" id="addqacard" type="date" class="angular-datepicker-input " ng-attr-placeholder="mm/dd/yyyy" ng-model=" qacard.mmddyyyy ">
+            <input class="form-control" id="card" type="date" class="angular-datepicker-input " ng-attr-placeholder="mm/dd/yyyy" ng-model=" qacard.riskObservationDate ">
             <br>
-            <input class="form-control " id="addqacard " type="text " placeholder="Address " ng-model="qacard.person " ng-value="{{qacard.person}} " ng-attr-placeholder="{{person}} ">
+            <input class="form-control " id="card " type="text " placeholder="Address " ng-model="card.riskReportedBy " ng-value="{{card.riskReportedBy}} " ng-attr-placeholder="{{riskReportedBy}} ">
             <br>
-            <select class="form-control " id="addqacard " ng-model="qacard.category.model ">
-            <option ng-repeat="option in category.availableOptions " value="{{option.name}} ">{{option.name}}</option>
+            <select class="form-control " id="card " ng-model="card.riskCategory.model ">
+            <option ng-repeat="option in riskCategory.availableOptions " value="{{option.name}} ">{{option.name}}</option>
             </select>
             <br>
         </center>
     </div>
     <div class="add-container ">
-        <textarea class="form-control " placeholder="Write a description" ng-model="qacard.description " rows="4 " cols="10 "></textarea>
+        <textarea class="form-control " placeholder="Write a description" ng-model="card.riskDescription " rows="4 " cols="10 "></textarea>
     </div>
     <br>
     <br>
     <div class="add-container ">
-        <textarea class="form-control " placeholder="Wite aMitigration Plan" ng-model="qacard.mitigration " rows="4 " cols="10 "></textarea>
+        <textarea class="form-control " placeholder="Wite a Mitigration Plan" ng-model="card.riskMitigration " rows="4 " cols="10 "></textarea>
     </div>
-    <button class="btn btn-success " id="addButton " type="button " ng-click="postQaCard(qacard) ">{{addButton}}</button>
+    <button class="btn btn-success " id="addButton " type="button " ng-click="postCard(card) ">{{addButton}}</button>
     <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button>
     <button class="btn btn-primary " id="toSales " type="button " ng-click="getMySales() ">Your Sales</button> -->
 
