@@ -118,16 +118,19 @@ module.exports = {
     addcard: function(req, res) {
         console.log(req.id);
         UserModel.findByIdAndUpdate(
-            req.user._id, { $push: { "card": req.id } }, { safe: true, upsert: true },
+            req.user._id, { $push: { "card": req.id } }, { upsert: true },
             function(err, model) {
-                if (err) {
-                    console.log(err);
-                }
-                console.log(model)
-                res.send(model);
+                if (err) return res.send(500, { error: err });
+                return res.send("succesfully saved");
             }
         )
     },
+    //     var query = {'username':req.user.username};
+    // req.newData.username = req.user.username;
+    // MyModel.findOneAndUpdate(query, req.newData, {upsert:true}, function(err, doc){
+    //     if (err) return res.send(500, { error: err });
+    //     return res.send("succesfully saved");
+    // });
     // addSale: function(req, res){
     // 	console.log(req.id);
     // 	UserModel.findByIdAndUpdate(
