@@ -1,7 +1,7 @@
 angular.module('basic').controller('summaryCtrl', function($scope, $location, mainServ) {
     $scope.personemail = 'Hello';
     $scope.Admistration = true; //true hides, false shows
-    $scope.piechart = true;
+    //$scope.piechart = true;
 
     function real(data) {
         var person = data.data.local.userName;
