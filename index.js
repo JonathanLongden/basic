@@ -66,7 +66,7 @@ app.get('/card', cardControl.read);
 
 
 // app.get('/qacard', cardControl.read);
-app.post('/card', cardControl.create);
+// app.post('/card', cardControl.create);
 // app.get('/qacard:id', cardControl.readById);
 // app.put('/qacard:id', cardControl.update);
 

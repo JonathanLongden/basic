@@ -86,7 +86,7 @@ module.exports = {
     },
 
     getAllUsers: function(req, res) {
-        UserModel.find().populate('qacard').exec(function(err, result) {
+        UserModel.find().populate('card').exec(function(err, result) {
             if (err) {
                 res.send(err);
             } else {
@@ -117,7 +117,7 @@ module.exports = {
     addqacard: function(req, res) {
         console.log(req.id);
         UserModel.findByIdAndUpdate(
-            req.user._id, { $push: { "Card": req.id } }, { safe: true, upsert: true },
+            req.user._id, { $push: { "card": req.id } }, { safe: true, upsert: true },
             function(err, model) {
                 if (err) console.log(err);
                 res.send(model);
