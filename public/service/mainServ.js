@@ -94,7 +94,7 @@ angular.module("basic")
             console.log(qacard);
             return $http({
                 method: 'POST',
-                url: '/qacard',
+                url: '/card',
                 data: qacard
             }).then(function(res) {
                 console.log(res);
