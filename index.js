@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 var userControl = require('./controller/userControl.js');
-var qaControl = require('./controller/qaControl.js')
+var cardControl = require('./controller/cardControl.js')
 
 //POST -- Create
 //GET  -- Read
@@ -57,18 +57,18 @@ app.put('/user/:id', userControl.update);
 // app.put('/sale/:id', userControl.updateSale);
 
 //When sale is created, add sale id to user sale array
-app.post('/qacard', qaControl.create, userControl.addqacard, ); //Creating card that tieing to User
-app.get('/qacard', qaControl.read);
-// app.get('/qacard/:id', qaControl.readById);
-// app.get('/mysales', qaControl.readByUser);
-// app.put('/qacard/:id', qaControl.update);
-// app.delete('/qacard/:id', qaControl.delete, userControl.deleteqacard);
+app.post('/card', cardControl.create, userControl.addqacard, ); //Creating card that tieing to User
+app.get('/card', cardControl.read);
+// app.get('/qacard/:id', cardControl.readById);
+// app.get('/mysales', cardControl.readByUser);
+// app.put('/qacard/:id', cardControl.update);
+// app.delete('/qacard/:id', cardControl.delete, userControl.deleteqacard);
 
 
-// app.get('/qacard', qaControl.read);
-app.post('/qacard', qaControl.create);
-// app.get('/qacard:id', qaControl.readById);
-// app.put('/qacard:id', qaControl.update);
+// app.get('/qacard', cardControl.read);
+app.post('/card', cardControl.create);
+// app.get('/qacard:id', cardControl.readById);
+// app.put('/qacard:id', cardControl.update);
 
 mongoose.connect(
     //"mongodb://localhost:27017/sales"

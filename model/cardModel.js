@@ -1,17 +1,16 @@
 var mongoose = require('mongoose');
 
-
-var qaSchema = new mongoose.Schema({
-
-    riskObservationDate: { type: Date, default: '01/01/1990' },
+var cardSchema = new mongoose.Schema({
+    _user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    riskObservationDate: { type: Date },
     riskReportedBy: { type: String },
     riskCategory: { type: String },
     riskDescription: { type: String },
     riskMitigration: { type: String }
 
-});
+})
 
-module.exports = qaSchema
+module.exports = mongoose.model("Card", cardSchema);
 
 // var saleSchema = new mongoose.Schema({
 // 	name: {type:String},

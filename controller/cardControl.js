@@ -1,15 +1,15 @@
-var qaCardModel = require('./../model/qaCardModel.js');
+var cardModel = require('./../model/cardModel.js');
 var userControl = require('./userControl');
 module.exports = {
     create: function(req, res, next) {
         req.body._user = req.user._id;
-        var sale = new qaCardModel(req.body);
+        var card = new cardModel(req.body);
 
-        sale.save(function(err, result) {
+        card.save(function(err, result) {
             if (err) {
                 res.send(err);
             }
-            //add sale id to req
+            //add card id to req
             req.id = result._id;
             //call userControl.addSale
 
@@ -20,8 +20,8 @@ module.exports = {
     },
     //Added this for a demo
     createbyself: function(req, res, next) {
-        var qacard = new qaCardModel(req.body);
-        qacard.save(function(err, result) {
+        var card = new cardModel(req.body);
+        card.save(function(err, result) {
             if (err) {
                 res.send(err);
             } else {
@@ -30,7 +30,7 @@ module.exports = {
         });
     },
     read: function(req, res) {
-        qaCardModel
+        cardModel
             .find(req.query)
             .exec(function(err, result) {
                 if (err) {
@@ -40,7 +40,7 @@ module.exports = {
             })
     },
     readById: function(req, res) {
-        qaCardModel.findById(req.params.id, req.body, function(err, result) {
+        cardModel.findById(req.params.id, req.body, function(err, result) {
             if (err) {
                 res.send(err)
             }
@@ -48,7 +48,7 @@ module.exports = {
         })
     },
     readByUser: function(req, res) {
-        qaCardModel.find({ _user: req.user._id }).exec(function(err, result) {
+        cardModel.find({ _user: req.user._id }).exec(function(err, result) {
             if (err) {
                 res.send(err)
             } else {
@@ -57,7 +57,7 @@ module.exports = {
         })
     },
     update: function(req, res) {
-        qaCardModel.findByIdAndUpdate(req.params.id, req.body, function(err, result) {
+        cardModel.findByIdAndUpdate(req.params.id, req.body, function(err, result) {
             if (err) {
                 res.send(err);
             }
@@ -65,7 +65,7 @@ module.exports = {
         })
     },
     delete: function(req, res, next) {
-        qaCardModel.findByIdAndRemove(req.params.id, req.body, function(err, result) {
+        cardModel.findByIdAndRemove(req.params.id, req.body, function(err, result) {
             if (err) {
                 res.send(err);
             }
