@@ -64,7 +64,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     this.isOpen = false;
     $scope.riskReportedBy = 'Hello';
 
-    $scope.category = {
+    $scope.riskCategory = {
         model: null,
         availableOptions: [
             { id: '1', name: 'Sample Contaminations/Bias Potential' },
