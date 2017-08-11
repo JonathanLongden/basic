@@ -12,12 +12,15 @@
     </center>
     <br>
     <div class="container">
-        <div class="User col-sm-12">
+        <div class="User col-sm-12" ng-show="piechart" class="ng-show">
             <center>
                 <graphic-directive></graphic-directive>
             </center>
         </div>
     </div>
+    <center>
+        <button ng-show="piechart == 'display' ? true : false" class="btn btn-success">Save</button>
+    </center>
     <div class="container">
         <div class="User col-sm-12">
             <center>
