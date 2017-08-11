@@ -90,12 +90,12 @@ angular.module("basic")
         //     });
         // };
 
-        this.qcCardPost = function(qacard) {
-            console.log(qacard);
+        this.qcCardPost = function(card) {
+            console.log(card);
             return $http({
                 method: 'POST',
                 url: '/card',
-                data: qacard
+                data: card
             }).then(function(res) {
                 console.log(res);
                 console.log(res.data);
