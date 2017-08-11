@@ -30,3 +30,11 @@ angular.module("basic").directive("loginDirective", function() {
         }
 
     })
+    .directive("graphicDirective", function() {
+
+        return {
+            templateUrl: './../templates/graphic.html',
+            restrict: "AE"
+        }
+
+    })

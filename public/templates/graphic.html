@@ -1,0 +1,44 @@
+<div class="home container text-center" ng-controller="graphicCtrl">
+    <br>
+    <br>
+    <br>
+    <div class="form-horizontal">
+        <center>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="control-label" for="blue"> blue: </label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[0].value" placeholder="A">
+                </div>
+                <div class="col-sm-4">
+                    <label for="light-blue">light-blue:</label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[1].value" placeholder="B">
+                </div>
+                <div class="col-sm-4">
+                    <label for="orange">orange:</label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[2].value" placeholder="C">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="tan">tan:</label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[3].value" placeholder="D">
+                </div>
+                <div class="col-sm-4">
+                    <label for="green">green:</label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[4].value" placeholder="E">
+                </div>
+                <div class="col-sm-4">
+                    <label for="light-green">light-green:</label>
+                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[5].value" placeholder="E">
+                </div>
+            </div>
+        </center>
+    </div>
+    <br>
+    <br>
+
+    <div class="chart-container col-md-12">
+        <simple-pie-chart chart-config="pieChartConfig"></simple-pie-chart>
+    </div>
+
+</div>
