@@ -5,14 +5,6 @@
         </div>
     </row>
 </div>
-
-<div class="form-group row">
-    <row>
-        <div class="col-sm-6">
-            <button class="btn btn-warning " href="/forms " id="forms " ui-sref="forms " style="color:white; ">Back to Forms</button>
-        </div>
-    </row>
-</div>
 <div class="container text-center">
     <h2 id="create-title">Quality Risk Mitigation Discussion and Directions</h2>
     <div class="form-group">
@@ -31,6 +23,8 @@
     <div class="add-container ">
         <textarea class="form-control " placeholder="What is the Mitigation Direction" ng-model="card.mitigrationDirection " rows="4 " cols="10 "></textarea>
     </div>
+    <br>
+    <br>
     <button class="btn btn-success " id="addButton " type="button " ng-click="postmCard(mcard) ">{{addmButton}}</button>
     <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button>
     <button class="btn btn-primary " id="toSales " type="button " ng-click="getMySales() ">Your Sales</button> -->

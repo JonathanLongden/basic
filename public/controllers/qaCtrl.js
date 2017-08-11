@@ -11,6 +11,8 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     this.myDate = new Date();
     this.isOpen = false;
     $scope.riskReportedBy = 'Hello';
+    $scope.memberPresent = 'User';
+
 
     $scope.riskCategory = {
         model: null,
@@ -50,6 +52,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             if (personemail) {
                 try {
                     $scope.riskReportedBy = data.data.local.userName;
+                    $scope.memberPresent = data.data.local.userName;
                     return true;
                 } catch (err) {
                     console.log(err);
