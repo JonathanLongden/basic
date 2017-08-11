@@ -121,6 +121,8 @@ module.exports = {
             req.user._id, { $push: { "card": req.id } }, { upsert: true },
             function(err, model) {
                 if (err) return res.send(500, { error: err });
+                console.log(model + res.send("model"));
+                res.send(model);
                 return res.send("succesfully saved");
             }
         )
