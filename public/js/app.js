@@ -53,7 +53,7 @@ angular.module("basic", ['ui.router'])
             .state("graphic", {
                 url: "/graphic",
                 templateUrl: "./templates/graphic.html", // or template: '<h1>Home Page</h1>' 
-                controller: "gaphicCtrl.js"
+                controller: "graphicCtrl.js"
             })
 
 
