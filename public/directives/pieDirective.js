@@ -1,5 +1,5 @@
 angular.module("basic")
-    .directive('simplePieChart', function($window) {
+    .directive('simplePieChart', function() {
         return {
             restrict: 'E',
             replace: true,
@@ -10,7 +10,7 @@ angular.module("basic")
             link: function(scope, element, attrs) {
                 var chart = pieChart(),
                     chartEl = d3.select(element[0]),
-                    win = angular.element($window);
+                    win = angular.element();
 
                 win.bind('resize', function() {
                     var newBcr = element[0].getBoundingClientRect();
