@@ -8,14 +8,14 @@ module.exports = {
         card.save(function(err, result) {
             if (err) {
                 res.send(err);
+            } else {
+                //add card id to req
+                req.id = result._id;
+                //call userControl.addSale
+
+                console.log(req.user);
+                next(result);
             }
-            //add card id to req
-            req.id = result._id;
-            //call userControl.addSale
-
-            console.log(req.user);
-            next();
-
         });
     },
     //Added this for a demo
