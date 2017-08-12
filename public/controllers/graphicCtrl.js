@@ -52,13 +52,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         riskCategory.push(category)
                     }
                 }
-                //loop through list of unique items
-                // 
-                for (var i = 0; i < riskCategory.length; i++) {
-                    var num = riskCategory[i];
-                    counts[num] = counts[num] ? counts[num] + 1 : 1;
-                    console.log(counts[num]);
-                }
+
                 result = {};
                 for (var i = 0; i < riskCategory.length; ++i) {
                     if (!result[riskCategory[i]])
