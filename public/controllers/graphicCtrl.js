@@ -31,7 +31,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
         mainServ.getAllCards()
             .then(function(response) {
                 console.log(response);
-                console.log(response.data.riskCategory);
+                console.log(response.data);
+                //console.log(response.data.riskCategory);
+                //
                 console.log(response.riskCategory);
                 var riskCategory = [];
                 for (var i = 0; i < response.length; i++) {
