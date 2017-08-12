@@ -44,8 +44,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
             .then(function(response) {
                 //creates a list
                 var riskCategory = [];
-                //unique values in a list
-                var uniques = riskCategory.unique();
+
                 for (var i = 0; i < response.length; i++) {
                     var category = response[i].riskCategory;
                     if (category != null) {
