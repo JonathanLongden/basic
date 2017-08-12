@@ -62,7 +62,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 }
                 console.log(result);
                 //should scope this object
-                scope.pieChartConfig.result;
+                $scope.pieChartConfig.result;
 
             })
     }
