@@ -60,6 +60,13 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     counts[num] = counts[num] ? counts[num] + 1 : 1;
                     console.log(counts[num]);
                 }
+                result = {};
+                for (var i = 0; i < riskCategory.length; ++i) {
+                    if (!result[riskCategory[i]])
+                        result[riskCategory[i]] = 0;
+                    ++result[riskCategory[i]];
+                }
+                console.log(result);
 
 
             })
