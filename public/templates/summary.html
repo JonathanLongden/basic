@@ -11,14 +11,16 @@
         <h1 id="welcome" style="color:White;">Summary of Cases</h1>
     </center>
     <br>
-    <center>
-        <button ng-click="piechart = !piechart" class="btn btn-success">Pie Chart</button>
-    </center>
-    <div class="container">
-        <div class="User col-sm-12" ng-show="piechart" class="ng-show">
-            <center>
-                <graphic-directive></graphic-directive>
-            </center>
+    <div class="container" ng-controller="graphicCtrl">
+        <center>
+            <button ng-click="piechart = !piechart; getCards(); " class="btn btn-success">Pie Chart</button>
+        </center>
+        <div class="container">
+            <div class="User col-sm-12" ng-show="piechart" class="ng-show">
+                <center>
+                    <graphic-directive></graphic-directive>
+                </center>
+            </div>
         </div>
     </div>
     <div class="container">

@@ -26,6 +26,14 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
     // }
+    $scope.piechart;
+    $scope.getCards = function() {
+        mainServ.getAllCards()
+            .then(function(response) {
+                console.log(response);
+
+            })
+    }
 
 
 
