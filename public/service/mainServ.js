@@ -129,15 +129,15 @@ angular.module("basic")
         // }
 
 
-        // this.getAllSales = function() {
-        //     return $http({
-        //         method: 'GET',
-        //         url: '/sales'
-        //     }).then(function(res) {
+        this.getAllCards = function() {
+            return $http({
+                method: 'GET',
+                url: '/cards'
+            }).then(function(res) {
 
-        //         return res.data;
-        //     })
-        // }
+                return res.data;
+            })
+        }
 
 
         // // this is for getting just one sale!

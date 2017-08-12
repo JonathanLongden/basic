@@ -65,8 +65,8 @@ app.get('/card', cardControl.read);
 // app.delete('/qacard/:id', cardControl.delete, userControl.deleteqacard);
 
 
-// app.get('/qacard', cardControl.read);
-// app.post('/card', cardControl.create);
+app.get('/cards', cardControl.read); //Gets all Cards
+// app.post('/cards', cardControl.create);
 // app.get('/qacard:id', cardControl.readById);
 // app.put('/qacard:id', cardControl.update);
 
