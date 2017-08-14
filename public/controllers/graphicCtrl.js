@@ -2,21 +2,25 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     $scope.pieChartConfig = null;
 
-    // $scope.pieChartConfig = {
-    //     graphData: [
-    //         // { name: 'A', value: 50 },
-    //         // { name: 'B', value: 100 },
-    //         // { name: 'C', value: 100 },
-    //         // { name: 'D', value: 35 },
-    //         // { name: 'E', value: 125 },
-    //         // { name: 'F', value: 125 }
-    //         //{name: 'F', value: 125}
-    //     ]
-    // };
+    $scope.pieChartConfig = {
+        // graphData: [
+        //     { name: 'A', value: 50 },
+        //     { name: 'B', value: 100 },
+        //     { name: 'C', value: 100 },
+        //     { name: 'D', value: 35 },
+        //     { name: 'E', value: 125 },
+        //     { name: 'F', value: 125 }
+        //     {name: 'F', value: 125}
+        // ]
+    };
 
     $scope.getCards = function() {
         mainServ.getAllCards()
             .then(function(response) {
+
+                function getdata(response) {
+                    return p1 * p2; // The function returns the product of p1 and p2
+                }
                 //creates a list
                 var riskCategory = [];
 
@@ -60,8 +64,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
                     //console.log(i);
                 }
-                $scope.pieChartConfig = arr;
                 console.log($scope.pieChartConfig);
+                return $scope.pieChartConfig = arr;
+
                 //console.log(graphData);
                 //console.log(arr);//Showed the objects need for Graph Data
 
