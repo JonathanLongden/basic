@@ -82,14 +82,15 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
                 }
                 console.log(txt);
-                var datalist = txt.split(",");
+                var datalist = [];
+                datalist = txt.split(",");
                 console.log(datalist);
                 // datalist.push(txt.split(","));
-                // var len = datalist.length;
-                // for (var i = 0; i < len; i++) {
-                //     console.log(i + " " + datalist[i]);
-                // }
-                // console.log(datalist);
+                var len = datalist.length;
+                for (var i = 0; i < len; i++) {
+                    console.log(datalist[i]);
+                }
+                console.log(datalist);
 
 
 
