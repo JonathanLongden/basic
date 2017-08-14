@@ -71,22 +71,31 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
                 riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
                 // var graphDataexample = new Object();
-                // var newdata = graphDataexample.name = 'A';
-                // graphDataexample.value = '50';
+                // var newdata = new graphDataexample.name = 'A';
+                // var graphDataexample.value = '50';
                 // console.log(graphDataexample);
+                function person(first, last, age, eye) {
+                    this.firstName = first;
+                    this.lastName = last;
+                    this.age = age;
+                    this.eyeColor = eye;
+                }
                 var txt = " ";
                 var datalist = [];
                 for (x in count) {
-                    txt += x + ":" + count[x] + " ";
+                    txt += x + "," + count[x] + ",";
                     //list.push(txt);
 
 
                 }
                 console.log(txt);
+                datalist.push(txt);
+                console.log(datalist);
 
                 console.log(count)
-                var newArrayDataOfOjbect = Object.values(count)
-                console.log(newArrayDataOfOjbect);
+
+                // var newArrayDataOfOjbect = Object.values(count)
+                // console.log(newArrayDataOfOjbect);
 
             })
     }
