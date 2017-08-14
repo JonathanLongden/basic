@@ -75,8 +75,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // graphDataexample.value = '50';
                 // console.log(graphDataexample);
                 var txt = "";
+                var name = "";
                 for (x in count) {
-                    txt += count[x] + " ";
+                    txt += x + ":" + count[x] + " ";
                     console.log(txt)
                 }
 
