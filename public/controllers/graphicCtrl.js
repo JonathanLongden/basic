@@ -91,7 +91,18 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     console.log(datalist[i]);
                 }
                 console.log(datalist);
+                var arr = [];
+                var graphData = new Object();
+                for (var i = 0; i < len; i++) {
+                    if ((i % 2) == 0) {
+                        graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
+                        arr.push(graphData[i]);
 
+                    }
+                    console.log(i);
+                }
+                console.log(graphData);
+                console.log(arr);
 
 
                 // for (var i = 0; i < len; i++) {
