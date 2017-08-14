@@ -86,14 +86,16 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 console.log(datalist);
 
                 var arr = [];
-                var columnDefs = function(key, sortable, resizeable) {
-                    this.name = key;
-                    this.value = sortable;
+                var graphData = function(name, value) {
+                    this.name = name;
+                    this.value = value;
 
                 };
                 var len = datalist.length;
                 for (var i = 0; i < len; i++) {
-                    arr.push((new columnDefs(datalist[i], datalist[i + 1])));
+                    if (i % 2 === 0) {
+                        arr.push((new graphData(datalist[i], datalist[i + 1])));
+                    }
                 }
                 console.log(arr);
 
