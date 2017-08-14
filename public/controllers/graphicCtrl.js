@@ -110,8 +110,16 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 }
                 console.log(graphData);
                 console.log(arr);
-
-
+                var array = [];
+                for (var i = 0; i < len; i++) {
+                    if ((i % 2) == 0) {
+                        var single = data[i] = {}; // creates a new object
+                        data[i].name = datalist[i];
+                        data[i].value = datalist[i + 1];
+                        array.push(single);
+                    }
+                }
+                console.log(array);
             })
     }
 
