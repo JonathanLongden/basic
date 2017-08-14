@@ -74,12 +74,6 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // var newdata = new graphDataexample.name = 'A';
                 // var graphDataexample.value = '50';
                 // console.log(graphDataexample);
-                function person(first, last, age, eye) {
-                    this.firstName = first;
-                    this.lastName = last;
-                    this.age = age;
-                    this.eyeColor = eye;
-                }
                 var txt = " ";
                 var datalist = [];
                 for (x in count) {
@@ -89,10 +83,18 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
                 }
                 console.log(txt);
-                datalist.push(txt);
+                datalist.push(txt.split(","));
                 console.log(datalist);
-
                 console.log(count)
+                var arr = [];
+                var len = datalist.length;
+                for (var i = 0; i < len; i++) {
+                    arr.push({
+                        name: datalist[i],
+                        value: datalist[i + 1]
+                    });
+                }
+                console.log(arr);
 
                 // var newArrayDataOfOjbect = Object.values(count)
                 // console.log(newArrayDataOfOjbect);
