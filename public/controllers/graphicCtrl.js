@@ -44,7 +44,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
                 var datalist = [];
                 datalist = txt.split(",");
-                console.log(datalist);
+                //console.log(datalist);
                 var len = datalist.length;
                 // for (var i = 0; i < len; i++) {
                 //     console.log(datalist[i]);
@@ -73,7 +73,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
             })
-    }
+    }();
+
+    console.log($scope.pieChartConfig);
 
 
 
