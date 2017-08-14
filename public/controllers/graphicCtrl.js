@@ -70,8 +70,13 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 var count = {};
 
                 riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
+                // var graphDataexample = new Object();
+                // var newdata = graphDataexample.name = 'A';
+                // graphDataexample.value = '50';
+                // console.log(graphDataexample);
 
-                console.log(count);
+                console.log(count[Object.keys(obj)[0]]);
+                console.log(count[Object.keys(obj)[1]]);
                 var newArrayDataOfOjbect = Object.values(count)
                 console.log(newArrayDataOfOjbect);
 
