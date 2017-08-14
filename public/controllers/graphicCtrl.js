@@ -101,10 +101,12 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // console.log(arr);
                 var graphData = new Object();
                 for (var i = 0; i < len; i++) {
-                    if (i % 2 == 0) {
+                    if ((i % 2) == 0) {
                         graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
                         arr.push(graphData[i]);
+
                     }
+                    console.log(i);
                 }
                 console.log(graphData);
                 console.log(arr);
@@ -116,9 +118,5 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
 
-    // $scope.pieChartConfig = {
-    // 	graphData: dataSetOne
-    // };
-    // console.log($scope.pieChartConfig);
 
 });
