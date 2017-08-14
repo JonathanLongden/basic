@@ -74,16 +74,15 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // var newdata = graphDataexample.name = 'A';
                 // graphDataexample.value = '50';
                 // console.log(graphDataexample);
+                var txt = " ";
                 var datalist = [];
                 for (x in count) {
                     txt += x + ":" + count[x] + " ";
-                    console.log(txt)
-                }
-                for (var i = 0; i < count.length; i++) {
-                    if ((i % 2) !== 0) {
+                    //list.push(txt);
 
-                    }
+
                 }
+                console.log(txt);
 
                 console.log(count)
                 var newArrayDataOfOjbect = Object.values(count)
