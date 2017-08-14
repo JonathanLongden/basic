@@ -75,19 +75,21 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // var graphDataexample.value = '50';
                 // console.log(graphDataexample);
                 var txt = "";
-                var datalist = [];
                 for (x in count) {
                     txt += x + "," + count[x] + ",";
                     //list.push(txt);
 
 
                 }
-                datalist.push(txt.split(","));
-                var len = datalist.length;
-                for (var i = 0; i < len; i++) {
-                    console.log(i + " " + datalist[i]);
-                }
+                console.log(txt);
+                var datalist = txt.split(",");
                 console.log(datalist);
+                // datalist.push(txt.split(","));
+                // var len = datalist.length;
+                // for (var i = 0; i < len; i++) {
+                //     console.log(i + " " + datalist[i]);
+                // }
+                // console.log(datalist);
 
 
 
