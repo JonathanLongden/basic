@@ -91,7 +91,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     this.value = sortable;
 
                 };
-
+                var len = datalist.length;
                 for (var i = 0; i < len; i++) {
                     arr.push((new columnDefs(datalist[i], datalist[i + 1])));
                 }
