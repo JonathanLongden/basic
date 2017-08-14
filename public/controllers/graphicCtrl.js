@@ -2,7 +2,6 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     $scope.pieChartConfig = null;
 
-    //$scope.pieChartConfig.graphData[0].value
     // $scope.pieChartConfig = {
     //     graphData: [
     //         // { name: 'A', value: 50 },
@@ -14,33 +13,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //         //{name: 'F', value: 125}
     //     ]
     // };
-    // $scope.pieChartConfig = {
-    //     // graphData: [
-    //     //     { name: 'A', value: 50 },
-    //     //     { name: 'B', value: 100 },
-    //     //     { name: 'C', value: 100 },
-    //     //     { name: 'D', value: 35 },
-    //     //     { name: 'E', value: 125 },
-    //     //     { name: 'F', value: 125 }
-    //     //     //{name: 'F', value: 125}
-    //     // ]
-    // };
-    //console.log($scope.pieChartConfig.graphData);
 
-    // $scope.updatePieChart = function(AA,BB,CC,DD,EE){
-    // 	console.log("going")
-    // 	var newArr = [AA,BB,CC,DD,EE];
-
-    // 	for (var i = 0; i < dataSetOne.length; i++) {
-    // 		dataSetOne[i].value = newArr[i];
-    // 	}
-
-    // 	$scope.pieChartConfig.graphData = dataSetOne;
-    // 	console.log($scope.pieChartConfig);
-
-
-    // }
-    $scope.piechart;
     $scope.getCards = function() {
         mainServ.getAllCards()
             .then(function(response) {
@@ -75,10 +48,12 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 //Priting out as a list
                 var arr = [];
                 var graphData = new Object();
-                for (var i = 0; i < len - 1; i++) {
+                for (var i = 0; i < len; i++) {
                     if ((i % 2) == 0) {
-                        graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                        arr.push(graphData[i]);
+                        if (datalist[i] != null) {
+                            graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
+                            arr.push(graphData[i]);
+                        }
 
                     }
                     //console.log(i);
