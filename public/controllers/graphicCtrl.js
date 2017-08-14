@@ -106,6 +106,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         arr.push(graphData[i]);
                     }
                 }
+                console.log(graphData);
+                console.log(arr);
 
 
             })
