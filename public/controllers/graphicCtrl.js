@@ -12,17 +12,17 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //         //{name: 'F', value: 125}
     //     ]
     // };
-    // $scope.pieChartConfig = {
-    //     graphData: [
-    //         { name: 'A', value: 50 },
-    //         { name: 'B', value: 100 },
-    //         { name: 'C', value: 100 },
-    //         { name: 'D', value: 35 },
-    //         { name: 'E', value: 125 },
-    //         { name: 'F', value: 125 }
-    //         //{name: 'F', value: 125}
-    //     ]
-    // };
+    $scope.pieChartConfig = {
+        graphData: [
+            { name: 'A', value: 50 },
+            { name: 'B', value: 100 },
+            { name: 'C', value: 100 },
+            { name: 'D', value: 35 },
+            { name: 'E', value: 125 },
+            { name: 'F', value: 125 }
+            //{name: 'F', value: 125}
+        ]
+    };
 
 
     // $scope.updatePieChart = function(AA,BB,CC,DD,EE){
@@ -53,16 +53,25 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
                 }
                 //creates & counts items into an object
-                //{deliverables:1}
-                result = {};
-                for (var i = 0; i < riskCategory.length; ++i) {
-                    if (!result[riskCategory[i]])
-                        result[riskCategory[i]] = 0;
-                    ++result[riskCategory[i]];
-                }
-                console.log(result);
+
+                // result = {};
+                // //{deliverables:1}
+                // for (var i = 0; i < riskCategory.length; ++i) {
+                //     if (!result[riskCategory[i]])
+                //         result[riskCategory[i]] = 0;
+                //     ++result[riskCategory[i]];
+                // }
+                // console.log(result);
+                //need something like
+                //{name:deliverables, value:1}
                 //should scope this object
-                $scope.pieChartConfig.result;
+                //$scope.pieChartConfig.result;
+
+                var count = {};
+
+                riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
+
+                console.log(count);
 
             })
     }
