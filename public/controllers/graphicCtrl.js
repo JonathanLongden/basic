@@ -75,8 +75,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // graphDataexample.value = '50';
                 // console.log(graphDataexample);
 
-                console.log(count[Object.keys(obj)[0]]);
-                console.log(count[Object.keys(obj)[1]]);
+                console.log(count[Object.keys(count)[0]]);
+                console.log(count[Object.keys(count)[1]]);
                 var newArrayDataOfOjbect = Object.values(count)
                 console.log(newArrayDataOfOjbect);
 
