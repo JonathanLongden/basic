@@ -50,7 +50,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 var graphData = new Object();
                 for (var i = 0; i < len; i++) {
                     if ((i % 2) == 0) {
-                        if (datalist[i] == null || datalist[i] == undefined) {
+                        if (datalist[i] == "" || datalist[i + 1] == undefined) {
                             //do nothing
                         } else {
                             graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
