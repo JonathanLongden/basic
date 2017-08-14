@@ -86,18 +86,26 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 console.log(datalist);
 
                 var arr = [];
-                var graphData = function(name, value) {
-                    this.name = name;
-                    this.value = value;
+                // var graphData = function(name, value) {
+                //     this.name = name;
+                //     this.value = value;
 
-                };
+                // };
                 var len = datalist.length;
+                // for (var i = 0; i < len; i++) {
+                //     if (i % 2 === 0) {
+                //         arr.push((new graphData(datalist[i], datalist[i + 1])));
+                //         arr.push((new graphData(datalist[i], datalist[i + 1])));
+                //     }
+                // }
+                // console.log(arr);
+                var graphData = new Object();
                 for (var i = 0; i < len; i++) {
                     if (i % 2 === 0) {
-                        arr.push((new graphData(datalist[i], datalist[i + 1])));
+                        graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
+                        arr.push(graphData[i]);
                     }
                 }
-                console.log(arr);
 
 
             })
