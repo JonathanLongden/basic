@@ -72,6 +72,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
 
                 console.log(count);
+                var newArrayDataOfOjbect = Object.values(count)
+                console.log(newArrayDataOfOjbect);
 
             })
     }
