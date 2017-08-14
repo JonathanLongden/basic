@@ -13,15 +13,15 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //     ]
     // };
     $scope.pieChartConfig = {
-        graphData: [
-            { name: 'A', value: 50 },
-            { name: 'B', value: 100 },
-            { name: 'C', value: 100 },
-            { name: 'D', value: 35 },
-            { name: 'E', value: 125 },
-            { name: 'F', value: 125 }
-            //{name: 'F', value: 125}
-        ]
+        // graphData: [
+        //     { name: 'A', value: 50 },
+        //     { name: 'B', value: 100 },
+        //     { name: 'C', value: 100 },
+        //     { name: 'D', value: 35 },
+        //     { name: 'E', value: 125 },
+        //     { name: 'F', value: 125 }
+        //     //{name: 'F', value: 125}
+        // ]
     };
     console.log($scope.pieChartConfig.graphData);
 
@@ -90,7 +90,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 for (var i = 0; i < len; i++) {
                     console.log(datalist[i]);
                 }
-                console.log(datalist);
+                //Priting out as a list
                 var arr = [];
                 var graphData = new Object();
                 for (var i = 0; i < len; i++) {
@@ -101,39 +101,13 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
                     console.log(i);
                 }
-                console.log(graphData);
-                console.log(arr);
+                $scope.pieChartConfig = arr;
+                console.log($scope.pieChartConfig);
+                //console.log(graphData);
+                //console.log(arr);//Showed the objects need for Graph Data
 
 
-                // for (var i = 0; i < len; i++) {
-                //     if (i % 2 === 0) {
-                //         arr.push((new graphData(datalist[i], datalist[i + 1])));
-                //         arr.push((new graphData(datalist[i], datalist[i + 1])));
-                //     }
-                // }
-                // console.log(arr);
-                // var graphData = new Object();
-                // for (var i = 0; i < len; i++) {
-                //     if ((i % 2) == 0) {
-                //         graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                //         arr.push(graphData[i]);
 
-                //     }
-                //     console.log(i);
-                // }
-                // console.log(graphData);
-                // console.log(arr);
-
-                // var array = [];
-                // for (var i = 0; i < len; i++) {
-                //     if ((i % 2) == 0) {
-                //         data[i] = new Object(); // creates a new object
-                //         data[i].name = datalist[i];
-                //         data[i].value = datalist[i + 1];
-                //         array.push(single);
-                //     }
-                // }
-                // console.log(array);
             })
     }
 
