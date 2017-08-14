@@ -1,5 +1,7 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
+    $scope.pieChartConfig = null;
+
     //$scope.pieChartConfig.graphData[0].value
     // $scope.pieChartConfig = {
     //     graphData: [
@@ -12,18 +14,18 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //         //{name: 'F', value: 125}
     //     ]
     // };
-    $scope.pieChartConfig = {
-        // graphData: [
-        //     { name: 'A', value: 50 },
-        //     { name: 'B', value: 100 },
-        //     { name: 'C', value: 100 },
-        //     { name: 'D', value: 35 },
-        //     { name: 'E', value: 125 },
-        //     { name: 'F', value: 125 }
-        //     //{name: 'F', value: 125}
-        // ]
-    };
-    console.log($scope.pieChartConfig.graphData);
+    // $scope.pieChartConfig = {
+    //     // graphData: [
+    //     //     { name: 'A', value: 50 },
+    //     //     { name: 'B', value: 100 },
+    //     //     { name: 'C', value: 100 },
+    //     //     { name: 'D', value: 35 },
+    //     //     { name: 'E', value: 125 },
+    //     //     { name: 'F', value: 125 }
+    //     //     //{name: 'F', value: 125}
+    //     // ]
+    // };
+    //console.log($scope.pieChartConfig.graphData);
 
     // $scope.updatePieChart = function(AA,BB,CC,DD,EE){
     // 	console.log("going")
@@ -52,54 +54,34 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         riskCategory.push(category)
                     }
                 }
-                //creates & counts items into an object
-
-                // result = {};
-                // //{deliverables:1}
-                // for (var i = 0; i < riskCategory.length; ++i) {
-                //     if (!result[riskCategory[i]])
-                //         result[riskCategory[i]] = 0;
-                //     ++result[riskCategory[i]];
-                // }
-                // console.log(result);
-                //need something like
-                //{name:deliverables, value:1}
-                //should scope this object
-                //$scope.pieChartConfig.result;
 
                 var count = {};
 
                 riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
-                // var graphDataexample = new Object();
-                // var newdata = new graphDataexample.name = 'A';
-                // var graphDataexample.value = '50';
-                // console.log(graphDataexample);
+
                 var txt = "";
                 for (x in count) {
                     txt += x + "," + count[x] + ",";
-                    //list.push(txt);
-
 
                 }
-                console.log(txt);
+
                 var datalist = [];
                 datalist = txt.split(",");
                 console.log(datalist);
-                // datalist.push(txt.split(","));
                 var len = datalist.length;
-                for (var i = 0; i < len; i++) {
-                    console.log(datalist[i]);
-                }
+                // for (var i = 0; i < len; i++) {
+                //     console.log(datalist[i]);
+                // }
                 //Priting out as a list
                 var arr = [];
                 var graphData = new Object();
-                for (var i = 0; i < len; i++) {
+                for (var i = 0; i < len - 1; i++) {
                     if ((i % 2) == 0) {
                         graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
                         arr.push(graphData[i]);
 
                     }
-                    console.log(i);
+                    //console.log(i);
                 }
                 $scope.pieChartConfig = arr;
                 console.log($scope.pieChartConfig);
