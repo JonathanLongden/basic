@@ -23,7 +23,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
             //{name: 'F', value: 125}
         ]
     };
-
+    console.log($scope.pieChartConfig.graphData);
 
     // $scope.updatePieChart = function(AA,BB,CC,DD,EE){
     // 	console.log("going")
@@ -101,7 +101,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 // console.log(arr);
                 var graphData = new Object();
                 for (var i = 0; i < len; i++) {
-                    if (i % 2 === 0) {
+                    if (i % 2 == 0) {
                         graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
                         arr.push(graphData[i]);
                     }
