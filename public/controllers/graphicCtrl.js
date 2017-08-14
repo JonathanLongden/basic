@@ -65,7 +65,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     //console.log(i);
                 }
                 console.log($scope.pieChartConfig);
-                return $scope.pieChartConfig = arr;
+                $scope.pieChartConfig = arr;
+                //return $scope.pieChartConfig = arr;
 
                 //console.log(graphData);
                 //console.log(arr);//Showed the objects need for Graph Data
