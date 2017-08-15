@@ -2,9 +2,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
     $scope.pieChartConfig = {
-        graphData: [
-            $scope.getCards()
-        ]
+
+
     };
     console.log(scope.pieChartConfig)
     console.log(scope.pieChartConfig.graphdata)
@@ -20,12 +19,15 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //     //     {name: 'F', value: 125}
     //     // ]
     // };
+    $scope.slides = null;
+    console.log($scope.slides);
+    console.log(slides);
 
     $scope.getCards = function() {
 
         mainServ.getAllCards()
             .then(function(response) {
-
+                $scope.slides = response;
                 // function getdata(response) {
                 //     return p1 * p2; // The function returns the product of p1 and p2
                 // }

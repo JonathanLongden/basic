@@ -134,7 +134,6 @@ angular.module("basic")
                 method: 'GET',
                 url: '/cards'
             }).then(function(res) {
-
                 return res.data;
             })
         }
