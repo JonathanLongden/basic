@@ -65,8 +65,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
                     $scope.pieChartConfig = graphData;
                     console.log($scope.pieChartConfig);
-                    //return arr
-                    return true;
+                    return graphData;
+                    //return true;
                 } catch (err) {
                     console.log(err);
                 }
@@ -92,7 +92,10 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 try {
                     var cards = personsCards(data);
                     if (cards) {
-                        //true
+                        console.log(cards)
+                        $scope.pieChartConfig = cards;
+                        console.log($scope.pieChartConfig)
+                            //true
                     } else {
 
                         //false No data
