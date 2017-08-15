@@ -1,9 +1,7 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
     $scope.data;
     $scope.pieChartConfig;
-    $scope.pieChartConfig = {
-        //graphData: []
-    };
+    $scope.pieChartConfig = [];
     // $scope.pieChartConfig = {
     //     graphData: [
     //         { name: 'A', value: 50 },
