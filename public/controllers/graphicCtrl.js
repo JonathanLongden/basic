@@ -1,6 +1,6 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
-    $scope.data;
-    // $scope.pieChartConfig;
+
+
     $scope.pieChartConfig = {
         graphData: []
     };
@@ -17,9 +17,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //     ]
     // };
     //$scope.pieChartConfig;
-    console.log($scope.pieChartConfig); //{grapData: Array(7)}
+    //console.log($scope.pieChartConfig); //{grapData: Array(7)}
     //arrow GraphData:(7)[{...},{...},{...}]
-    console.log($scope.pieChartConfig.graphData); //(7)[{...},{...},{...}]
+    //console.log($scope.pieChartConfig.graphData); //(7)[{...},{...},{...}]
     //arrow 0: {name:A, value:50}
 
     //currently[] 0: { graphData: Array(5) }
@@ -69,8 +69,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         //console.log(i);
                     }
                     //$scope.pieChartConfig.push({ graphData });
-                    console.log($scope.pieChartConfig);
-                    console.log($scope.pieChartConfig.graphData); //
+                    //console.log($scope.pieChartConfig);
+                    //console.log($scope.pieChartConfig.graphData); //
                     return true;
                     //return true;
                 } catch (err) {
@@ -174,7 +174,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     };
 
-    console.log($scope.pieChartConfig);
+    //console.log($scope.pieChartConfig);
 
 
 
