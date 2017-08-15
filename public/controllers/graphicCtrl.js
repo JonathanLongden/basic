@@ -56,7 +56,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                                 //do nothing
                             } else {
                                 alldata[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                                arr.push(alldata[i]);
+                                graphData.push(alldata[i]);
                             }
 
                         }
