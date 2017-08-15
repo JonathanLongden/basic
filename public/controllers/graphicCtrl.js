@@ -66,7 +66,6 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         }
                         //console.log(i);
                     }
-
                     $scope.pieChartConfig.push({ graphData });
                     console.log($scope.pieChartConfig);
                     return graphData;
