@@ -1,7 +1,13 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
 
-    $scope.pieChartConfig = null;
+    $scope.pieChartConfig = {
+        graphData: [
+            $scope.getCards()
+        ]
+    };
+    console.log(scope.pieChartConfig)
+    console.log(scope.pieChartConfig.graphdata)
 
     // $scope.pieChartConfig = {
     //     // graphData: [
@@ -16,7 +22,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     // };
 
     $scope.getCards = function() {
-        graphdata = This.mainServ.getAllCards();
+
         mainServ.getAllCards()
             .then(function(response) {
 
@@ -66,7 +72,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
                     //console.log(i);
                 }
-                console.log(graphdata);
+
                 //$scope.pieChartConfig = arr;
                 return arr
                     //return $scope.pieChartConfig = arr;
@@ -76,10 +82,9 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
             })
-        console.log(graphdata);
+
     };
 
-    console.log($scope.getCards.graphdata);
 
 
 
