@@ -1,26 +1,28 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
+
     $scope.pieChartConfig = null;
 
-    $scope.pieChartConfig = {
-        // graphData: [
-        //     { name: 'A', value: 50 },
-        //     { name: 'B', value: 100 },
-        //     { name: 'C', value: 100 },
-        //     { name: 'D', value: 35 },
-        //     { name: 'E', value: 125 },
-        //     { name: 'F', value: 125 }
-        //     {name: 'F', value: 125}
-        // ]
-    };
+    // $scope.pieChartConfig = {
+    //     // graphData: [
+    //     //     { name: 'A', value: 50 },
+    //     //     { name: 'B', value: 100 },
+    //     //     { name: 'C', value: 100 },
+    //     //     { name: 'D', value: 35 },
+    //     //     { name: 'E', value: 125 },
+    //     //     { name: 'F', value: 125 }
+    //     //     {name: 'F', value: 125}
+    //     // ]
+    // };
 
     $scope.getCards = function() {
+        graphdata = This.mainServ.getAllCards();
         mainServ.getAllCards()
             .then(function(response) {
 
-                function getdata(response) {
-                    return p1 * p2; // The function returns the product of p1 and p2
-                }
+                // function getdata(response) {
+                //     return p1 * p2; // The function returns the product of p1 and p2
+                // }
                 //creates a list
                 var riskCategory = [];
 
@@ -64,19 +66,20 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
                     //console.log(i);
                 }
-                console.log($scope.pieChartConfig);
-                $scope.pieChartConfig = arr;
-                //return $scope.pieChartConfig = arr;
+                console.log(graphdata);
+                //$scope.pieChartConfig = arr;
+                return arr
+                    //return $scope.pieChartConfig = arr;
 
-                //console.log(graphData);
-                //console.log(arr);//Showed the objects need for Graph Data
+
 
 
 
             })
-    }();
+        console.log(graphdata);
+    };
 
-    console.log($scope.pieChartConfig);
+    console.log($scope.getCards.graphdata);
 
 
 
