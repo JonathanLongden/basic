@@ -1,18 +1,19 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
 
-    // $scope.pieChartConfig = {
-    //     graphData: [
-    //         { name: 'A', value: 50 },
-    //         { name: 'B', value: 100 },
-    //         { name: 'C', value: 100 },
-    //         { name: 'D', value: 35 },
-    //         { name: 'E', value: 125 },
-    //         { name: 'F', value: 125 },
-    //         { name: 'F', value: 125 }
-    //     ]
-    // };
-    $scope.pieChartConfig;
+    $scope.pieChartConfig = {
+        graphData: [
+            // { name: 'A', value: 50 },
+            // { name: 'B', value: 100 },
+            // { name: 'C', value: 100 },
+            // { name: 'D', value: 35 },
+            // { name: 'E', value: 125 },
+            // { name: 'F', value: 125 },
+            // { name: 'F', value: 125 }
+        ]
+    };
+    //$scope.pieChartConfig;
+    console.log($scope.pieChartConfig.graphData)
 
     function personsCards(data) {
         var persondata = data;
@@ -62,7 +63,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                         //console.log(i);
                     }
 
-                    $scope.pieChartConfig = arr;
+                    $scope.pieChartConfig.graphData = arr;
                     //return arr
                     return true;
                 } catch (err) {
@@ -168,7 +169,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     };
 
-    console.log($scope.pieChartConfig);
+    console.log($scope.pieChartConfig.graphData);
 
 
 
