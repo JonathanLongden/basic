@@ -2,23 +2,16 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
 
     $scope.pieChartConfig = {
-
-
+        graphData: [
+            { name: 'A', value: 50 },
+            { name: 'B', value: 100 },
+            { name: 'C', value: 100 },
+            { name: 'D', value: 35 },
+            { name: 'E', value: 125 },
+            { name: 'F', value: 125 },
+            { name: 'F', value: 125 }
+        ]
     };
-    console.log(scope.pieChartConfig)
-    console.log(scope.pieChartConfig.graphdata)
-
-    // $scope.pieChartConfig = {
-    //     // graphData: [
-    //     //     { name: 'A', value: 50 },
-    //     //     { name: 'B', value: 100 },
-    //     //     { name: 'C', value: 100 },
-    //     //     { name: 'D', value: 35 },
-    //     //     { name: 'E', value: 125 },
-    //     //     { name: 'F', value: 125 }
-    //     //     {name: 'F', value: 125}
-    //     // ]
-    // };
     $scope.slides = null;
     console.log($scope.slides);
     console.log(slides);
