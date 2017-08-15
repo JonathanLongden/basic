@@ -2,7 +2,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     $scope.data;
     $scope.pieChartConfig;
     $scope.pieChartConfig = {
-        graphData: []
+        //graphData: []
     };
     // $scope.pieChartConfig = {
     //     graphData: [
@@ -52,7 +52,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     //     console.log(datalist[i]);
                     // }
                     //Priting out as a list
-                    var arr = [];
+                    var graphData = [];
                     var alldata = new Object();
                     for (var i = 0; i < len; i++) {
                         if ((i % 2) == 0) {
@@ -60,16 +60,16 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                                 //do nothing
                             } else {
                                 alldata[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                                arr.push(alldata[i]);
+                                graphData.push(alldata[i]);
                             }
 
                         }
                         //console.log(i);
                     }
 
-                    $scope.pieChartConfig.graphData.push({ arr });
+                    $scope.pieChartConfig.push({ graphData });
                     console.log($scope.pieChartConfig);
-                    return arr;
+                    return graphData;
                     //return true;
                 } catch (err) {
                     console.log(err);
@@ -96,10 +96,10 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 try {
                     var cards = personsCards(data);
                     if (cards) {
-                        console.log(cards)
-                        $scope.pieChartConfig.graphData.push({ cards });
-                        console.log($scope.pieChartConfig)
-                            //true
+                        //console.log(cards)
+                        //$scope.pieChartConfig.graphData.push({ cards });
+                        //console.log($scope.pieChartConfig)
+                        //true
                     } else {
 
                         //false No data
