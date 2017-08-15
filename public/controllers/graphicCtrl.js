@@ -13,7 +13,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     //     ]
     // };
     //$scope.pieChartConfig;
-    console.log($scope.pieChartConfig.graphData)
+    console.log($scope.pieChartConfig)
 
     function personsCards(data) {
         var persondata = data;
