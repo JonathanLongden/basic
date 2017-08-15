@@ -1,17 +1,17 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
-
-    $scope.pieChartConfig = {
-        graphData: [
-            // { name: 'A', value: 50 },
-            // { name: 'B', value: 100 },
-            // { name: 'C', value: 100 },
-            // { name: 'D', value: 35 },
-            // { name: 'E', value: 125 },
-            // { name: 'F', value: 125 },
-            // { name: 'F', value: 125 }
-        ]
-    };
+    $scope.pieChartConfig.graphData;
+    // $scope.pieChartConfig = {
+    //     graphData: [
+    //         { name: 'A', value: 50 },
+    //         { name: 'B', value: 100 },
+    //         { name: 'C', value: 100 },
+    //         { name: 'D', value: 35 },
+    //         { name: 'E', value: 125 },
+    //         { name: 'F', value: 125 },
+    //         { name: 'F', value: 125 }
+    //     ]
+    // };
     //$scope.pieChartConfig;
     console.log($scope.pieChartConfig.graphData)
 
@@ -64,6 +64,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     }
 
                     $scope.pieChartConfig.graphData = arr;
+                    console.log($scope.pieChartConfig.graphData);
                     //return arr
                     return true;
                 } catch (err) {
