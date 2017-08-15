@@ -14,7 +14,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     };
     $scope.slides = null;
     console.log($scope.slides);
-    console.log(slides);
+
 
     $scope.getCards = function() {
 
@@ -80,7 +80,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     };
 
-
+    console.log($scope.slides);
 
 
 
