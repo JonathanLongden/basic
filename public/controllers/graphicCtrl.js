@@ -1,6 +1,6 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
-    $scope.pieChartConfig.graphData;
+    $scope.pieChartConfig;
     // $scope.pieChartConfig = {
     //     graphData: [
     //         { name: 'A', value: 50 },
@@ -48,23 +48,23 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     //     console.log(datalist[i]);
                     // }
                     //Priting out as a list
-                    var arr = [];
-                    var graphData = new Object();
+                    var graphData = [];
+                    var alldata = new Object();
                     for (var i = 0; i < len; i++) {
                         if ((i % 2) == 0) {
-                            if (datalist[i] == "" || datalist[i + 1] == undefined) {
+                            if (alldata[i] == "" || datalist[i + 1] == undefined) {
                                 //do nothing
                             } else {
-                                graphData[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                                arr.push(graphData[i]);
+                                alldata[i] = ({ name: datalist[i], value: datalist[i + 1] });
+                                arr.push(alldata[i]);
                             }
 
                         }
                         //console.log(i);
                     }
 
-                    $scope.pieChartConfig.graphData = arr;
-                    console.log($scope.pieChartConfig.graphData);
+                    $scope.pieChartConfig = graphData;
+                    console.log($scope.pieChartConfig);
                     //return arr
                     return true;
                 } catch (err) {
@@ -72,12 +72,12 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 }
 
             } else {
-                $location.path('/landingPage');
+                //$location.path('/landingPage');
                 return null;
 
             };
         } catch (err) {
-            $location.path('/landingPage');
+            //$location.path('/landingPage');
             console.log(err);
         }
 
@@ -170,7 +170,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     };
 
-    console.log($scope.pieChartConfig.graphData);
+    console.log($scope.pieChartConfig);
 
 
 
