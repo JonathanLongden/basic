@@ -49,16 +49,21 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
         //card.riskObservationDate = formatDate(card.riskObservationDate);
-        if (card.riskCategory == null || card.riskObservationDate == null || card.riskDescription == null || card.riskMitigration == null)
-            throw Error;
+        var a = card.riskCategory;
+        var b = card.riskObservationDate;
+        var c = card.riskDescription;
+        var d = card.riskMitigration;
+        if (a == null || b == null || c == null || d == null) {
+            //Do Nothing Will Add Error Control Here Popup display
+        } else {
+            mainServ.qcCardPost(card)
+                .then(function(response) {
+                    //console.log("You Created a Card");
+                    var verify = response;
+                    //console.log(verify)
+                });
+        }
 
-        //console.log(card);
-        mainServ.qcCardPost(card)
-            .then(function(response) {
-                //console.log("You Created a Card");
-                var verify = response;
-                //console.log(verify)
-            });
     };
 
 
