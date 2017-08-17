@@ -21,6 +21,7 @@ var passport = require('passport');
 
 var configSession = require('./passport/setsecret.js');
 
+//self invokinging
 require('./passport/passport.js')(passport);
 
 

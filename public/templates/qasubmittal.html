@@ -30,14 +30,18 @@
     <br>
     <br>
     <button class="btn btn-success " id="addButton " type="button " ng-click="postCard(card) ">{{addButton}}</button>
-    <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button>
-    <button class="btn btn-primary " id="toSales " type="button " ng-click="getMySales() ">Your Sales</button> -->
-
-    <!-- <center><div class="content-list " ng-repeat="sale in mySales track by $index ">
-      <h4 id="sale-list-content ">{{sale.name | uppercase}}</h4>
-      <h4 id="sale-list-content ">{{sale.address | uppercase}}</h4>
-      <h4 id="sale-list-content ">{{sale.date | date}}</h4>
-      <br>
-      <button class="btn btn-primary " name="button " ng-click="deleteSale(sale._id) ">Delete</button>
-    </div></center> -->
+    <div class="form-group">
+        <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button> -->
+        <button class="btn btn-primary" type="button " ng-click="getMyCards() ">Your Quality Risk Cards</button>
+        <center>
+            <div class="content-list " ng-repeat="card in MyCards track by $index ">
+                <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
+                <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
+                <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
+                <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                <br>
+                <button class="btn btn-primary " name="button " ng-click="deleteSale(card._id) ">Delete(notWorking)</button>
+            </div>
+        </center>
+    </div>
 </div>

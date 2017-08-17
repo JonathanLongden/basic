@@ -42,7 +42,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     riskCategory.forEach(function(i) { count[i] = (count[i] || 0) + 1; });
 
                     var txt = "";
-                    for (x in count) {
+                    for (var x in count) {
                         txt += x + "," + count[x] + ",";
 
                     }
@@ -55,14 +55,14 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                     // }
                     //Priting out as a list
                     //var graphData = [];
-                    var alldata = new Object();
-                    for (var i = 0; i < len; i++) {
-                        if ((i % 2) == 0) {
-                            if (alldata[i] == "" || datalist[i + 1] == undefined) {
+                    var alldata = {};
+                    for (var j = 0; j < len; j++) {
+                        if ((j % 2) == 0) {
+                            if (alldata[j] == "" || datalist[j + 1] == undefined) {
                                 //do nothing
                             } else {
-                                alldata[i] = ({ name: datalist[i], value: datalist[i + 1] });
-                                $scope.pieChartConfig.graphData.push(alldata[i]);
+                                alldata[j] = ({ name: datalist[j], value: datalist[j + 1] });
+                                $scope.pieChartConfig.graphData.push(alldata[j]);
                             }
 
                         }
@@ -107,7 +107,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 }
 
             });
-    })()
+    })();
 
 
     $scope.getCards = function() {

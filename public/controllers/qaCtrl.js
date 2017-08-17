@@ -1,11 +1,11 @@
 angular.module('basic').controller('qaCtrl', function($scope, $location, mainServ) {
 
 
-    $scope.userId;
+    //$scope.userId;
     // $scope.success;
     $scope.addButton = "Add Quality Risk Card";
     $scope.addmButton = "Add Mitigation Discussion Card";
-    // $scope.mySales;
+    $scope.MyCards;
 
 
     this.myDate = new Date();
@@ -90,7 +90,32 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             });
 
 
-    })()
+    })();
+
+    //getting Cards
+    $scope.getMyCards = function() {
+        mainServ.getAllCards()
+            .then(function(response) {
+                $scope.MyCards = response;
+            });
+    };
+
+    //
+    // mainServ.getAllCards()
+    // .then(function(response) {
+    //     var data = response;
+    //     try {
+    //         var cards = personsCards(data);
+    //         if (cards) {
+    //             //true Display Grapch
+    //         } else {
+    //             //false Show a Sign?
+    //         }
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+
+    // });
 
 
 
