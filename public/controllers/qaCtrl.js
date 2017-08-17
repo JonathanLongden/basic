@@ -13,18 +13,18 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.riskReportedBy = 'Web Site has Crashed';
     $scope.memberPresent = 'User';
 
-    function formatDate(date) {
-        console.log(date);
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
+    // function formatDate(date) {
+    //     console.log(date);
+    //     var d = new Date(date),
+    //         month = '' + (d.getMonth() + 1),
+    //         day = '' + d.getDate(),
+    //         year = d.getFullYear();
 
-        if (month.length < 2) month = '0' + month;
-        if (day.length < 2) day = '0' + day;
+    //     if (month.length < 2) month = '0' + month;
+    //     if (day.length < 2) day = '0' + day;
 
-        return [year, month, day].join('-');
-    }
+    //     return [year, month, day].join('-');
+    // }
 
     $scope.riskCategory = {
         model: null,
@@ -45,11 +45,12 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     };
 
     $scope.postCard = function(card) {
-        console.log(card);
+        //console.log(card);
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
-        card.riskObservationDate = formatDate(card.riskObservationDate);
-
+        //card.riskObservationDate = formatDate(card.riskObservationDate);
+        if (card.riskCategory == null || card.riskObservationDate == null || card.riskDescription == null || card.riskMitigration == null)
+            throw Error;
 
         //console.log(card);
         mainServ.qcCardPost(card)
