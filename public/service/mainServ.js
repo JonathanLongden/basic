@@ -35,20 +35,21 @@ angular.module("basic")
                     // console.log(res);
                     // console.log(res.data);
                     return res;
+                });
+        };
+
+
+        this.deleteCard = function(id) {
+            return $http({
+                    method: "DELETE",
+                    url: "/card/" + id
                 })
-        }
+                .then(function(res) {
+                    return res;
+                });
+        };
 
-
-        this.deleteSale = function(id) {
-                return $http({
-                        method: "DELETE",
-                        url: "/sale/" + id
-                    })
-                    .then(function(res) {
-                        return res;
-                    })
-            }
-            // app.get('/user', userControl.getOneUser);
+        // app.get('/user', userControl.getOneUser);
         this.getUpdateUserID = function(user) {
             // console.log(user);
             return $http({

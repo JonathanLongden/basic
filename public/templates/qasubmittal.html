@@ -32,6 +32,8 @@
     <button class="btn btn-success " id="addButton " type="button " ng-click="postCard(card) ">{{addButton}}</button>
     <div class="form-group">
         <!-- <button class="btn btn-primary " id="toMap " type="button " ui-sref="map " ng-click="initMap() ">To Map</button> -->
+        <br>
+        <br>
         <button class="btn btn-primary" type="button " ng-click="getMyCards() ">Your Quality Risk Cards</button>
         <center>
             <div class="content-list " ng-repeat="card in MyCards track by $index ">
@@ -40,7 +42,7 @@
                 <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
                 <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
                 <br>
-                <button class="btn btn-primary " name="button " ng-click="deleteSale(card._id) ">Delete(notWorking)</button>
+                <button class="btn btn-primary " name="button " ng-click="deleteCard(card._id) ">Delete</button>
             </div>
         </center>
     </div>

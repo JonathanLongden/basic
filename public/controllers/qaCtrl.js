@@ -1,11 +1,11 @@
 angular.module('basic').controller('qaCtrl', function($scope, $location, mainServ) {
 
 
-    //$scope.userId;
+    $scope.userId = null;
     // $scope.success;
     $scope.addButton = "Add Quality Risk Card";
     $scope.addmButton = "Add Mitigation Discussion Card";
-    $scope.MyCards;
+    $scope.MyCards = null;
 
 
     this.myDate = new Date();
@@ -13,6 +13,18 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.riskReportedBy = 'Hello';
     $scope.memberPresent = 'User';
 
+    function formatDate(date) {
+        console.log(date);
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
 
     $scope.riskCategory = {
         model: null,
@@ -35,14 +47,16 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.postCard = function(card) {
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
+        card.riskObservationDate = formatDate(card.riskObservationDate);
+        console.log(card.riskObservationDate);
 
         //console.log(card);
         mainServ.qcCardPost(card)
             .then(function(response) {
-                console.log("You Created a Card");
+                //console.log("You Created a Card");
                 var verify = response;
                 //console.log(verify)
-            })
+            });
     };
 
 
@@ -62,13 +76,13 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
                 $location.path('/landingPage');
                 return null;
 
-            };
+            }
         } catch (err) {
             $location.path('/landingPage');
             console.log(err);
         }
 
-    };
+    }
 
     //self-invoking function that responses to whether a user is log in or not
     (function() {
@@ -100,22 +114,14 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
             });
     };
 
-    //
-    // mainServ.getAllCards()
-    // .then(function(response) {
-    //     var data = response;
-    //     try {
-    //         var cards = personsCards(data);
-    //         if (cards) {
-    //             //true Display Grapch
-    //         } else {
-    //             //false Show a Sign?
-    //         }
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
+    $scope.deleteCard = function(id) {
+        console.log(id);
+        mainServ.deleteCard(id)
+            .then(function(response) {
+                $scope.getMyCards();
+            });
+    };
 
-    // });
 
 
 
