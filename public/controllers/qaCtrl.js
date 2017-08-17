@@ -48,7 +48,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         console.log(card);
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
-        //card.riskObservationDate = formatDate(card.riskObservationDate);
+        card.riskObservationDate = formatDate(card.riskObservationDate);
 
 
         //console.log(card);
