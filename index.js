@@ -63,7 +63,7 @@ app.get('/card', cardControl.read);
 // app.get('/qacard/:id', cardControl.readById);
 // app.get('/mysales', cardControl.readByUser);
 // app.put('/qacard/:id', cardControl.update);
-app.delete('/card/:id', cardControl.delete, userControl.deleteqacard);
+app.delete('/card/:id', cardControl.delete, userControl.deleteCard);
 
 
 app.get('/cards', cardControl.read); //Gets all Cards

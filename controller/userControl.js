@@ -125,7 +125,24 @@ module.exports = {
                 res.send(model);
                 //return res.send("succesfully saved");
             }
-        )
+        );
+    },
+    deleteCard: function(req, res) {
+        //console.log()
+        UserModel.findOne({ _id: req._user }, function(err, user) {
+            if (err) {
+                console.log(err);
+            }
+            var index = user.sale.indexOf(req.body._id);
+            user.sale.splice(index, 1);
+            user.save(function(error) {
+                if (error) {
+                    console.log(err);
+                } else {
+                    res.send(req.body);
+                }
+            });
+        });
     },
     //     var query = {'username':req.user.username};
     // req.newData.username = req.user.username;

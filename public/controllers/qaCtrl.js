@@ -45,10 +45,11 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     };
 
     $scope.postCard = function(card) {
+        console.log(card);
         card.riskReportedBy = $scope.riskReportedBy;
         card.riskCategory = card.riskCategory.model;
         //card.riskObservationDate = formatDate(card.riskObservationDate);
-        console.log(card.riskObservationDate);
+
 
         //console.log(card);
         mainServ.qcCardPost(card)
@@ -115,7 +116,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     };
 
     $scope.deleteCard = function(id) {
-        console.log(id);
+        //console.log(id);
         mainServ.deleteCard(id)
             .then(function(response) {
                 $scope.getMyCards();
