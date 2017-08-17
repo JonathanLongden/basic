@@ -10,7 +10,7 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
 
     this.myDate = new Date();
     this.isOpen = false;
-    $scope.riskReportedBy = 'Hello';
+    $scope.riskReportedBy = 'Web Site has Crashed';
     $scope.memberPresent = 'User';
 
     function formatDate(date) {

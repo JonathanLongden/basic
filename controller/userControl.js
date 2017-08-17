@@ -133,8 +133,8 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            var index = user.sale.indexOf(req.body._id);
-            user.sale.splice(index, 1);
+            var index = user.card.indexOf(req.body._id);
+            user.card.splice(index, 1);
             user.save(function(error) {
                 if (error) {
                     console.log(err);
