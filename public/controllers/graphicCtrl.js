@@ -4,7 +4,7 @@ angular.module('basic').controller('graphicCtrl', ['$scope', '$state', '$locatio
         $scope.pieChartConfig = {
             graphData: []
         };
-        //$scope.load = $state.reload();
+        $scope.load = $state.reload();
 
         function personsCards(data) {
             var persondata = data;
