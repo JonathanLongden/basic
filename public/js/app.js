@@ -25,9 +25,9 @@ angular.module("basic", ['ui.router'])
                 templateUrl: "./templates/signup.html", // or template: '<h1>Home Page</h1>' 
                 controller: "loginCtrl"
             })
-            .state("qasubmittal", {
-                url: "/qasubmittal",
-                templateUrl: "./templates/qasubmittal.html", // or template: '<h1>Home Page</h1>' 
+            .state("riskcard", {
+                url: "/riskcard",
+                templateUrl: "./templates/riskcard.html", // or template: '<h1>Home Page</h1>' 
                 controller: "qaCtrl"
             })
             .state("mitigation", {
