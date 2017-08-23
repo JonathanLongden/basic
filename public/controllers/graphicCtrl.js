@@ -88,7 +88,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     $scope.deleteCard = function(id) {
         mainServ.deleteCard(id)
             .then(function(response) {
-                $window.location.reload();
+                //$window.location.reload();
                 $state.reload();
                 $route.reload();
                 $scope.getAllCards();
