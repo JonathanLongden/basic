@@ -2,12 +2,17 @@
     <center>
         <h2>Login</h2>
     </center>
+    <br>
     <form ng-submit="postLogin(loginEmail, secret)" ng-controller="loginCtrl">
         <row>
-            <div ng-hide="CorrectLogin" class="ng-hide">
-                <h1 style="color:red;">Please user your Professional Email from the Company!</h1>
-            </div>
+            <center>
+                <div ng-hide="CorrectLogin" class="ng-hide">
+                    <h1 style="color:red;">Please user your Professional Email from the Company!</h1>
+                </div>
+            </center>
         </row>
+        <br>
+        <br>
         <row>
             <div class="col-sm-6 col-sm-offset-3">
                 <input class="form-control" type="email" ng-model="loginEmail" placeholder=Email>
@@ -15,9 +20,11 @@
                 <button class="btn btn-warning" id="login" type="submit" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
             </div>
         </row>
-        <div ng-hide="wrongpw" class="ng-hide">
-            <h3 style="color:red;">Incorrect Email/Password Combination</h3>
-        </div>
+        <center>
+            <div ng-hide="wrongpw" class="ng-hide">
+                <h3 style="color:red;">Incorrect Email/Password Combination</h3>
+            </div>
+        </center>
 
     </form>
 
