@@ -1,4 +1,4 @@
-angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
+angular.module('basic').controller('graphicCtrl', function($scope, $route, $location, mainServ, $rootScope) {
     $scope.MyCards = null;
     $scope.pieChartConfig = {
         graphData: []
@@ -88,6 +88,7 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     $scope.deleteCard = function(id) {
         mainServ.deleteCard(id)
             .then(function(response) {
+                //$location.path(/summary);
                 //$window.location.reload();
                 //$state.reload();
                 $route.reload();
