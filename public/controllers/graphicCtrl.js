@@ -1,5 +1,5 @@
-angular.module('basic').controller('graphicCtrl', ['$scope', '$state', '$route', '$location', 'mainServ', '$rootScope',
-    function($scope, $state, $route, $location, mainServ, $rootScope) {
+angular.module('basic').controller('graphicCtrl', ['$scope', '$state', '$location', 'mainServ', '$rootScope',
+    function($scope, $state, $location, mainServ, $rootScope) {
         $scope.MyCards = null;
         $scope.pieChartConfig = {
             graphData: []
