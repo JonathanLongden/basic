@@ -174,7 +174,21 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
 
     };
 
-    //console.log($scope.pieChartConfig);
+    //getting Cards
+    $scope.getMyCards = function() {
+        mainServ.getAllCards()
+            .then(function(response) {
+                $scope.MyCards = response;
+            });
+    };
+
+    $scope.deleteCard = function(id) {
+        //console.log(id);
+        mainServ.deleteCard(id)
+            .then(function(response) {
+                $scope.getMyCards();
+            });
+    };
 
 
 

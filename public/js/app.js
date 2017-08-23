@@ -54,7 +54,7 @@ angular.module("basic", ['ui.router'])
                 url: "/graphic",
                 templateUrl: "./templates/graphic.html", // or template: '<h1>Home Page</h1>' 
                 controller: "graphicCtrl.js"
-            })
+            });
 
 
 

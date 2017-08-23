@@ -2,52 +2,18 @@
     <br>
     <br>
     <br>
-    <!-- <div class="form-horizontal">
-        <center>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label class="control-label" for="blue"> blue: </label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[0].value" placeholder="A">
-                </div>
-                <div class="col-sm-4">
-                    <label for="light-blue">light-blue:</label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[1].value" placeholder="B">
-                </div>
-                <div class="col-sm-4">
-                    <label for="orange">orange:</label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[2].value" placeholder="C">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="tan">tan:</label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[3].value" placeholder="D">
-                </div>
-                <div class="col-sm-4">
-                    <label for="green">green:</label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[4].value" placeholder="E">
-                </div>
-                <div class="col-sm-4">
-                    <label for="light-green">light-green:</label>
-                    <input id="input" class="form-control" type="number" ng-model="pieChartConfig.graphData[5].value" placeholder="E">
-                </div>
-            </div>
-        </center>
-    </div> -->
-    <br>
     <br>
     <div class="row">
         <div class="col-md-6">
-            <h1>List Soon to Come with Data</h1>
-            <!-- <center>
-                <div class="content-list" ng-repeat="sale in mySales track by $index">
-                    <h4 id="sale-list-content">{{sale.name | uppercase}}</h4>
-                    <h4 id="sale-list-content">{{sale.address | uppercase}}</h4>
-                    <h4 id="sale-list-content">{{sale.date | date}}</h4>
-                    <br>
-                    <button class="btn btn-primary" name="button" ng-click="deleteSale(sale._id)">Delete</button>
-                </div>
-            </center> -->
+            <h1>Your Risk Cards Submitted</h1>
+            <div class="content-list " ng-repeat="card in MyCards track by $index ">
+                <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
+                <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
+                <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
+                <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                <br>
+                <button class="btn btn-primary " name="button " ng-click="deleteCard(card._id) ">Delete</button>
+            </div>
         </div>
         <div class="chart-container col-md-6">
             <simple-pie-chart chart-config="pieChartConfig"></simple-pie-chart>
