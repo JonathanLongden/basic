@@ -6,14 +6,22 @@
     <div class="row">
         <div class="col-md-6">
             <h1>Your Risk Cards Submitted</h1>
-            <!-- <button class="btn btn-primary" type="button " ng-click="getMyCards() ">Your Quality Risk Cards</button> -->
+            <br>
             <div class="content-list " ng-repeat="card in MyCards track by $index ">
-                <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
-                <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
-                <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
-                <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
-                <br>
-                <button class="btn btn-primary " name="button " ng-click="deleteCard(card._id)">Delete</button>
+                <ul>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="chart-container col-md-6">

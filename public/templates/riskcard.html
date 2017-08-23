@@ -37,10 +37,20 @@
         <button class="btn btn-primary" type="button " ng-click="getMyCards() ">Your Quality Risk Cards</button>
         <center>
             <div class="content-list " ng-repeat="card in MyCards track by $index ">
-                <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
-                <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
-                <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
-                <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                <ul>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskObservationDate | date}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskCategory | uppercase}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskDescription | uppercase}}</h4>
+                    </li>
+                    <li>
+                        <h4 id="sale-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                    </li>
+                </ul>
                 <br>
                 <button class="btn btn-primary " name="button " ng-click="deleteCard(card._id) ">Delete</button>
             </div>
