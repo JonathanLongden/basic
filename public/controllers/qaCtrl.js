@@ -45,9 +45,9 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
         } else {
             mainServ.qcCardPost(card)
                 .then(function(response) {
-                    //console.log("You Created a Card");
                     var verify = response;
-                    //console.log(verify)
+                    $scope.getMyCards();
+
                 });
         }
 
