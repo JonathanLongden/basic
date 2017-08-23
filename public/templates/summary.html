@@ -13,10 +13,10 @@
     <br>
     <div class="container" ng-controller="graphicCtrl">
         <center>
-            <button ng-click="piechart = !piechart; load()" href=" #/summary " ui-sref="summary " class="btn btn-success">Pie Chart</button>
+            <button ng-click="piechart = !piechart; load()" class=" btn btn-success ">Pie Chart</button>
         </center>
-        <div class="container">
-            <div class="User col-sm-12" ng-show="piechart" class="ng-show">
+        <div class="container ">
+            <div class="User col-sm-12 " ng-show="piechart " class="ng-show ">
                 <center>
                     <graphic-directive></graphic-directive>
                 </center>
@@ -24,13 +24,13 @@
         </div>
     </div>
     <center>
-        <div class="container">
-            <div class="User col-sm-12">
+        <div class="container ">
+            <div class="User col-sm-12 ">
                 <center>
                     <reports-directive></reports-directive>
                 </center>
             </div>
-            <div class="Admin col-sm-12" ng-hide="Admistration" class="ng-hide">
+            <div class="Admin col-sm-12 " ng-hide="Admistration " class="ng-hide ">
                 <center>
                     <adminreport-directive></adminreport-directive>
                 </center>
