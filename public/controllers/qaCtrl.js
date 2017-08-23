@@ -13,19 +13,6 @@ angular.module('basic').controller('qaCtrl', function($scope, $location, mainSer
     $scope.riskReportedBy = 'Web Site has Crashed';
     $scope.memberPresent = 'User';
 
-    // function formatDate(date) {
-    //     console.log(date);
-    //     var d = new Date(date),
-    //         month = '' + (d.getMonth() + 1),
-    //         day = '' + d.getDate(),
-    //         year = d.getFullYear();
-
-    //     if (month.length < 2) month = '0' + month;
-    //     if (day.length < 2) day = '0' + day;
-
-    //     return [year, month, day].join('-');
-    // }
-
     $scope.riskCategory = {
         model: null,
         availableOptions: [
