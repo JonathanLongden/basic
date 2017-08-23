@@ -1,5 +1,5 @@
-angular.module('basic').controller('graphicCtrl', ['$scope', '$route', '$location', 'mainServ', '$rootScope'],
-    function($scope, $route, $location, mainServ, $rootScope) {
+angular.module('basic').controller('graphicCtrl', // ['$scope', '$route', '$location', 'mainServ', '$rootScope'],
+    function($scope, $state, $route, $location, mainServ, $rootScope) {
         $scope.MyCards = null;
         $scope.pieChartConfig = {
             graphData: []
@@ -92,7 +92,14 @@ angular.module('basic').controller('graphicCtrl', ['$scope', '$route', '$locatio
                     //$location.path(/summary);
                     //$window.location.reload();
                     //$state.reload();
-                    $route.reload();
+                    //$route.reload();
+                    $state.reload();
+
+                    // $state.transitionTo($state.current, $stateParams, {
+                    //     reload: true,
+                    //     inherit: false,
+                    //     notify: true
+                    // });
                     $scope.getAllCards();
 
                 });
