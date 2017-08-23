@@ -1,6 +1,6 @@
 angular.module('basic').controller('graphicCtrl', function($scope, $location, mainServ, $rootScope) {
 
-
+    $scope.MyCards = null;
     $scope.pieChartConfig = {
         graphData: []
     };
@@ -64,8 +64,8 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     }
     //self-invoking function that responses to whether a user is log in or not
     //Turn this into an on click!
-    //(function() {
-    $scope.getMyCards = function() {
+    (function() {
+        // $scope.getMyCards = function() {
         mainServ.getAllCards()
             .then(function(response) {
                 $scope.MyCards = response;
@@ -82,24 +82,14 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
                 }
 
             });
-    }; //();
-
-    //(function() {}();
-
-    // //getting Cards
-    // $scope.getMyCards = function() {
-    //     mainServ.getAllCards()
-    //         .then(function(response) {
-    //             $scope.MyCards = response;
-    //         });
-    // };
+    })();
 
     $scope.deleteCard = function(id) {
         //console.log(id);
         mainServ.deleteCard(id)
             .then(function(response) {
-                $scope.getMyCards();
-                $scope.getCards();
+                //$scope.getMyCards();
+                //$scope.getCards();
             });
     };
 
