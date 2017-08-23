@@ -61,10 +61,10 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
         }
 
     }
-    //self-invoking function that responses to whether a user is log in or not
+    //self-invoking function
     //(function() {
     // code
-    //    })()
+    // })()
     (function() {
         // $scope.getMyCards = function() {
         mainServ.getAllCards()
@@ -86,11 +86,13 @@ angular.module('basic').controller('graphicCtrl', function($scope, $location, ma
     })();
 
     $scope.deleteCard = function(id) {
-        //console.log(id);
         mainServ.deleteCard(id)
             .then(function(response) {
+                $window.location.reload();
+                $state.reload();
+                $route.reload();
                 $scope.getAllCards();
-                //$scope.getCards();
+
             });
     };
 
