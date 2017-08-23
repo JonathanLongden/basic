@@ -37,10 +37,10 @@
                 </row>
             </div>
             <div class="summary">
-                <div class="form-group row">
+                <div class="form-group row" ng-controller="graphicCtrl">
                     <row>
                         <div class="col-sm-6">
-                            <button class="btn btn-warning" href="/summary" id="summary" ui-sref="summary ">View Summary of Reports</button>
+                            <button class="btn btn-warning" ng-click="load() " href="/summary " id="summary " ui-sref="summary ">View Summary of Reports</button>
                         </div>
                     </row>
                 </div>
