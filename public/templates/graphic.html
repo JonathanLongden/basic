@@ -10,25 +10,27 @@
     </div>
     <div class="row">
         <br>
-        <div class="col-md-12">
-            <h1 style="color:White;">Your Risk Cards Submitted</h1>
-            <br>
-            <div class="container-content-list " ng-repeat="card in MyCards track by $index ">
-                <ul>
-                    <li>
-                        <h4 id="card-list-content ">{{card.riskObservationDate | date}}</h4>
-                    </li>
-                    <li>
-                        <h4 id="card-list-content ">{{card.riskCategory | uppercase}}</h4>
-                    </li>
-                    <li>
-                        <h4 id="card-list-content ">{{card.riskDescription | uppercase}}</h4>
-                    </li>
-                    <li>
-                        <h4 id="card-list-content ">{{card.riskMitigration | uppercase}}</h4>
-                    </li>
-                </ul>
+        <center>
+            <div class="col-md-12">
+                <h1 style="color:White;">Your Risk Cards Submitted</h1>
+                <br>
+                <div class="container-content-list " ng-repeat="card in MyCards track by $index ">
+                    <ul>
+                        <li>
+                            <h4 id="card-list-content ">{{card.riskObservationDate | date}}</h4>
+                        </li>
+                        <li>
+                            <h4 id="card-list-content ">{{card.riskCategory | uppercase}}</h4>
+                        </li>
+                        <li>
+                            <h4 id="card-list-content ">{{card.riskDescription | uppercase}}</h4>
+                        </li>
+                        <li>
+                            <h4 id="card-list-content ">{{card.riskMitigration | uppercase}}</h4>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </center>
     </div>
 </div>
